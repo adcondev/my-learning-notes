@@ -46,8 +46,3 @@ func main() {
 - **Binding**: `ShouldBindJSON` parses the JSON; errors if invalid.
 - **Response**: Uses `c.JSON` to send "Hello, {Name}" back.
 - **Use case**: Test with `curl -X POST http://localhost:8080/hello -H "Content-Type: application/json" -d '{"name":"YourName"}'`.
-- **Struct for Request**: `Request` binds the incoming JSON field "message".
-- **Binding**: `ShouldBindJSON` parses the JSON; errors if invalid.
-- **Condition Check**: Responds "hello world" only if message is "Hello".
-- **Response**: Uses `c.JSON` to send JSON back.
-- **Use case**: Test with `curl -X POST http://localhost:8080/hello -H "Content-Type: application/json" -d '{"message":"Hello"}'`.
