@@ -20,3 +20,4 @@
 - query parameters
 - index and query optimization
 - know how to "play your cards" in job environments
+- AWS, Services, how cloud relates to system design

@@ -276,12 +276,17 @@ GET  /api/v1/status      # Check printer status
 
 **New entries to journal:**
 
-- I have to review how golang errors behave during testing. I added a mini-guide on error handling in Go.
+- I have to review how golang errors behave during testing. I added a mini-guide on error handling in Go. Values can be programmed, and since errors are values, errors can be programmed.
 - I achieved a lot of new testing patterns. Tests around Print, Character and Position commands are almost complete. Few fixes and refactoring are still needed. I have completed with success the tests for Print, Character and Line Spacing commands. They merged correctly and passed every check in Github.
+
 - I have advanced a lot in Position Printing commands. Tests are missing still, but I have a clear plan for their implementation.
 - I refactored and improved casting around uint16 data types for commands that use little endian representation(`qrcode.go`, `image.go`).
 - I probably will need to redo this journal, as I want to include more details about the testing process and the challenges faced. Also, I will need checkboxes for tracking progress as i didn't finish certain ideas or task mentioned before.
 - I have checked database internal concepts and their implications for our use case. Mainly, the difference between in-memory and on-disk storage. From DSA perpective i will check B+ trees and Log-Structured Merge-trees (LSM).
+
+- I checked the CAP theorem and its implications for distributed systems. I created a simple example in Go to illustrate the concepts of Consistency, Availability, and Partition Tolerance.
+- I have been very focused on test patterns and their implementation in Go. I should check Test-Driven Development (TDD) practices to further enhance my testing skills. Search for books on TDD in Go.
+- Character commands so they tests ASCII inputs. I need to ensure that all edge cases are covered.
 
 ---
 
