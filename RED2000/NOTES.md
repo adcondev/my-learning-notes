@@ -288,6 +288,8 @@ GET  /api/v1/status      # Check printer status
 - I have been very focused on test patterns and their implementation in Go. I should check Test-Driven Development (TDD) practices to further enhance my testing skills. Search for books on TDD in Go.
 - Character commands so they tests ASCII inputs. I need to ensure that all edge cases are covered.
 
+- Today i refactored certain commands, i focused on type safety and proper error handling. I created types based on values used and indicated in the ESCPOS documentation. I also created specific error types for better error management.
+
 ---
 
 ## 🎯 **Current Focus Areas**
