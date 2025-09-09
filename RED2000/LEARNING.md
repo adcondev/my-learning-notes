@@ -21,3 +21,5 @@
 - index and query optimization
 - AWS, how cloud relates to system design
 - Ticket, Incident Management
+- Logging, Site Reliability Engineering (SRE), Cybersecurity
+- CI/CD, GitOps, DevOps
