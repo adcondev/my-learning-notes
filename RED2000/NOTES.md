@@ -408,6 +408,11 @@ func (p *EscposPrinter) Print(str string) error {
 - I learned about stack and heap memory management, i want to go deeper into garbage colletion in Go. Just as general knowledge, i want to understand how memory is managed in Go and how it affects performance.
 - I am starting a side project about microservices in Go. I found a book called "gRPC Microservices in Go" that seems pretty good. I am really interested in another but related to REST API with Gin framework.
 
+- For now i will be working on Protobuf definitions and the basics of the Saga pattern.
+- Among other distributed system concepts i reviewed the CAP theorem and the PACELC theorem, and added a guide.
+- Also, i checked the main concepts of system design and scaling.
+- I checked SQL Injection countermeasures.
+
 ---
 
 ## 🎯 **Current Focus Areas**
