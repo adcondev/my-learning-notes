@@ -415,6 +415,12 @@ func (p *EscposPrinter) Print(str string) error {
 
 - I added a guide on Saga patterns, including Choreography and Orchestration.
 - I continued with service discovery patterns in microservices. I added a simple graph for client-side and server-side discovery.
+- I am ready to start with the implementation of a simple microservice using gRPC and Protobuf. I will start with simple tasks that do not have any business logic, only isolated tasks with each technology/pattern involved just to get familiar with the tools and the workflow.
+
+- I am learning about ACID vs BASE properties in databases. i am most familiar with ACID, so i will need to review BASE properties and how they apply to NoSQL databases.
+- I am seriusly thinking on learning Kafka, PySpark and data pipelines. Retaking the Data Engineering path i left years ago.
+- I reviewed the history of Go and its main features. I want to understand why Go was created and how it differs from other languages.
+- I learned about backpropagation algorithm in neural networks and machine learning concepts. If i am that into DevOps, probably MLOps is a good path to follow.
 
 ---
 
