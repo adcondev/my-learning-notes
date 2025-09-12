@@ -413,6 +413,9 @@ func (p *EscposPrinter) Print(str string) error {
 - Also, i checked the main concepts of system design and scaling.
 - I checked SQL Injection countermeasures.
 
+- I added a guide on Saga patterns, including Choreography and Orchestration.
+- I continued with service discovery patterns in microservices. I added a simple graph for client-side and server-side discovery.
+
 ---
 
 ## 🎯 **Current Focus Areas**
