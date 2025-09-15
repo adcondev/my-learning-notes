@@ -330,6 +330,8 @@ GET  /api/v1/status      # Check printer status
 
 - I have worked on CI/CD pipelines and their refactoring for the pos-printer repository. I ensured that dependabot is properly configured and that PRs are automatically tagged based on file changes and size. Automerge should work correctly now.
 - I will focus this week in the PDF generation as an alternative output for receipts. I will research libraries and tools that can help with this task. Maroto seems a good option. As soon as i have a working prototype, i will create a PR for the image printing commands.
+- I studied more about techniques and patterns for caching, message queues and API styles and architectures.
+
 
 ---
 
