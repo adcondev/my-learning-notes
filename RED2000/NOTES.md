@@ -292,105 +292,7 @@ GET  /api/v1/status      # Check printer status
 
 - I created helpers, builders and assertions for tests. These utilities streamline the testing process and improve code readability. Also, type safety was improved by using specific types instead of generic ones. This encourages the use of constants as parameters in final implementation.
 - I found a [guide](https://forums.adafruit.com/viewtopic.php?t=32217) for better understanding about User-Defined character in ESCPOS. Maybe at least leave the maps for `áéíóúü`, `ÁÉÍÓÚÜ` and `ñÑ` characters. The thing is not every printers need this implementation, so this should be optional at capabilities level.
-I will need a function that auto turns on and off the User-Defined character mode. This function will be implemented in Text() level, it will apply a formatting similar to the swap between `\n` and `LF`. Pseudocode would be something like:
-
-```go
-func Formatting(data []byte) []byte {
-	formatted := make([]byte, len(data))
-	copy(formatted, data)
-
-	for i := range formatted {
-		switch formatted[i] {
-		case '\n':
-			formatted[i] = LF
-		case '\r':
-			formatted[i] = CR
-		case '\t':
-			formatted[i] = common.HT
-		}
-	}
-	return formatted
-}
-
-func (c *Commands) Text(n string) ([]byte, error) {
-	if err := common.IsBufLenOk([]byte(n)); err != nil {
-		switch {
-		case errors.Is(err, common.ErrEmptyBuffer):
-			return nil, ErrEmptyText
-		case errors.Is(err, common.ErrBufferOverflow):
-			return nil, ErrTextTooLarge
-		default:
-			return nil, err
-		}
-	}
-
-	return Formatting([]byte(n)), nil
-}
-
-type EscposPrinter struct {
-	// Componentes obligatorios
-	Connector connector.Connector
-	Profile   *profile.Escpos
-
-	// Commands
-	Escpos *escpos.Protocol
-
-	// Rest of the struct...
-}
-
-type UserDefinedChar {
-  Y byte // 3
-  C1 byte // C1 = C2
-  C2 byte // C2 = C1
-  Xi byte // 12
-  Data [][]byte // len(Data) = 36
-}
-
-func (p *EscposPrinter) SetupUserDefinedChars() error {
-  // p.Profile.UserDefinedChars = []UserDefinedChar
-  for i, char := range p.Profile.UserDefinedChars {
-    cmd, err := p.Escpos.Character.UserDefined.DefineUserDefinedCharacters(3, char.c, char.c, char.data)
-    if err != nil {
-      return "no se puede establecer caracteres"
-    }
-    }
-}
-
-func (p *EscposPrinter) Print(str string) error {
-	// Codificar usando el charset activo del perfil
-	encoded, err := encoding.EncodeString(str, p.activeCharset)
-	if err != nil {
-		// Fallback: intentar con el charset por defecto
-		log.Printf("Error codificando con charset %d, volviendo a default: %v",
-			p.activeCharset, err)
-		encoded, err = encoding.EncodeString(str, p.Profile.DefaultCharSet)
-		if err != nil {
-			return fmt.Errorf("fallo al codificar texto %s: %w", str, err)
-		}
-	}
-
-
-
-	// Enviar al protocolo como bytes raw
-	cmd, err := p.Escpos.Print.Text(string(encoded))
-  if err != nil {
-		return fmt.Errorf("error al generar comando de impresión: %w", err)
-	}
-  if len(p.Profile.UserDefinedChars) != 0 && !p.Escpos.AreCharsDefined {
-    err := p.SetupUserDefinedChars()
-    if err != nil {
-      return fmt.Errorf("error al definir caracteres personalizados: %w", err)
-    }
-    p.Escpos.AreCharsDefined = true
-  }
-  
-	_, err = p.Connector.Write(cmd)
-	if err != nil {
-		return fmt.Errorf("error al enviar comando de impresión: %v", err)
-	}
-	return nil
-}
-```
+- I will need a function that auto turns on and off the User-Defined character mode. This function will be implemented in Text() level, it will apply a formatting similar to the swap between `\n` and `LF`. 
 
 ---
 
@@ -421,6 +323,13 @@ func (p *EscposPrinter) Print(str string) error {
 - I am seriusly thinking on learning Kafka, PySpark and data pipelines. Retaking the Data Engineering path i left years ago.
 - I reviewed the history of Go and its main features. I want to understand why Go was created and how it differs from other languages.
 - I learned about backpropagation algorithm in neural networks and machine learning concepts. If i am that into DevOps, probably MLOps is a good path to follow.
+
+## 🗓️ **WEEK 11: TBD**
+
+**Period:** September 15-19, 2025
+
+- I have worked on CI/CD pipelines and their refactoring for the pos-printer repository. I ensured that dependabot is properly configured and that PRs are automatically tagged based on file changes and size. Automerge should work correctly now.
+- I will focus this week in the PDF generation as an alternative output for receipts. I will research libraries and tools that can help with this task. Maroto seems a good option. As soon as i have a working prototype, i will create a PR for the image printing commands.
 
 ---
 
