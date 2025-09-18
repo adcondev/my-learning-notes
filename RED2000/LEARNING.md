@@ -23,3 +23,6 @@
 - Monitoring, Logging, Site Reliability Engineering (SRE), Cybersecurity
 - CI/CD, GitOps, DevOps
 - REST, gRPC, GraphQL, WebSocket
+- Load Balancer, Reverse Proxy, Forward Proxy, API Gateway
+- Caching, Message Queue, Pub/Sub
+- Microservices, Monolith, Serverless

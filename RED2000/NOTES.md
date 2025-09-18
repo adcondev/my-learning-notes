@@ -332,6 +332,12 @@ GET  /api/v1/status      # Check printer status
 - I will focus this week in the PDF generation as an alternative output for receipts. I will research libraries and tools that can help with this task. Maroto seems a good option. As soon as i have a working prototype, i will create a PR for the image printing commands.
 - I studied more about techniques and patterns for caching, message queues and API styles and architectures.
 
+- 16 september was a holiday in my country, so i had the day off. Only checked for AWS courses and identified system desing homologies.
+
+- I will continue with API design patterns and architectures.
+- Also, i will create guides for the topics from the monday and based on the guides i found online.
+- I finished a demo implementation around Channels and Goroutines. It managed channels, goroutines and backpressure, and simulated a simple but concurrent task. I added it to `go-examples` repository.
+
 
 ---
 
