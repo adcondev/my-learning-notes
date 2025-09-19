@@ -341,6 +341,10 @@ GET  /api/v1/status      # Check printer status
 - I have been exploring different API styles and architectures. I will work on a practice to implement gRPC and Protobuf in a simple microservice.
 - Built a multi-goroutine system demonstrating channel-based communication. Features exponential backoff with jitter for retry logic, fan-in pattern, dead letter queue for failed messages, and timeout-based race conditions using select.
 
+- Today i will read about Database Internals from Alex Petrov. I want to understand how databases work under the hood and how to optimize them for our use case.
+- I continued an implementation around a database from scratch in Go. I finished Chapter 1 and created a github repository for it, `go-databases`. I will continue with it as a side project.
+- I checked panic, recover and graceful shutdown in Go. I added a simple example to `go-examples` repository.
+
 ---
 
 ## 🎯 **Current Focus Areas**

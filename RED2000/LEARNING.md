@@ -26,3 +26,4 @@
 - Load Balancer, Reverse Proxy, Forward Proxy, API Gateway
 - Caching, Message Queue, Pub/Sub
 - Microservices, Monolith, Serverless
+- Making tests and debugging in production environments
