@@ -338,6 +338,8 @@ GET  /api/v1/status      # Check printer status
 - Also, i will create guides for the topics from the monday and based on the guides i found online.
 - I finished a demo implementation around Channels and Goroutines. It managed channels, goroutines and backpressure, and simulated a simple but concurrent task. I added it to `go-examples` repository.
 
+- I have been exploring different API styles and architectures. I will work on a practice to implement gRPC and Protobuf in a simple microservice.
+- Built a multi-goroutine system demonstrating channel-based communication. Features exponential backoff with jitter for retry logic, fan-in pattern, dead letter queue for failed messages, and timeout-based race conditions using select.
 
 ---
 
