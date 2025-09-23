@@ -345,6 +345,16 @@ GET  /api/v1/status      # Check printer status
 - I continued an implementation around a database from scratch in Go. I finished Chapter 1 and created a github repository for it, `go-databases`. I will continue with it as a side project.
 - I checked panic, recover and graceful shutdown in Go. I added a simple example to `go-examples` repository.
 
+## 🗓️ **WEEK 12: TBD**
+
+**Period:** September 22-26, 2025
+
+- I got wise tooth removal surgery, so i will be out of commission for today, monday.
+
+- Checked Github Fundamentals course.
+- *Inside Cyber Warfare: Mapping the Cyber Underworld* by **Jeffrey Caruso** is a really good book about cyber warfare and cyber security.
+- Continued the database from scratch implementation. I finished Chapter 2 and started Chapter 3.
+
 ---
 
 ## 🎯 **Current Focus Areas**
