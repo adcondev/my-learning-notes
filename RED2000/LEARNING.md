@@ -10,7 +10,7 @@
 
 - MVP, VPS, Ping
 - SSH, TCP/IP
-- Hash, Pagination, Streaming
+- Hash, Pagination, Streaming, Cron Jobs
 - DNS, VMS, VPN, Firewall
 - Deadlock, Circular Dependency, Race Condition, Starvation
 - Dictionary Attack, Brute Force Attack
@@ -28,7 +28,7 @@
 - Caching, Message Queue, Pub/Sub
 - Production Environment: Test and Debugging Danger
 - Canary, Blue-Green, Rolling Update, A/B Testing
-- Cron Jobs
 - Cyberwarfare, Social Engineering, Keylogger, RAT, Homograph Attack
 - EC2, S3, IAM, VPC, Lambda, RDS, CloudFormation, CloudWatch
 - Route 53, ELB, DynamoDB, API Gateway, Fargate
+- On-Premise Drawbacks vs Cloud Benefits
