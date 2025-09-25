@@ -32,3 +32,4 @@
 - EC2, S3, IAM, VPC, Lambda, RDS, CloudFormation, CloudWatch
 - Route 53, ELB, DynamoDB, API Gateway, Fargate
 - On-Premise Drawbacks vs Cloud Benefits
+- Quality Assurance (QA)

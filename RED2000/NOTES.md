@@ -355,9 +355,10 @@ GET  /api/v1/status      # Check printer status
 - *Inside Cyber Warfare: Mapping the Cyber Underworld* by **Jeffrey Caruso** is a really good book about cyber warfare and cyber security.
 - Continued the database from scratch implementation. I finished Chapter 2 and started Chapter 3.
 
-- I checked some DSA concepts like B+ trees and LSM trees.
 - Copilot wasn't working properly yesterday, so i will check today and continue ESCPOS commands implementation. Barcode command are being done and tested.
 - I did some investigation for a friend about the 2025 Stackoverflow Developer Survey results, AWS most important services and Docker Containers vs Virtual Machines.
+
+- I'm working on a simple CRUD example with FastAPI and SQLModel with PostgreSQL as the database.
 
 ---
 
