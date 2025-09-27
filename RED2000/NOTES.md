@@ -360,6 +360,9 @@ GET  /api/v1/status      # Check printer status
 
 - I'm working on a simple CRUD example with FastAPI and SQLModel with PostgreSQL as the database.
 
+- I will continue the Python API example. The idea is to create a skeleton for a friend to modify and use in her projects. Thus, Github Codespaces will be used for development and testing. I did a lot of tests with Docker containers and Codespaces.
+- I set up a container running PostgreSQL with a persistent volume. I created a simple FastAPI application with SQLModel to interact with the database.
+
 ---
 
 ## 🎯 **Current Focus Areas**
