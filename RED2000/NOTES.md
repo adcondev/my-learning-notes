@@ -363,6 +363,8 @@ GET  /api/v1/status      # Check printer status
 - I will continue the Python API example. The idea is to create a skeleton for a friend to modify and use in her projects. Thus, Github Codespaces will be used for development and testing. I did a lot of tests with Docker containers and Codespaces.
 - I set up a container running PostgreSQL with a persistent volume. I created a simple FastAPI application with SQLModel to interact with the database.
 
+- repaired my pc, it wasn't turning on. I had to replace the power supply unit. Due to a USB overcurrent issue, one of the ports was damaged.
+
 ---
 
 ## 🎯 **Current Focus Areas**
