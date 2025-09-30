@@ -363,7 +363,13 @@ GET  /api/v1/status      # Check printer status
 - I will continue the Python API example. The idea is to create a skeleton for a friend to modify and use in her projects. Thus, Github Codespaces will be used for development and testing. I did a lot of tests with Docker containers and Codespaces.
 - I set up a container running PostgreSQL with a persistent volume. I created a simple FastAPI application with SQLModel to interact with the database.
 
-- repaired my pc, it wasn't turning on. I had to replace the power supply unit. Due to a USB overcurrent issue, one of the ports was damaged.
+## 🗓️ **WEEK 13: TBD**
+
+**Period:** September 29 - October03, 2025
+
+- Repaired my pc, it wasn't turning on. Due to a USB overcurrent issue, one of the ports was damaged. I did many tests, at the end i managed to enter BIOS and disable the faulty port. Now everything is working fine.
+- I will squeeze the Copilot premium request as i have half of them left, i have just one day to use them. For it, i will create a personal website with Hugo and its templates. I am thinking in a website that can be used as a portfolio, blog, docs and tutorials.
+- I checked cloud computing core concepts and AWS services. 
 
 ---
 
