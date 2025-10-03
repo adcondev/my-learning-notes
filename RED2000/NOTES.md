@@ -379,7 +379,10 @@ GET  /api/v1/status      # Check printer status
 
 - I am studying Frontend Fundamentals. I will continue with the MERN stack tutorial later. For now, i will focus on HTML, CSS and JavaScript basics.
 - I have to upgrade to Windows 11, i will check BIOS settings and do a clean installation. Looks like CPU has the TPM 2.0 module, so i will enable it in BIOS.
-- I will return to the ESC/POS commands implementation after finishing the Windows 11 installation.
+- I will return to the ESC/POS commands implementation after finishing the Windows 11 installation. An USB will be bought for later.
+- I ended diving into Containerization with Docker and Compose. I want to do a project where no local installation is needed, everything will be done through containers. Imagine getting rid of mocks tests and use a container with a test postgresql database. not mock anymore, just testing against a containerized database. Nice Docker [Cheatsheet](https://dockerlabs.collabnix.com/docker/cheatsheet/) and [Commands](https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index).
+- I really need to dive into Testcontainers. Looks like game changer for integration testing and DevOps.
+- I will look for cheatsheets for technology i am interested in. Look for the n8n repository, it has a lot of useful resources and workflows.
 
 ---
 
