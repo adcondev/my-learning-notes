@@ -384,6 +384,8 @@ GET  /api/v1/status      # Check printer status
 - I really need to dive into Testcontainers. Looks like game changer for integration testing and DevOps.
 - I will look for cheatsheets for technology i am interested in. Look for the n8n repository, it has a lot of useful resources and workflows.
 
+- I still working in MERN stack tutorial. I have dependencies through Docker containers, thay are part of my Dev Containers setup. I worked again on Dev Containers and Codespaces. It was a day about containers, docker and docker-compose.
+
 ---
 
 ## 🎯 **Current Focus Areas**
