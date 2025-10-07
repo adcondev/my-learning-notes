@@ -292,7 +292,7 @@ GET  /api/v1/status      # Check printer status
 
 - I created helpers, builders and assertions for tests. These utilities streamline the testing process and improve code readability. Also, type safety was improved by using specific types instead of generic ones. This encourages the use of constants as parameters in final implementation.
 - I found a [guide](https://forums.adafruit.com/viewtopic.php?t=32217) for better understanding about User-Defined character in ESCPOS. Maybe at least leave the maps for `áéíóúü`, `ÁÉÍÓÚÜ` and `ñÑ` characters. The thing is not every printers need this implementation, so this should be optional at capabilities level.
-- I will need a function that auto turns on and off the User-Defined character mode. This function will be implemented in Text() level, it will apply a formatting similar to the swap between `\n` and `LF`. 
+- I will need a function that auto turns on and off the User-Defined character mode. This function will be implemented in Text() level, it will apply a formatting similar to the swap between `\n` and `LF`.
 
 ---
 
@@ -365,7 +365,7 @@ GET  /api/v1/status      # Check printer status
 
 ## 🗓️ **WEEK 13: TBD**
 
-**Period:** September 29 - October03, 2025
+**Period:** September 29 - October 03, 2025
 
 - Repaired my pc, it wasn't turning on. Due to a USB overcurrent issue, one of the ports was damaged. I did many tests, at the end i managed to enter BIOS and disable the faulty port. Now everything is working fine.
 - I was looking for a good book and tutorial. tutorial will be around MERN stack, the book is about boostrapping microservices with JavaScript, using Terraform, Github Actions, Docker and Kubernetes.
@@ -385,6 +385,13 @@ GET  /api/v1/status      # Check printer status
 - I will look for cheatsheets for technology i am interested in. Look for the n8n repository, it has a lot of useful resources and workflows.
 
 - I still working in MERN stack tutorial. I have dependencies through Docker containers, thay are part of my Dev Containers setup. I worked again on Dev Containers and Codespaces. It was a day about containers, docker and docker-compose.
+
+## 🗓️ **WEEK 14: TBD**
+
+**Period:** October 06 - October 10, 2025
+
+- I keep working on the MERN stack tutorial. I have setup the container of each service, now i will work on the code. As for now, i have a "Hello, World!" implementation for each service.
+- I will check how a Js Promise would look like in Go. I know there are goroutines and channels, but i want to see a simple example that mimics the behavior of Promises in JavaScript.
 
 ---
 
