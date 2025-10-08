@@ -397,6 +397,11 @@ GET  /api/v1/status      # Check printer status
 - I will check about VPS providers and prices. I have the idea of setting up a Dokploy instance with Terraform and Ansible. I will check the Dokploy repository for guides and documentation.
 - I will check all the Docker and Docker Compose posibilities with Github Actions. I want to create a workflow that builds and tests the code in a containerized environment. Maybe the Dokploy VPS can be used for it.
 
+- *Web Application Security: Exploitation and Countermeasures for Modern Web Applications by Andrew Hoffman* looks like a very hands-on book about web security. I will check it out.
+- I will check which VPS providers are the best for my needs. To ensure a smooth experience with Dokploy, my server should have at least 2GB of RAM and 30GB of disk space. I am diving more into VPS and Cloud providers.
+- Nice [ebook](https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/) about building web applications with Go.
+- I reformated, refactored ESCPOS commands package and integrated the Barcode commands. I also added a simple example that shows how to use the package. I translated comments to latin spanish for better understanding.
+
 ---
 
 ## 🎯 **Current Focus Areas**
