@@ -393,6 +393,10 @@ GET  /api/v1/status      # Check printer status
 - I keep working on the MERN stack tutorial. I have setup the container of each service, now i will work on the code. As for now, i have a "Hello, World!" implementation for each service.
 - I will check how a Js Promise would look like in Go. I know there are goroutines and channels, but i want to see a simple example that mimics the behavior of Promises in JavaScript.
 
+- Worked on to finally finish the Barcode commands implementation. They are finally done and tested. they are already merged into main branch.
+- I will check about VPS providers and prices. I have the idea of setting up a Dokploy instance with Terraform and Ansible. I will check the Dokploy repository for guides and documentation.
+- I will check all the Docker and Docker Compose posibilities with Github Actions. I want to create a workflow that builds and tests the code in a containerized environment. Maybe the Dokploy VPS can be used for it.
+
 ---
 
 ## 🎯 **Current Focus Areas**
