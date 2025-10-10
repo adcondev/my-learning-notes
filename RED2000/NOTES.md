@@ -403,6 +403,10 @@ GET  /api/v1/status      # Check printer status
 - I reformated, refactored ESCPOS commands package and integrated the Barcode commands. I also added a simple example that shows how to use the package. I translated comments to latin spanish for better understanding.
 - i will check the main differences between Docker Swarm and Kubernetes. I want to understand the pros and cons of each one and see which one fits better for my needs.
 
+- I wil setup Dokploy in my VPS. I have a DigitalOcean droplet with Ubuntu 24.04 LTS.
+- Also, i will add the mechanim control command to the ESC/POS package. they are used to cut paper and open cash drawer.
+- I started to work in a minimal daemon to get data from a weight scale. I will use it later for testing purposes with the pos-printer package. As first task, i wil review the code.
+
 ---
 
 ## 🎯 **Current Focus Areas**
