@@ -407,6 +407,10 @@ GET  /api/v1/status      # Check printer status
 - Also, i will add the mechanim control command to the ESC/POS package. they are used to cut paper and open cash drawer.
 - I started to work in a minimal daemon to get data from a weight scale. I will use it later for testing purposes with the pos-printer package. As first task, i wil review the code.
 
+- Once daemon was done, i started to work on a TUI in a `BSInstaller.exe` to manage installation, uninstallation and monitoring of the daemon. I will use ***Bubble Tea*** package for it. The idea is to have everything embedded in a single binary, and install it with mininal user technical knowledge. I will check this article about [Bubble Tea](https://penchev.com/posts/create-tui-with-go/) for later.
+- I will check the following [article](https://harishd.hashnode.dev/go-import-side-effect-or-blank-import) about importing only side effects (`_ "import/pkg"`) in Go. I want to understand how it works and how to use it properly.
+- I worked on a `Taskfile.yml` for the `BSInstaller.exe`, this will help the developer side. It is a Go alteranative to Makefile. the file will help to build, test and run the `BSInstaller.exe`.
+
 ---
 
 ## 🎯 **Current Focus Areas**
