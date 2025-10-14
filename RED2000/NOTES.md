@@ -411,6 +411,20 @@ GET  /api/v1/status      # Check printer status
 - I will check the following [article](https://harishd.hashnode.dev/go-import-side-effect-or-blank-import) about importing only side effects (`_ "import/pkg"`) in Go. I want to understand how it works and how to use it properly.
 - I worked on a `Taskfile.yml` for the `BSInstaller.exe`, this will help the developer side. It is a Go alteranative to Makefile. the file will help to build, test and run the `BSInstaller.exe`.
 
+
+## 🗓️ **WEEK 15: TBD**
+
+**Period:** October 13 - October 17, 2025
+
+- I was tasked to improve the security of the Weight Scale Daemon. Not everyone should be able to access the scale data.
+- Make the changes in the installer to accept arguments and passes them to the service executable.
+  - Among them is the `--secure` flag to enable secure mode. I need to allow only certain clients to access the scale data in the websocket.
+  - The `--url` flag to change the default URL (<http://localhost:8080>). Default will be `http://localhost:8080`.
+- I set up alerts and monitoring for the VPS. A container with n8n is being monitored and RAM usage is being tracked. DigitalOcean will trigger an alert if RAM usage exceeds 75% for more than 5 minutes or if n8n crashes.
+- The VPS was built with DigitalOcean. It leverages on containers for each service, because of this Traefik is being used as a reverse proxy, load balancer and SSL termination. It is also running a n8n container for workflow automation.
+- I will create replicas at least for the n8n container and setup Watchtower for automatic updates with zero downtime. I will check Dokploy today in case a database is needed as external service for n8n.
+- I need to design tests against failure scenarios in the Weight Scale Daemon. I will check how to simulate a crash and how the service behaves in that situation. Even from physical disconnection of the scale.
+
 ---
 
 ## 🎯 **Current Focus Areas**
