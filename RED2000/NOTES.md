@@ -425,6 +425,9 @@ GET  /api/v1/status      # Check printer status
 - I will create replicas at least for the n8n container and setup Watchtower for automatic updates with zero downtime. I will check Dokploy today in case a database is needed as external service for n8n.
 - I need to design tests against failure scenarios in the Weight Scale Daemon. I will check how to simulate a crash and how the service behaves in that situation. Even from physical disconnection of the scale.
 
+- I made breaking changes in the Weight Scale Daemon. Service and installer have now two versions: local and remote. Local version is for local use only, it does not expose any network interface. Remote version exposes a WebSocket interface for remote clients to connect and get scale data. I designed a better HTML to interact with the WebSocket server, it receives initial configuration data, and changes can be made through the WebSocket connection without reloading as it has a button to send new configuration data. As for the installer, a flag is used to select which service binary to embed. For its TUI i used Bubble Tea and its components, it is interactive and user-friendly, it has a local version which is clearly different in colors from the production one.
+- Documentation was written for the Weight Scale Daemon and its installer. It includes installation instructions, configuration options, and usage examples. Has 2 main parts, the Dev Guide and the User Guide.
+
 ---
 
 ## 🎯 **Current Focus Areas**
