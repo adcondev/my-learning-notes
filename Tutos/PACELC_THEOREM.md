@@ -1,19 +1,21 @@
 # PACELC Theorem in Distributed Systems
 
-The PACELC theorem extends the famous CAP theorem by addressing a critical limitation: what happens during normal operation when there are no network partitions? While CAP only considers trade-offs during partitions, PACELC provides a more complete framework for distributed system design.
+The PACELC theorem extends CAP by addressing a critical limitation: what happens during normal operation when networks aren't partitioned? PACELC provides a complete design framework for both failure and normal conditions.
 
 ## PACELC Formula
 
-**"In case of network Partitioning (P), choose between Availability (A) and Consistency (C); Else (E), when the system is running normally in the absence of partitions, choose between Latency (L) and Consistency (C)."**
+**"If network Partition (P): choose Availability (A) or Consistency (C). Else (E) in normal operation: choose Latency (L) or Consistency (C)."**
 
 ## Key Concepts
 
 ### During Partitions (PAC)
+
 - **Partition (P)**: Network failures or message loss between nodes
 - **Availability (A)**: The system responds to every request, even during failures
 - **Consistency (C)**: All nodes see the same data at the same time
 
 ### During Normal Operation (ELC)
+
 - **Else (E)**: Normal operation without network partitions
 - **Latency (L)**: Fast response times for read/write operations
 - **Consistency (C)**: Strong consistency guarantees even during normal operation
@@ -125,16 +127,19 @@ graph TB
 When designing a distributed system, ask these questions:
 
 ### During Network Partitions
+
 1. **Can your application tolerate stale data?**
    - Yes → Choose Availability (PA)
    - No → Choose Consistency (PC)
 
 ### During Normal Operation
+
 2. **What matters more for user experience?**
    - Fast response times → Choose Latency (EL)
    - Always accurate data → Choose Consistency (EC)
 
 ### Business Context
+
 3. **What are the consequences of inconsistency?**
    - Minor inconvenience → PA/EL
    - Financial loss → PC/EC
