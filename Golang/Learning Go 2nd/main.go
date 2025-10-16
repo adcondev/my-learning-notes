@@ -1,10 +1,15 @@
 package main
 
 import (
-	"encoding/json"
+	"context"
 	"fmt"
 	"log"
 	"math"
+	"os"
+
+	"github.com/google/generative-ai-go/genai"
+	"github.com/joho/godotenv"
+	"google.golang.org/api/option"
 )
 
 func LinearSearch(arr []int, target int) int {
@@ -56,18 +61,28 @@ type Kid struct {
 }
 
 func main() {
-	// Raw JSON string
-	rawJson := "[{\"age\": 5, \"candies\": 20},{\"age\": 6, \"candies\": 15}]"
-
-	// Create a slice to hold the unmarshaled data
-	var kids []Kid
-
-	// Unmarshal the JSON string into the slice
-	err := json.Unmarshal([]byte(rawJson), &kids)
-	if err != nil {
-		log.Fatalf("Error unmarshaling JSON: %v", err)
+	if err := godotenv.Load(); err != nil {
+		log.Println("Warning: No .env file found")
 	}
-
-	// Print the result
-	fmt.Printf("%+v\n", kids)
+	apiKey := os.Getenv("GEMINI_API_KEY")
+	ctx := context.Background()
+	client, err := genai.NewClient(ctx, option.WithAPIKey(apiKey))
+	if err != nil {
+		log.Fatal(err)
+	}
+	model := client.GenerativeModel("gemini-2.5-flash")
+	result, err := model.GenerateContent(
+		ctx,
+		genai.Text("Explain how AI works in a few words"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if len(result.Candidates) > 0 && len(result.Candidates[0].Content.Parts) > 0 {
+		for _, part := range result.Candidates[0].Content.Parts {
+			fmt.Println(part)
+		}
+	} else {
+		fmt.Println("Sin respuesta")
+	}
 }

@@ -428,6 +428,15 @@ GET  /api/v1/status      # Check printer status
 - I made breaking changes in the Weight Scale Daemon. Service and installer have now two versions: local and remote. Local version is for local use only, it does not expose any network interface. Remote version exposes a WebSocket interface for remote clients to connect and get scale data. I designed a better HTML to interact with the WebSocket server, it receives initial configuration data, and changes can be made through the WebSocket connection without reloading as it has a button to send new configuration data. As for the installer, a flag is used to select which service binary to embed. For its TUI i used Bubble Tea and its components, it is interactive and user-friendly, it has a local version which is clearly different in colors from the production one.
 - Documentation was written for the Weight Scale Daemon and its installer. It includes installation instructions, configuration options, and usage examples. Has 2 main parts, the Dev Guide and the User Guide.
 
+- Today i will make a combination of the websocket-serial service, but instead of a weight scale, it will be a POS printer. I will start from the lastest version of pos-printer package, so i have a clean start. From here, i will need:
+- The tech stack
+  - Frontend: HTML, (minimal) CSS, JavaScript. Simple, no frameworks. Textbox to write text, button to send it. As page is reloaded when connecting, initial configuration data will be sent through a form, and will have the option to be changed through the websocket connection. Very similar to `service.go` in the weight scale daemon.
+  - WebSocket server: Go, Gorilla WebSocket package. Simple, and very similar to the weight scale daemon. It will receive text from the frontend and send it to the printer through the pos-printer package(most basic commands, print and cut at most). Finally, it will return an acknowledgment to the frontend. No complex additional logic, just like the one in `service.go`, just a simple echo server with printing capabilities. No extra consideration with printing timeouts or buffering, as it is a prototype.
+  - POS printer: pos-printer package, based on the `windows.go` example. It will use the latest version of the package, with recently mechanical control commands. It will be a simple implementation that uses the `escpos.print.Text()` and `escpos.mechanical.Cut()` commands.
+  - An extra prototype feature inside a there will be a button to that triggers and endpoint to get the devices in COM ports. This will be useful for the user to know which port to use for the printer. And just for show purposes, the endpoint will return a JSON with the list of COM ports. The frontend will display them in a simple list.
+- I worked in the last implementations, i started with the frontend, then the websocket server and finally the pos-printer usage as handlers. First, i will communicate HTML textboxes to server logs.
+- Check Grafana, useSend, Portainer, Watchtower, Evolution API, GOWA, Minio, BookStack. 
+
 ---
 
 ## 🎯 **Current Focus Areas**
