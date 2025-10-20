@@ -411,7 +411,6 @@ GET  /api/v1/status      # Check printer status
 - I will check the following [article](https://harishd.hashnode.dev/go-import-side-effect-or-blank-import) about importing only side effects (`_ "import/pkg"`) in Go. I want to understand how it works and how to use it properly.
 - I worked on a `Taskfile.yml` for the `BSInstaller.exe`, this will help the developer side. It is a Go alteranative to Makefile. the file will help to build, test and run the `BSInstaller.exe`.
 
-
 ## 🗓️ **WEEK 15: TBD**
 
 **Period:** October 13 - October 17, 2025
@@ -440,6 +439,13 @@ GET  /api/v1/status      # Check printer status
 - I achieved printing from the WebSocket server to a POS printer. The frontend sends text to the server, which uses the pos-printer package to print it. My test was from a remote LAN computer, so it is working as expected.
 - Tomorrow i will work on the COM ports listing endpoint and its frontend integration. Also, i will try to implement a printing queue with buffered channels to avoid message loss if multiple print requests are sent in a short time. Same for timeouts, failure and concurrent scenarios, this is to be similar as the weight scale daemon.
 - I set up a new printer and it worked with the pos-printer package without issues, only minimal adptations were needed for the codepage. I will continue adding.
+
+## 🗓️ **WEEK 16: TBD**
+
+**Period:** October 20 - October 24, 2025
+
+- I helped to setup some radio equipment for a server in a local hotel. It was a long day, but everything went fine.
+- I installed Grafana and Prometheus in the VPS. I will use them to monitor the containers and services running in the server. I will create dashboards and alerts for important metrics.
 
 ---
 
