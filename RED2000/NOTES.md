@@ -446,6 +446,11 @@ GET  /api/v1/status      # Check printer status
 
 - I helped to setup some radio equipment for a server in a local hotel. It was a long day, but everything went fine.
 - I installed Grafana and Prometheus in the VPS. I will use them to monitor the containers and services running in the server. I will create dashboards and alerts for important metrics.
+- I advanced in the WebSocket POS printer daemon. I created the static files to represent the ticket template, data and configuration. For now, i will print in terminal that data through the local network into my console plus the simple printer test with fewer data and returning and acknowledgment to the client.
+- Printing queue is still pending, also the COM ports listing endpoint and other concurrent scenarios handling.
+
+- Today i worked on a pending chore about refactoring the ESCPOS package. I was around refactoring the commands and ensuring standardization across the package, and proper english in comments and documentation.
+- I will finish the mechanism control commands implementation. They are used to cut paper and open cash drawer.
 
 ---
 
