@@ -457,6 +457,10 @@ GET  /api/v1/status      # Check printer status
 - I started the documentation for the ESCPOS bit image commands. They are used to print images and graphics. I will continue the implementation and testing tomorrow.
 - I assigned a name for the ESCPOS package: `POSTER`. It stands for `Postergeist`, due to the daemon nature of the package. Maybe later i will define the scope of the package and its features, since i want an all-in-one solution but not only for ESCPOS, also for ZPL and scale, any POS device that can be used.
 
+- I will continue with the bit image commands implementation. They are a bit complex, but i will try to finish them as soon as possible.
+- I worked on the bit image commands implementation. I finished the structure and added table-driven tests and integration ones. They are now part of the ESCPOS package.
+- I am learning about bash scripting. I want to create scripts to automate tasks and improve my workflow and other DevOps processes.
+
 ---
 
 ## 🎯 **Current Focus Areas**
