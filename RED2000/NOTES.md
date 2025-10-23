@@ -452,6 +452,11 @@ GET  /api/v1/status      # Check printer status
 - Today i worked on a pending chore about refactoring the ESCPOS package. I was around refactoring the commands and ensuring standardization across the package, and proper english in comments and documentation.
 - I will finish the mechanism control commands implementation. They are used to cut paper and open cash drawer.
 
+- I am solving some issues related to linters and code formatters. I want to ensure that the codebase is clean and follows best practices.
+- I finished the mechanism control commands implementation. They are now part of the ESCPOS package and can be used to cut paper. The tests were also added.
+- I started the documentation for the ESCPOS bit image commands. They are used to print images and graphics. I will continue the implementation and testing tomorrow.
+- I assigned a name for the ESCPOS package: `POSTER`. It stands for `Postergeist`, due to the daemon nature of the package. Maybe later i will define the scope of the package and its features, since i want an all-in-one solution but not only for ESCPOS, also for ZPL and scale, any POS device that can be used.
+
 ---
 
 ## 🎯 **Current Focus Areas**
