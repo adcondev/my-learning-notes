@@ -28,15 +28,15 @@ Week 1: Testing │ Week 2:          │ Week 3:          │ Week 4:
 
 #### 🏗️ Repository Infrastructure
 
-| Component | Status | Description |
-|-----------|--------|-------------|
-| ✅ Issue Templates | Complete | Bug reports, features, general issues |
-| ✅ Bug Report Templates | Complete | Structured bug reporting |
-| ✅ Feature Request Templates | Complete | Feature proposal format |
-| ⏳ Multi-OS Testing | In Progress | CI across Windows, Linux, macOS |
-| ⏳ Linter Integration | Planned | Code quality automation |
-| ⏳ Conventional Commits | Planned | Commit message standards |
-| ⏳ Stale PR Auto-closer | Planned | Automatic cleanup |
+| Component                   | Status      | Description                           |
+|-----------------------------|-------------|---------------------------------------|
+| ✅ Issue Templates           | Complete    | Bug reports, features, general issues |
+| ✅ Bug Report Templates      | Complete    | Structured bug reporting              |
+| ✅ Feature Request Templates | Complete    | Feature proposal format               |
+| ⏳ Multi-OS Testing          | In Progress | CI across Windows, Linux, macOS       |
+| ⏳ Linter Integration        | Planned     | Code quality automation               |
+| ⏳ Conventional Commits      | Planned     | Commit message standards              |
+| ⏳ Stale PR Auto-closer      | Planned     | Automatic cleanup                     |
 
 #### 🔧 Automation Goals
 
@@ -156,11 +156,11 @@ pos-printer/
 
 **ESCPOS Implementation Status:**
 
-| Command Type | Implementation | Tests | Notes |
-|--------------|---------------|-------|-------|
-| Basic Printing | ✅ Complete | ✅ Tested | Production ready |
-| Line Spacing | ✅ Complete | ✅ Tested | Production ready |
-| Barcode Support | 🔄 In Progress | ⏳ Pending | Under development |
+| Command Type     | Implementation | Tests     | Notes             |
+|------------------|----------------|-----------|-------------------|
+| Basic Printing   | ✅ Complete     | ✅ Tested  | Production ready  |
+| Line Spacing     | ✅ Complete     | ✅ Tested  | Production ready  |
+| Barcode Support  | 🔄 In Progress | ⏳ Pending | Under development |
 | Character Format | 🔄 In Progress | ⏳ Pending | Under development |
 
 ### 📚 Personal Learning
@@ -462,7 +462,7 @@ GET  /api/v1/status      # Check printer status
 - I am learning about bash scripting. I want to create scripts to automate tasks and improve my workflow and other DevOps processes.
 
 - I worked on documentation for my previous projects. I want to ensure that they are well documented and easy to understand for future reference.
-- i was about to integrate the websocket communication that receives the ticket models.
+- I was about to integrate the websocket communication that receives the ticket models. i had some problems with the communication, so i will need to debug it further, but at least i have the models, parsers and flex types ready.
 - I checked some GPUs were still working properly after time being idle.
 
 ---
@@ -471,12 +471,12 @@ GET  /api/v1/status      # Check printer status
 
 ### 🔬 Active Research & Development
 
-| Area | Tool/Technology | Status |
-|------|-----------------|--------|
-| 📄 JSON Ticket Representation | Parzibyte tools | Investigating |
-| 🔌 Communication Protocol | WebSocket vs REST API | Feasibility analysis |
-| 📟 Hardware Issues | Codepage problems | Firmware updates needed? |
-| 🐳 Deployment | Containerization | Impact on connectors |
+| Area                          | Tool/Technology       | Status                   |
+|-------------------------------|-----------------------|--------------------------|
+| 📄 JSON Ticket Representation | Parzibyte tools       | Investigating            |
+| 🔌 Communication Protocol     | WebSocket vs REST API | Feasibility analysis     |
+| 📟 Hardware Issues            | Codepage problems     | Firmware updates needed? |
+| 🐳 Deployment                 | Containerization      | Impact on connectors     |
 
 ### 🛠️ Technical Debt Management
 
