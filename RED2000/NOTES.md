@@ -461,6 +461,10 @@ GET  /api/v1/status      # Check printer status
 - I worked on the bit image commands implementation. I finished the structure and added table-driven tests and integration ones. They are now part of the ESCPOS package.
 - I am learning about bash scripting. I want to create scripts to automate tasks and improve my workflow and other DevOps processes.
 
+- I worked on documentation for my previous projects. I want to ensure that they are well documented and easy to understand for future reference.
+- i was about to integrate the websocket communication that receives the ticket models.
+- I checked some GPUs were still working properly after time being idle.
+
 ---
 
 ## 🎯 **Current Focus Areas**
