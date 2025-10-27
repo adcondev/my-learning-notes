@@ -465,6 +465,16 @@ GET  /api/v1/status      # Check printer status
 - I was about to integrate the websocket communication that receives the ticket models. i had some problems with the communication, so i will need to debug it further, but at least i have the models, parsers and flex types ready.
 - I checked some GPUs were still working properly after time being idle.
 
+## 🗓️ **WEEK 17: TBD**
+
+**Period:** October 27 - October 31, 2025
+
+- I continued working with the POS printer daemon. I finally setup the correct models, parsers and types to receive ticket data through the WebSocket connection. I created tests to ensure that the data is correctly parsed and validated.
+- I corrected the backend to properly receive and parse the ticket data, i was having some problems so it was easier to restart incrementally. Now i can receive the data, parse it and print data, template and config in console correctly.
+- I will focus on integrating the POS printer package to print the received ticket data. Some adjustments related to refactoring and code organization will be needed.
+- I did some modification on the static files to show every field of the ticket models. Every field is now editable and can be sent to the backend for printing.
+- I helped with a [guide](https://github.com/adcondev/n8n-local) to setup n8n locally and expose it to the internet using Ngrok. It was for a friend who wanted to test some workflows without setting up a full server. Also, removing the random public URL that Ngrok provides each time it starts.
+
 ---
 
 ## 🎯 **Current Focus Areas**
