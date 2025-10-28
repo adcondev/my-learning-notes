@@ -475,6 +475,10 @@ GET  /api/v1/status      # Check printer status
 - I did some modification on the static files to show every field of the ticket models. Every field is now editable and can be sent to the backend for printing.
 - I helped with a [guide](https://github.com/adcondev/n8n-local) to setup n8n locally and expose it to the internet using Ngrok. It was for a friend who wanted to test some workflows without setting up a full server. Also, removing the random public URL that Ngrok provides each time it starts.
 
+- For now, i will work on the simplest commands like Printing, Mechanism control and Print position. The trick is they will be part of a new architecture, the idea is slowly migrate to a new architecture that supports multiple protocols (ESCPOS, ZPL, etc) as packages inside the same repository.
+- I also worked with the rearchitecture of the pos-printer package. I minimal version was done, now i will need to migrate the existing commands to the new architecture. It will take some time, but it will be worth it in the long run.
+- I finished a minimal version of the ticket printing through the WebSocket POS printer daemon. It uses the pos-printer package to print, format and cut the ticket. It used the configuration and template received from the frontend. I will show it tomorrow.
+
 ---
 
 ## 🎯 **Current Focus Areas**
