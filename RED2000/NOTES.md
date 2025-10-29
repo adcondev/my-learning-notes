@@ -360,7 +360,7 @@ GET  /api/v1/status      # Check printer status
 
 - I'm working on a simple CRUD example with FastAPI and SQLModel with PostgreSQL as the database.
 
-- I will continue the Python API example. The idea is to create a skeleton for a friend to modify and use in her projects. Thus, Github Codespaces will be used for development and testing. I did a lot of tests with Docker containers and Codespaces.
+- I will continue the Python API example. Thus, Github Codespaces will be used for development and testing. I did a lot of tests with Docker containers and Codespaces.
 - I set up a container running PostgreSQL with a persistent volume. I created a simple FastAPI application with SQLModel to interact with the database.
 
 ## 🗓️ **WEEK 13: TBD**
@@ -478,6 +478,13 @@ GET  /api/v1/status      # Check printer status
 - For now, i will work on the simplest commands like Printing, Mechanism control and Print position. The trick is they will be part of a new architecture, the idea is slowly migrate to a new architecture that supports multiple protocols (ESCPOS, ZPL, etc) as packages inside the same repository.
 - I also worked with the rearchitecture of the pos-printer package. I minimal version was done, now i will need to migrate the existing commands to the new architecture. It will take some time, but it will be worth it in the long run.
 - I finished a minimal version of the ticket printing through the WebSocket POS printer daemon. It uses the pos-printer package to print, format and cut the ticket. It used the configuration and template received from the frontend. I will show it tomorrow.
+
+- I showed the minimal working prototype of the POS printer daemon. The tickets printed were well received and formatted correctly.
+- Now i have two options to integrate the functionality with the system:
+  1. Make a translator or processor that converts a JSON with embedded commands that my system could translate into its respective ESCPOS commands and print the ticket. (Extremely flexible, but with more changes and more complicated). I would need to create a new package that handles this translation. Also, frontend and backend changes would be needed. (More work, not mine but my companion's)
+  2. Continue the way it works, with a fixed template hardcoded in Go, setup a daemon that could update only a printer service so it receives data from a main service that handler the update of the printer binaries. (Less flexible, but apparently easier to implement). This reminds me of Watchtower docker container.
+- I will start with Option 1, as it is more flexible and could be used in the future for other projects. I will leave the actual repo as it is, in any case it will be for Option 2. The `escpos-json` package will be created for Option 1, just as proof of concept, then i would want to integrate it to ESCPOS Package.
+- I am still doing in-depth research about Option 1. I will need to check how to design the JSON structure, commands, and how to implement the translation package. Also, i will need to check how to integrate it with the existing frontend and backend.
 
 ---
 
