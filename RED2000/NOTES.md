@@ -486,6 +486,10 @@ GET  /api/v1/status      # Check printer status
 - I will start with Option 1, as it is more flexible and could be used in the future for other projects. I will leave the actual repo as it is, in any case it will be for Option 2. The `escpos-json` package will be created for Option 1, just as proof of concept, then i would want to integrate it to ESCPOS Package.
 - I am still doing in-depth research about Option 1. I will need to check how to design the JSON structure, commands, and how to implement the translation package. Also, i will need to check how to integrate it with the existing frontend and backend.
 
+- I will refactor some ESCPOS package code. I want to ensure that it is clean and follows best practices. I engineered a new way to structure the ESCPOS commands library. Heavy refactoring is still needed.
+- In my head this library becomes better than the actual ones that exists in Go as the other have many flaws and anttipatterns.
+- I gathered some ideas about the approach on the remote printing through a JSON, my translator is still in design but i have an experimental idea of how it could work with Go structs.
+
 ---
 
 ## 🎯 **Current Focus Areas**
