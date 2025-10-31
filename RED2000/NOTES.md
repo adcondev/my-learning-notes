@@ -490,6 +490,11 @@ GET  /api/v1/status      # Check printer status
 - In my head this library becomes better than the actual ones that exists in Go as the other have many flaws and anttipatterns.
 - I gathered some ideas about the approach on the remote printing through a JSON, my translator is still in design but i have an experimental idea of how it could work with Go structs.
 
+- I will try to fix my Github activity graph, since i changed my username and emails some contributions are not being counted. I could not find a way to fix it, so i will contact Github support for help.
+- I have the first version of the model to be used as input for the JSON ticket representation. I will start with simple Text and Image blocks to be represented and printed. I will need to create the parser and the translator package.
+- I did even more breaking changes in the `pos-printer` repository. I big one will be that i am renaming the repo to `pos-tergeist`, as it will be the main package for POS services solutions. Also, i have moved and renamed many packages and files to better represent the new architecture. Finally, it would be easier to just cherry pick the packages into `pos-tergeist` but i want to mantain the history as it is.
+- I pushed the changes to the remote feature branch. Changes still need to be reviewed and tested. I will create a PR when everything is ready.
+
 ---
 
 ## 🎯 **Current Focus Areas**
