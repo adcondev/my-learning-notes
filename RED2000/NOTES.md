@@ -495,6 +495,12 @@ GET  /api/v1/status      # Check printer status
 - I did even more breaking changes in the `pos-printer` repository. I big one will be that i am renaming the repo to `pos-tergeist`, as it will be the main package for POS services solutions. Also, i have moved and renamed many packages and files to better represent the new architecture. Finally, it would be easier to just cherry pick the packages into `pos-tergeist` but i want to mantain the history as it is.
 - I pushed the changes to the remote feature branch. Changes still need to be reviewed and tested. I will create a PR when everything is ready.
 
+## 🗓️ **WEEK 17: TBD**
+
+**Period:** November 3 - November 7, 2025
+
+- I started the week working in a new image printng engine for the ESCPOS package. It will be based on the bit image commands already implemented, but with a better architecture, simplier and more features.
+  
 ---
 
 ## 🎯 **Current Focus Areas**
