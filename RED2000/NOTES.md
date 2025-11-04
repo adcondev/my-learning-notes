@@ -495,12 +495,19 @@ GET  /api/v1/status      # Check printer status
 - I did even more breaking changes in the `pos-printer` repository. I big one will be that i am renaming the repo to `pos-tergeist`, as it will be the main package for POS services solutions. Also, i have moved and renamed many packages and files to better represent the new architecture. Finally, it would be easier to just cherry pick the packages into `pos-tergeist` but i want to mantain the history as it is.
 - I pushed the changes to the remote feature branch. Changes still need to be reviewed and tested. I will create a PR when everything is ready.
 
-## 🗓️ **WEEK 17: TBD**
+## 🗓️ **WEEK 18: TBD**
 
 **Period:** November 3 - November 7, 2025
 
-- I started the week working in a new image printng engine for the ESCPOS package. It will be based on the bit image commands already implemented, but with a better architecture, simplier and more features.
-  
+- I started the week working in a new image printing engine for the ESCPOS package. It will be based on the bit image commands already implemented, but with a better architecture, simpler and more features.
+- I managed to print a simple image using the new engine. Some details need to be fixed(small fix in dithering and function call), but the basic functionality is working.
+
+- I finished the last details of the image printing engine. It is now part of the ESCPOS package and can be used to print images and graphics. Tests are still missing, but i will add them later.
+- I will continue the work with QR and other Two-Dimensional codes printing commands. They are similar to image printing, but with some differences in the data format and encoding.
+- I am still deciding about the ordering, layers and architecture of the package, at least i have a first new reorder. I want to ensure that it is clean and easy to use. I merged the breaking changes into main branch through a PR and a rebase.
+- Learned about WaitGroups in Go. They are used to wait for a collection of goroutines to finish.
+- Finally, i added some improvements to the Github related files. Like the issue and PR templates, workflows and actions. I want to ensure that the repository is well maintained and follows best practices.
+
 ---
 
 ## 🎯 **Current Focus Areas**

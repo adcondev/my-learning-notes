@@ -13,24 +13,19 @@
 - Hash, Pagination, Streaming, Cron Jobs
 - DNS, VMS, VPN, Firewall
 - Deadlock, Circular Dependency, Race Condition, Starvation
-- Dictionary Attack, Brute Force Attack
 - Cryptography, Password Hashing
 - Query Parameters
 - Index and Query Optimization
-- AWS, GCP, Azure
 - Single Point of Failure (SPOF)
 - Containers, Pods, Kubernetes, Docker, Podman
-- Ticket, Incident Management
-- Monitoring, Logging, Site Reliability Engineering (SRE), Cybersecurity
-- CI/CD, GitOps, DevOps
+- Site Reliability Engineering (SRE), Cybersecurity
+- CI/CD, GitOps, DevOps, CloudOps
 - REST, gRPC, GraphQL, WebSocket
-- Reverse Proxy, Proxy, API Gateway
+- API Gateway
 - Caching, Message Queue, Pub/Sub
-- Production Environment: Test and Debugging Danger
 - Canary, Blue-Green, Rolling Update, A/B Testing
 - Cyberwarfare, Social Engineering, Keylogger, RAT, Homograph Attack
 - EC2, S3, IAM, VPC, Lambda, RDS, CloudFormation, CloudWatch
 - Route 53, ELB, DynamoDB, API Gateway, Fargate
 - On-Premise Drawbacks vs Cloud Benefits
-- Quality Assurance (QA)
-- Dokploy, Traefik, Redis, PostgreSQL, Nginx
+- Heartbeat, Failover, Failsafe
