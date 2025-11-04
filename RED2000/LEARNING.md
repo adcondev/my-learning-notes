@@ -2,8 +2,6 @@
 
 ## Books and topics to Explore
 
-- Docker: Up & Running, O'Reilly
-- Github Actions in Action, O'Reilly
 - System Design Interview Vol. 2, Alex Xu
 
 ## Interesting Technical Terms
