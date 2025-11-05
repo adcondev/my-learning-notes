@@ -508,6 +508,11 @@ GET  /api/v1/status      # Check printer status
 - Learned about WaitGroups in Go. They are used to wait for a collection of goroutines to finish.
 - Finally, i added some improvements to the Github related files. Like the issue and PR templates, workflows and actions. I want to ensure that the repository is well maintained and follows best practices.
 
+- First, i worked on CI and Automatic Releases workflows. I want to ensure that the code is tested and released automatically. Also, i updated Github related files like issue and PR templates.
+- I now have a clear idea about the architecture of the ESCPOS package. I will need to refactor some code and ensure that everything is in order. Then, i will setup some examples and documentation. I had a nice start and i have a much better idea of how the package should look like. I can't loose attention on what is missing from other libraries.
+- I also solved the problem of syncing the code table in the printer and in the package. I assigned that features to profiles package, so each profile will have its own code table and now the printer knows it and adapt the encoding accordingly. Then, this code table in profile is updated when the user changes it through the ESCPOS commands.
+- Finally, i setup the image engine to be able to print images with dithering and resizing, plus from base64 strings. I created an example that shows how to use the engine. Tests are still pending, but i will add them later.
+
 ---
 
 ## 🎯 **Current Focus Areas**
