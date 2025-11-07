@@ -517,6 +517,12 @@ GET  /api/v1/status      # Check printer status
 - I tryhard to finish the JSON ticket representation package. I created the basic structure and types for the JSON representation. The translator, handlers and tests are still pending.
 - The JSON ticket representation package evolved very into something more complex than expected. 
 
+- I worked on heavy refactoring and settled the architecture of the ESCPOS package. I want to ensure that it is clean and easy to use. I also added some examples and documentation.
+- The JSON ticket representation package is still pending QR and table commands. I will continue working on it next week. I updated the documentation related to the ESCPOS package and JSON ticket representation package.
+- The changes in ESCPOS package were merged into main branch through a PR, they have a breaking change due to the architecture refactor.
+- Finally, i added new features and refactores the github, copilot and ci/cd related files. I want to ensure that the repository is well maintained and follows best practices.
+- I pushed all the changes to the master branch. Changelog is now updated with the latest changes. No change are still pending on other branches.
+
 ---
 
 ## 🎯 **Current Focus Areas**
