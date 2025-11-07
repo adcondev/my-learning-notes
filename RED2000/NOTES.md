@@ -513,6 +513,10 @@ GET  /api/v1/status      # Check printer status
 - I also solved the problem of syncing the code table in the printer and in the package. I assigned that features to profiles package, so each profile will have its own code table and now the printer knows it and adapt the encoding accordingly. Then, this code table in profile is updated when the user changes it through the ESCPOS commands.
 - Finally, i setup the image engine to be able to print images with dithering and resizing, plus from base64 strings. I created an example that shows how to use the engine. Tests are still pending, but i will add them later.
 
+- I continued working on the encoding and code table management in the ESCPOS package. I merged correctly the code table management into profiles, so each profile has its own code table and the printer adapts accordingly. It fallbacks to Windows-1252 if the code table has no supported encoding in Go. To avoid inconsistencies, when a new code table is selected, it also checks if the encoding is supported, otherwise it fallbacks to Windows-1252.
+- I tryhard to finish the JSON ticket representation package. I created the basic structure and types for the JSON representation. The translator, handlers and tests are still pending.
+- The JSON ticket representation package evolved very into something more complex than expected. 
+
 ---
 
 ## 🎯 **Current Focus Areas**
