@@ -434,7 +434,7 @@ GET  /api/v1/status      # Check printer status
   - POS printer: pos-printer package, based on the `windows.go` example. It will use the latest version of the package, with recently mechanical control commands. It will be a simple implementation that uses the `escpos.print.Text()` and `escpos.mechanical.Cut()` commands.
   - An extra prototype feature inside a there will be a button to that triggers and endpoint to get the devices in COM ports. This will be useful for the user to know which port to use for the printer. And just for show purposes, the endpoint will return a JSON with the list of COM ports. The frontend will display them in a simple list.
 - I worked in the last implementations, i started with the frontend, then the websocket server and finally the pos-printer usage as handlers. First, i will communicate HTML textboxes to server logs.
-- Check Grafana, useSend, Portainer, Watchtower, Evolution API, GOWA, Minio, BookStack. 
+- Check Grafana, useSend, Portainer, Watchtower, Evolution API, GOWA, Minio, BookStack.
 
 - I achieved printing from the WebSocket server to a POS printer. The frontend sends text to the server, which uses the pos-printer package to print it. My test was from a remote LAN computer, so it is working as expected.
 - Tomorrow i will work on the COM ports listing endpoint and its frontend integration. Also, i will try to implement a printing queue with buffered channels to avoid message loss if multiple print requests are sent in a short time. Same for timeouts, failure and concurrent scenarios, this is to be similar as the weight scale daemon.
@@ -515,13 +515,22 @@ GET  /api/v1/status      # Check printer status
 
 - I continued working on the encoding and code table management in the ESCPOS package. I merged correctly the code table management into profiles, so each profile has its own code table and the printer adapts accordingly. It fallbacks to Windows-1252 if the code table has no supported encoding in Go. To avoid inconsistencies, when a new code table is selected, it also checks if the encoding is supported, otherwise it fallbacks to Windows-1252.
 - I tryhard to finish the JSON ticket representation package. I created the basic structure and types for the JSON representation. The translator, handlers and tests are still pending.
-- The JSON ticket representation package evolved very into something more complex than expected. 
+- The JSON ticket representation package evolved very into something more complex than expected.
 
 - I worked on heavy refactoring and settled the architecture of the ESCPOS package. I want to ensure that it is clean and easy to use. I also added some examples and documentation.
 - The JSON ticket representation package is still pending QR and table commands. I will continue working on it next week. I updated the documentation related to the ESCPOS package and JSON ticket representation package.
 - The changes in ESCPOS package were merged into main branch through a PR, they have a breaking change due to the architecture refactor.
 - Finally, i added new features and refactores the github, copilot and ci/cd related files. I want to ensure that the repository is well maintained and follows best practices.
 - I pushed all the changes to the master branch. Changelog is now updated with the latest changes. No change are still pending on other branches.
+
+## 🗓️ **WEEK 18: TBD**
+
+**Period:** November 10 - November 14, 2025
+
+- First, i resolved some PR from Dependabot and improved the CI and Release workflows, then i make sure it could automatically merge small changes like dependencies updates, and create the PRs with the proper labels and scopes. Enhanced auto-merge workflow with timeout and success criteria. I did some light refactoring on codebase just to add some TODOs and comments for future improvements.
+- I will implement QR and table commands in the JSON ticket representation package. They are similar to text and image commands, but with some differences in the data format and encoding. I will work on both direct ESCPOS QR commands and image-based QR codes.
+- I checked first some approaches for the Table representation. I am considering a library called `text/tablewriter`. What i would look for is to decorate the functionality to embedd ESCPOS commands but escape them with the `0xFF` value from the library, this is because if not escaped, the table writer would count them as characters and the table would be misaligned. I will check how to do it. This is a very basic standalone implementation, so i will need to adapt it to the JSON ticket representation subpackage from Poster (the main ESCPOS package).
+- Regenerated `LEARNING.md` to provide a detailed technical summary of the project's DevOps aspects for CV purposes. Updated `README.md` with a new "DevOps and CI/CD" section to give a public-facing overview of the project's infrastructure.
 
 ---
 
