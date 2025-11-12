@@ -532,6 +532,13 @@ GET  /api/v1/status      # Check printer status
 - I checked first some approaches for the Table representation. I am considering a library called `text/tablewriter`. What i would look for is to decorate the functionality to embedd ESCPOS commands but escape them with the `0xFF` value from the library, this is because if not escaped, the table writer would count them as characters and the table would be misaligned. I will check how to do it. This is a very basic standalone implementation, so i will need to adapt it to the JSON ticket representation subpackage from Poster (the main ESCPOS package).
 - Regenerated `LEARNING.md` to provide a detailed technical summary of the project's DevOps aspects for CV purposes. Updated `README.md` with a new "DevOps and CI/CD" section to give a public-facing overview of the project's infrastructure.
 
+- I kept researching more approaches for the Table representation. I found that `text/tablewriter` is not flexible enough for my needs, so I will create a custom implementation around it. I will add my own features for better ESCPOS integration. Now, I have some ideas, I will start with a standalone implementation and then adapt it to the JSON ticket representation subpackage from Poster.
+- I worked on the QR code commands implementation in the JSON ticket representation package. I created the basic structure and types for the QR code representation. I discovered a more complete package called `yeqown/go-qrcode`, which has more QR customization from the style perspective. The translator, handlers and tests are still pending.
+- Things with the QR went from obvious to complex, I will need to check how to implement it properly. It is fine right now, I am very close to a MVP about the feature, but heavy refactoring and separation of concerns is still needed. For now it has many more features than expected, but they are worth it.
+- I refactored some documentation related to `Poster`. I modified the `README.md` to include and link some documentation files about the tabular data representation approaches and areas of opportunity for this package.
+- I am still thinking in a smart way to version the JSON ticket representation package. I have the identifier `version` field in the main JSON structure, but I want to ensure that it is flexible and easy to use. I will check some approaches and decide later.
+- A error impedes me to continue with the QR code commands implementation. The error is related to the `yeqown/go-qrcode` package.
+
 ---
 
 ## 🎯 **Current Focus Areas**
