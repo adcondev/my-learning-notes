@@ -539,6 +539,14 @@ GET  /api/v1/status      # Check printer status
 - I am still thinking in a smart way to version the JSON ticket representation package. I have the identifier `version` field in the main JSON structure, but I want to ensure that it is flexible and easy to use. I will check some approaches and decide later.
 - A error impedes me to continue with the QR code commands implementation. The error is related to the `yeqown/go-qrcode` package.
 
+- I believe i have a first minimal viable implementation of QR code commands in the JSON ticket representation package. It does many more things that expected. the problem was QR size in pixels, was very dependant on module size and error correction level. I create a way to calculate it automatically wheter it would be printed as image or direct QR command. I prepared extensive tests as JSON samples, but units tests are still pending. I integrated the Qr functionality with handlers and graphics engine. I have to modify the converter to get the Qr details to JSON representation. I added many validations through the QR generation to catch possible errors.
+- I will focus on testing tomorrow or start todey if everything goes fine with the QR code commands implementation.
+- I really want to implement a logging middleware as many process happens behind the scenes and it would be useful to debug possible issues. If there is a problem, it would probably be fallbacked or corrected silently, so a logging middleware would be very useful.
+- As the last point, a better error handling mechanism would be useful. Right now, errors are returned as is, but a better approach would be to create custom error types and handlers. This would help to identify and handle errors more effectively.
+- Sadly, circular shape QR wasn't taht very useful as they are not recognized by scanners. I just discovered that it workds only if QR Code is big enough, pixel wise, i just have to put that disclaimer. In the other hand, the standard QR with a logo in the center worked very well, so i will keep it.
+- Right now, the center logo implementation is very basic, it takes the image from a file path, so i will need to improve it to accept base64 strings or byte slices. Also, i will need to add more tests and examples.
+- I opened a PR for the QR code commands implementation in the JSON ticket representation package. Fist, i will run builds, tests and linters. Then, i will review the code and documentation. Finally, i will merge it into main branch.
+
 ---
 
 ## 🎯 **Current Focus Areas**
