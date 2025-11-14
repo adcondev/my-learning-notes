@@ -547,6 +547,11 @@ GET  /api/v1/status      # Check printer status
 - Right now, the center logo implementation is very basic, it takes the image from a file path, so i will need to improve it to accept base64 strings or byte slices. Also, i will need to add more tests and examples.
 - I opened a PR for the QR code commands implementation in the JSON ticket representation package. Fist, i will run builds, tests and linters. Then, i will review the code and documentation. Finally, i will merge it into main branch.
 
+- I keep having problems with halftone QR generation, i am debugging it further. For now i have introduced functions to calculate optimal pixel width and data area size, there was a problem where if i configures a 576px QR output, because of safe zone of the QR, the actual image to print was bigger than 576px, so it wasn't printed correctly. I will need to check more edge cases and do more tests.
+- It was a very simple but hard to find bug, now halftone QR codes are working properly. Tests are still pending, but i will add them later. With this the QR code commands implementation in the JSON ticket representation package is finished.
+- I will continue with the Table commands implementation tomorrow. I have some ideas, but i will need to research more and decide later.
+- for now, i will open a PR for the QR code commands implementation in the JSON ticket representation package. First, i will run builds, tests and linters. Then, i will review the code and documentation. Finally, i will merge it into main branch.
+
 ---
 
 ## 🎯 **Current Focus Areas**
