@@ -523,7 +523,7 @@ GET  /api/v1/status      # Check printer status
 - Finally, i added new features and refactores the github, copilot and ci/cd related files. I want to ensure that the repository is well maintained and follows best practices.
 - I pushed all the changes to the master branch. Changelog is now updated with the latest changes. No change are still pending on other branches.
 
-## 🗓️ **WEEK 18: TBD**
+## 🗓️ **WEEK 19: TBD**
 
 **Period:** November 10 - November 14, 2025
 
@@ -553,7 +553,16 @@ GET  /api/v1/status      # Check printer status
 - For now, i will open a PR for the QR code commands implementation in the JSON ticket representation package. First, i will run builds, tests and linters. Then, i will review the code and documentation. Finally, i will merge it into main branch.
 
 - I will continue with QR features before merging as i think is better to get the images for logo and halftone in base64 strings or byte slices instead of file paths. Also, i will check if some refactoring is needed.
-- I finally finiched the QR code commands implementation in the JSON ticket representation package. I added support for base64 strings. I removed halftone and added an autosize calculation if logo is used, this is determined by error correction level and logo size. Tests and examples were added. I opened a PR for the changes. Many more bugs were fixed and improvements were added, same for validations to ensure i cover every scenario. Heavy testing and refactoring is still needed.
+- I finally finished the QR code commands implementation in the JSON ticket representation package. I added support for base64 strings. I removed halftone and added an autosize calculation if logo is used, this is determined by error correction level and logo size. Tests and examples were added. I opened a PR for the changes. Many more bugs were fixed and improvements were added, same for validations to ensure i cover every scenario. Heavy testing and refactoring is still needed.
+
+## 🗓️ **WEEK 20: TBD**
+
+**Period:** November 18 - November 21, 2025
+
+- First, i fixed some PRs around Dependabot and improved the CI and Release workflows by adding a dependency autosubmission workflow.  I resolved some conflicts in the PR, `feat/qr` and `master`. QR code commands implementation in the JSON ticket representation are integrated with the latest changes from main branch.
+- I started the week working on the Table commands implementation in the JSON ticket representation package. I created the basic structure and types for the Table representation. I researched more approaches and decided to create a custom implementation around `text/tablewriter`. I will add my own features for better ESCPOS integration.
+- I almost finished the Table commands implementation in the JSON ticket representation package. I created a custom table writer that escapes ESCPOS commands with `0xFF` value to avoid misalignment. I added support for basic table features like headers, padding, and alignment. Tests and examples are still pending.
+- I will make some ticket templates to integrate all the features implemented in the JSON ticket representation package. This will help to showcase the capabilities of the package and provide examples for users.
 
 ---
 
