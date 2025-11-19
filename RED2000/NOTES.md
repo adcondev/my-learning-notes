@@ -561,8 +561,15 @@ GET  /api/v1/status      # Check printer status
 
 - First, i fixed some PRs around Dependabot and improved the CI and Release workflows by adding a dependency autosubmission workflow.  I resolved some conflicts in the PR, `feat/qr` and `master`. QR code commands implementation in the JSON ticket representation are integrated with the latest changes from main branch.
 - I started the week working on the Table commands implementation in the JSON ticket representation package. I created the basic structure and types for the Table representation. I researched more approaches and decided to create a custom implementation around `text/tablewriter`. I will add my own features for better ESCPOS integration.
-- I almost finished the Table commands implementation in the JSON ticket representation package. I created a custom table writer that escapes ESCPOS commands with `0xFF` value to avoid misalignment. I added support for basic table features like headers, padding, and alignment. Tests and examples are still pending.
+- I almost finished the Table commands implementation in the JSON ticket representation package. I created a custom table writer that escapes ESCPOS commands with `0xFF` value to avoid misalignment. I added support for basic table features like headers, padding, and alignment. Tests and examples are still pending. The escape mechanism was discarded, as it was causing more problems than benefits. Instead, i created a custom table writer that handles ESCPOS commands properly.
 - I will make some ticket templates to integrate all the features implemented in the JSON ticket representation package. This will help to showcase the capabilities of the package and provide examples for users.
+
+- Today i will showcase the progress made in the JSON ticket representation package. I will show some ticket templates that use text, image, QR code, and table commands. I will also demonstrate how to use the package to print tickets and generate JSON representations.
+- Implement a ordering mechanism for ticket elements. This will allow users to control the order in which elements are printed. This is for later.
+- I replicated a well-known ticket template that uses text, image, QR code, and table commands. It was a good exercise to test the capabilities of the JSON ticket representation package. I will create more templates later.
+- I integreated the table commands implementation in the JSON ticket representation package with the latest changes from main branch. I resolved some conflicts in the PR, `feat/table` and `master`.
+- I did minimal fixes, improvements and refactoring in `poster` repository. I want to ensure that the codebase is clean and follows best practices. I also added some TODOs and comments for future improvements.
+- I received a nice approval for the JSON ticket representation package PR. It will be merged into main branch after some final reviews and tests. Only non-functional requirements are pending, like logging middleware and better error handling mechanism.
 
 ---
 
