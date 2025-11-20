@@ -571,6 +571,11 @@ GET  /api/v1/status      # Check printer status
 - I did minimal fixes, improvements and refactoring in `poster` repository. I want to ensure that the codebase is clean and follows best practices. I also added some TODOs and comments for future improvements.
 - I received a nice approval for the JSON ticket representation package PR. It will be merged into main branch after some final reviews and tests. Only non-functional requirements are pending, like logging middleware and better error handling mechanism.
 
+- I am reafactoring and making some last improvements in the JSON ticket representation package before merging it into main branch. I wanted to make a better JSON schema representation, so i created a new structure that is more flexible and easier to use. I am still adding more options for formatting and customization.
+- I worked on some unit testing for missing packages of the Poster repository. I want to ensure that the codebase is well tested and follows best practices. For now, i focused on the `profiles`, `connection` and `graphics` packages, as for now i am not modifying them so no danger of conflicts.
+- I saw it convenient to facilitate testing by refactoring the packages. Added `TODOs` and `FIXMEs` to highlight nitpicks and areas for future improvement. `testify` package was used for assertions and mocking, enhancing test reliability and readability.
+- I keep doing heavy refactoring in the JSON ticket representation package before merging it into main branch. I want to ensure that the codebase is clean and follows best practices. I also added some TODOs and comments for future improvements.
+
 ---
 
 ## 🎯 **Current Focus Areas**
