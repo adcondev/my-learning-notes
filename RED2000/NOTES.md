@@ -576,6 +576,9 @@ GET  /api/v1/status      # Check printer status
 - I saw it convenient to facilitate testing by refactoring the packages. Added `TODOs` and `FIXMEs` to highlight nitpicks and areas for future improvement. `testify` package was used for assertions and mocking, enhancing test reliability and readability.
 - I keep doing heavy refactoring in the JSON ticket representation package before merging it into main branch. I want to ensure that the codebase is clean and follows best practices. I also added some TODOs and comments for future improvements.
 
+- I will resolve TODOs and FIXMEs in the JSON ticket representation package before merging it into main branch. I will focus on the minimal ones first, then the more complex ones.
+- I worked on the documentation for the JSON ticket representation package. The server and frontend side will check it to determine where the JSONs will be generated and consumed. - I want to ensure that it is well documented and easy to understand for users. For now i created a JSON schema representation and a markdown documentation file. Thisll will be added to the repository later.
+
 ---
 
 ## 🎯 **Current Focus Areas**
