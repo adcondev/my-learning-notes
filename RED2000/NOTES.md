@@ -579,6 +579,16 @@ GET  /api/v1/status      # Check printer status
 - I will resolve TODOs and FIXMEs in the JSON ticket representation package before merging it into main branch. I will focus on the minimal ones first, then the more complex ones.
 - I worked on the documentation for the JSON ticket representation package. The server and frontend side will check it to determine where the JSONs will be generated and consumed. - I want to ensure that it is well documented and easy to understand for users. For now i created a JSON schema representation and a markdown documentation file. Thisll will be added to the repository later.
 
+## 🗓️ **WEEK 21: TBD**
+
+**Period:** November 24 - November 28, 2025
+
+- I will wait for the comments and reviews in the JSON ticket representation package, I will wait in case they require changes or discuss about the implementation. They will think about how to integrate in the actual system. I will be ready to help them if needed.
+- For now, I will work on the barcode commands implementation in the JSON ticket representation package. They are similar to QR code commands, but with some differences in the data format and encoding. No need to fallback as image, as is extremely rare to have printers without barcode support.
+- Some of the changes were around the QR generation given the parameters in the JSON. In this case i added a structure to obtain the default parameters in the handler.
+- I managed to print barcodes using the JSON ticket representation package. I created a test suit as an example of how to use the package to print barcodes. I will add more tests and examples later.
+- What will be pending is a panic triggered in test suite, it is about nil pointer dereference, i will need to debug it further.
+
 ---
 
 ## 🎯 **Current Focus Areas**
