@@ -589,6 +589,14 @@ GET  /api/v1/status      # Check printer status
 - I managed to print barcodes using the JSON ticket representation package. I created a test suit as an example of how to use the package to print barcodes. I will add more tests and examples later.
 - What will be pending is a panic triggered in test suite, it is about nil pointer dereference, i will need to debug it further.
 
+- I added some robustness to the error and nil pointer checks, same for Close() methods that are called, so i can recover and log the panic or error properly.
+- I am still working on catchig that nil pointer dereference panic, i will need to debug it further.
+- I have added some tests to other branches for `graphics` and `connection` packages. The thing is i have made some light changes in the codebase, so i will need to resolve some conflicts.
+- The unit tests for `graphics`, `connection` and `profile` packages were merged into main branch. Minimal conflict resolution was needed.
+- I will partially do the `miscellaneous` ESCPOS commands, i will focus on the `beeper` pure commands for now. I will try to deliver up to the JSON ticket representation package.
+- I set up CodeQL for static analysis of the codebase. I will try to catch some bugs and security vulnerabilities. As expected, there were some vulterabilities around some github actions that were fixed.
+- I will pause the `beeper` pure commands implementation in the `miscellaneous` ESCPOS commands, i will focus to `raw` command JSON ticket representation package. This is because i can test any command i want without any dependency or making the entire definition from ESCPOS pure commands to JSON handler. It is also a way for other developers or users to test any command they want.
+
 ---
 
 ## 🎯 **Current Focus Areas**
