@@ -1,0 +1,2768 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </meta>
+    <meta http-equiv="content-style-type" content="text/css">
+    </meta>
+    <meta http-equiv="content-script-type" content="text/javascript">
+    </meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </meta>
+    <meta name="robots" content="index,follow">
+    </meta>
+    <meta name="keywords" content="Epson,POS,Discproducer,Technical Information">
+    </meta>
+    <meta name="description" content="Epson POS and Discproducer Products Technical Information">
+    </meta>
+    <meta name="rating" content="general">
+    </meta>
+    <meta name="author" content="EPSON">
+    </meta>
+    <meta name="copyright" content="Copyright © SEIKO EPSON CORPORATION. All rights reserved.">
+    </meta>
+    <title>Commands in Code Order - TM Printer - ESC/POS Command - Tech.Reference - POS - Epson</title>
+    <link rel="stylesheet" href="./files/bootstrap.css" type="text/css">
+    </link>
+    <link rel="stylesheet" href="./files/base.css" type="text/css">
+    </link>
+    <link rel="stylesheet" href="./files/common.css" type="text/css">
+    </link>
+    <link rel="stylesheet" href="./files/reference.css" type="text/css">
+    </link>
+    <link rel="stylesheet" href="./files/ref_escpos.css" type="text/css">
+    </link>
+    <link rel="stylesheet" href="./files/custom.css" type="text/css">
+    </link>
+    <link rel="stylesheet" href="./files/api_reference_style.css" type="text/css">
+    </link>
+    <link rel="stylesheet" href="./files/default.css">
+    </link>
+    <link rel="stylesheet" href="./files/print.css" type="text/css" media="print">
+    </link>
+    <link rel="shortcut icon" href="./files/favicon.ico">
+    </link>
+    <link rel="icon" href="./files/favicon.ico">
+    </link>
+</head>
+
+<body class="double intelligent" id="reference_command">
+    <header class="navbar navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="navbar-left corporate_brand"><a href="https://epson.sn"><img src="./files/epson.png"
+                                class="corporate_logo" alt="Epson"></img></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="container" class="container-fluid gradGray">
+        <div class="breadCrumbs">
+            <ol>
+                <li><a href="https://download4.epson.biz/sec_pubs/pos/reference_en/">TOP</a>»
+                </li>
+                <li><a href="./index.html">ESC/POS<sup xmlns="">®</sup> Command Reference for TM Printers</a> »
+                </li>
+                <li>Command Lists »</li>
+                <li><strong>Commands in Code Order</strong></li>
+            </ol>
+        </div>
+        <div id="content" class="row">
+            <div id="main" class="col-xs-12 col-sm-8 col-md-9 col-sm-push-4 col-md-push-3">
+                <div class="pico_container" id="ref_escpos_container">
+                    <div class="mainCont products"><a name="top_of_pico_body" id="top_of_pico_body"></a>
+                        <div class="pico_body" id="reference_body">
+                            <div id="body-contents" data-mid="ref_escpos_en">
+                                <div class="Header1">
+                                    <div class="contentHeader">
+                                        <h1 class="Head-B" id="commands">Commands in Code Order</h1>
+                                        <hr>
+                                        </hr>
+                                    </div>
+                                    <div class="contentHeaderGhost"></div>
+                                    <table xmlns="" class="grid">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div>
+                                                        <div>Command</div>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div>
+                                                        <div>Description</div>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div>
+                                                        <div>Category</div>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="ht.html">HT</a></td>
+                                                <td align="left">Horizontal tab</td>
+                                                <td align="left" nowrap="">Print Position</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="lf.html">LF</a></td>
+                                                <td align="left">Print and line feed</td>
+                                                <td align="left" nowrap="">Print</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="ff_in_page.html">FF (in Page
+                                                        mode)</a></td>
+                                                <td align="left">Print and return to Standard mode (in Page mode)</td>
+                                                <td align="left" nowrap="">Print</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="ff_in_standard.html">FF (in Standard
+                                                        mode)</a></td>
+                                                <td align="left">End job (in Standard mode)</td>
+                                                <td align="left" nowrap="">Print</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="cr.html">CR</a></td>
+                                                <td align="left">Print and carriage return</td>
+                                                <td align="left" nowrap="">Print</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="dle_eot.html">DLE EOT</a></td>
+                                                <td align="left">Transmit real-time status</td>
+                                                <td align="left" nowrap="">Status</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="dle_enq.html">DLE ENQ</a></td>
+                                                <td align="left">Send real-time request to printer</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="dle_dc4_fn1.html">DLE DC4 (fn=1)</a>
+                                                </td>
+                                                <td align="left">Generate pulse in real-time</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="dle_dc4_fn2.html">DLE DC4 (fn=2)</a>
+                                                </td>
+                                                <td align="left">Execute power-off sequence</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="dle_dc4_fn3.html">DLE DC4 (fn=3)</a>
+                                                </td>
+                                                <td align="left">Sound buzzer in real-time</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="dle_dc4_fn7.html">DLE DC4 (fn=7)</a>
+                                                </td>
+                                                <td align="left">Transmit specified status in real time</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="dle_dc4_fn8.html">DLE DC4 (fn=8)</a>
+                                                </td>
+                                                <td align="left">Clear buffer(s)</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="can.html">CAN</a></td>
+                                                <td align="left">Cancel print data in Page mode</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_ff.html">ESC FF</a></td>
+                                                <td align="left">Print data in Page mode</td>
+                                                <td align="left" nowrap="">Print</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_space.html">ESC SP</a></td>
+                                                <td align="left">Set right-side character spacing</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_exclamation.html">ESC !</a></td>
+                                                <td align="left">Select print mode(s)</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_dollarssign.html">ESC $</a></td>
+                                                <td align="left">Set absolute print position</td>
+                                                <td align="left" nowrap="">Print Position</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_percent.html">ESC %</a></td>
+                                                <td align="left">Select/cancel user-defined character set</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_ampersand.html">ESC &amp;</a>
+                                                </td>
+                                                <td align="left">Define user-defined characters</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lparen_ca.html">ESC ( A</a></td>
+                                                <td align="left">Control beeper tones</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lparen_ca_fn48.html">ESC ( A
+                                                        &lt;fn=48&gt;</a></td>
+                                                <td align="left">Beep the buzzer</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lparen_ca_fn97.html">ESC ( A
+                                                        &lt;fn=97&gt;</a></td>
+                                                <td align="left">Model specific buzzer control (fn=97)</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lparen_ca_fn98.html">ESC ( A
+                                                        &lt;fn=98&gt;</a></td>
+                                                <td align="left">Model specific buzzer control (fn=98)</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lparen_ca_fn99.html">ESC ( A
+                                                        &lt;fn=99&gt;</a></td>
+                                                <td align="left">Model specific buzzer control (fn=99)</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lparen_cy.html">ESC ( Y</a></td>
+                                                <td align="left">Specify batch print</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_asterisk.html">ESC *</a></td>
+                                                <td align="left">Select bit-image mode</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_minus.html">ESC -</a></td>
+                                                <td align="left">Turn underline mode on/off</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_2.html">ESC 2</a></td>
+                                                <td align="left">Select default line spacing</td>
+                                                <td align="left" nowrap="">Line Spacing</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_3.html">ESC 3</a></td>
+                                                <td align="left">Set line spacing</td>
+                                                <td align="left" nowrap="">Line Spacing</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_less_than_sign.html">ESC
+                                                        &lt;</a></td>
+                                                <td align="left">Return home</td>
+                                                <td align="left" nowrap="">Mech. Control</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_equal.html">ESC =</a></td>
+                                                <td align="left">Select peripheral device</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_questionmark.html">ESC ?</a>
+                                                </td>
+                                                <td align="left">Cancel user-defined characters</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_atsign.html">ESC @</a></td>
+                                                <td align="left">Initialize printer</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_cd.html">ESC D</a></td>
+                                                <td align="left">Set horizontal tab positions</td>
+                                                <td align="left" nowrap="">Print Position</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_ce.html">ESC E</a></td>
+                                                <td align="left">Turn emphasized mode on/off</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_cg.html">ESC G</a></td>
+                                                <td align="left">Turn double-strike mode on/off</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_cj.html">ESC J</a></td>
+                                                <td align="left">Print and feed paper</td>
+                                                <td align="left" nowrap="">Print</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_ck.html">ESC K</a></td>
+                                                <td align="left">Print and reverse feed</td>
+                                                <td align="left" nowrap="">Print</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_cl.html">ESC L</a></td>
+                                                <td align="left">Select Page mode</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_cm.html">ESC M</a></td>
+                                                <td align="left">Select character font</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_cr.html">ESC R</a></td>
+                                                <td align="left">Select an international character set</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_cs.html">ESC S</a></td>
+                                                <td align="left">Select Standard mode</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_ct.html">ESC T</a></td>
+                                                <td align="left">Select print direction in Page mode</td>
+                                                <td align="left" nowrap="">Print Position</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_cu.html">ESC U</a></td>
+                                                <td align="left">Turn unidirectional print mode on/off</td>
+                                                <td align="left" nowrap="">Mech. Control</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_cv.html">ESC V</a></td>
+                                                <td align="left">Turn 90° clockwise rotation mode on/off</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_cw.html">ESC W</a></td>
+                                                <td align="left">Set print area in Page mode</td>
+                                                <td align="left" nowrap="">Print Position</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_backslash.html">ESC \</a></td>
+                                                <td align="left">Set relative print position</td>
+                                                <td align="left" nowrap="">Print Position</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_la.html">ESC a</a></td>
+                                                <td align="left">Select justification</td>
+                                                <td align="left" nowrap="">Print Position</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lc_3.html">ESC c 3</a></td>
+                                                <td align="left">Select paper sensor(s) to output paper-end signals</td>
+                                                <td align="left" nowrap="">Paper Sensor</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lc_4.html">ESC c 4</a></td>
+                                                <td align="left">Select paper sensor(s) to stop printing</td>
+                                                <td align="left" nowrap="">Paper Sensor</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lc_5.html">ESC c 5</a></td>
+                                                <td align="left">Enable/disable panel buttons</td>
+                                                <td align="left" nowrap="">Panel Button</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_ld.html">ESC d</a></td>
+                                                <td align="left">Print and feed n lines</td>
+                                                <td align="left" nowrap="">Print</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_le.html">ESC e</a></td>
+                                                <td align="left">Print and reverse feed n lines</td>
+                                                <td align="left" nowrap="">Print</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_li.html">ESC i</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Partial cut (one point left uncut)</td>
+                                                <td align="left" nowrap="">Mech. Control</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lm.html">ESC m</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Partial cut (three points left uncut)</td>
+                                                <td align="left" nowrap="">Mech. Control</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lp.html">ESC p</a></td>
+                                                <td align="left">Generate pulse</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lr.html">ESC r</a></td>
+                                                <td align="left">Select print color</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lt.html">ESC t</a></td>
+                                                <td align="left">Select character code table</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lu.html">ESC u</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Transmit peripheral device status</td>
+                                                <td align="left" nowrap="">Status</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lv.html">ESC v</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Transmit paper sensor status</td>
+                                                <td align="left" nowrap="">Status</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="esc_lbrace.html">ESC {</a></td>
+                                                <td align="left">Turn upside-down print mode on/off</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_exclamation.html">FS !</a></td>
+                                                <td align="left">Select print mode(s) for Kanji characters</td>
+                                                <td align="left" nowrap="">Kanji</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_ampersand.html">FS &amp;</a></td>
+                                                <td align="left">Select Kanji character mode</td>
+                                                <td align="left" nowrap="">Kanji</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_ca.html">FS ( A</a></td>
+                                                <td align="left">Select Kanji character style(s)</td>
+                                                <td align="left" nowrap="">Kanji</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_ca_fn48.html">FS ( A
+                                                        &lt;fn=48&gt;</a></td>
+                                                <td align="left">Select Kanji character font</td>
+                                                <td align="left" nowrap="">Kanji</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_cc.html">FS ( C</a></td>
+                                                <td align="left">Select code conversion method</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_cc_fn48.html">FS ( C
+                                                        &lt;fn=48&gt;</a></td>
+                                                <td align="left">Select character encode system</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_cc_fn60.html">FS ( C
+                                                        &lt;fn=60&gt;</a></td>
+                                                <td align="left">Set font priority</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_ce.html">FS ( E</a></td>
+                                                <td align="left">Group of commands for receipt enhancement control</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_ce_fn60.html">FS ( E
+                                                        &lt;fn=60&gt;</a></td>
+                                                <td align="left">Cancel set values for top/bottom logo printing</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_ce_fn61.html">FS ( E
+                                                        &lt;fn=61&gt;</a></td>
+                                                <td align="left">Transmit set values for top/bottom logo printing</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_ce_fn62.html">FS ( E
+                                                        &lt;fn=62&gt;</a></td>
+                                                <td align="left">Set top logo printing</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_ce_fn63.html">FS ( E
+                                                        &lt;fn=63&gt;</a></td>
+                                                <td align="left">Set bottom logo printing</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_ce_fn64.html">FS ( E
+                                                        &lt;fn=64&gt;</a></td>
+                                                <td align="left">Make extended settings for top/bottom logo printing
+                                                </td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_ce_fn65.html">FS ( E
+                                                        &lt;fn=65&gt;</a></td>
+                                                <td align="left">Enable/disable top/bottom logo printing</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_cl.html">FS ( L</a></td>
+                                                <td align="left">Select label and black mark control function(s)</td>
+                                                <td align="left" nowrap="">Printing Paper</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_cl_fn33.html">FS ( L
+                                                        &lt;fn=33&gt;</a></td>
+                                                <td align="left">Paper layout setting</td>
+                                                <td align="left" nowrap="">Printing Paper</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_cl_fn34.html">FS ( L
+                                                        &lt;fn=34&gt;</a></td>
+                                                <td align="left">Paper layout information transmission</td>
+                                                <td align="left" nowrap="">Printing Paper</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_cl_fn48.html">FS ( L
+                                                        &lt;fn=48&gt;</a></td>
+                                                <td align="left">Transmit the positioning information</td>
+                                                <td align="left" nowrap="">Printing Paper</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_cl_fn65.html">FS ( L
+                                                        &lt;fn=65&gt;</a></td>
+                                                <td align="left">Feed paper to the label peeling position</td>
+                                                <td align="left" nowrap="">Printing Paper</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_cl_fn66.html">FS ( L
+                                                        &lt;fn=66&gt;</a></td>
+                                                <td align="left">Feed paper to the cutting position</td>
+                                                <td align="left" nowrap="">Printing Paper</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_cl_fn67.html">FS ( L
+                                                        &lt;fn=67&gt;</a></td>
+                                                <td align="left">Feed paper to the print starting position</td>
+                                                <td align="left" nowrap="">Printing Paper</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_cl_fn80.html">FS ( L
+                                                        &lt;fn=80&gt;</a></td>
+                                                <td align="left">Paper layout error special margin setting</td>
+                                                <td align="left" nowrap="">Printing Paper</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lparen_le.html">FS ( e</a></td>
+                                                <td align="left">Enable/disable Automatic Status Back (ASB) for optional
+                                                    functions (extended status)</td>
+                                                <td align="left" nowrap="">Status</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_minus.html">FS -</a></td>
+                                                <td align="left">Turn underline mode on/off for Kanji characters</td>
+                                                <td align="left" nowrap="">Kanji</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_period.html">FS .</a></td>
+                                                <td align="left">Cancel Kanji character mode</td>
+                                                <td align="left" nowrap="">Kanji</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_2.html">FS 2</a></td>
+                                                <td align="left">Define user-defined Kanji characters</td>
+                                                <td align="left" nowrap="">Kanji</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_questionmark.html">FS ?</a></td>
+                                                <td align="left">Cancel user-defined Kanji characters</td>
+                                                <td align="left" nowrap="">Kanji</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_cc.html">FS C</a></td>
+                                                <td align="left">Select Kanji character code system</td>
+                                                <td align="left" nowrap="">Kanji</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_cs.html">FS S</a></td>
+                                                <td align="left">Set Kanji character spacing</td>
+                                                <td align="left" nowrap="">Kanji</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_cw.html">FS W</a></td>
+                                                <td align="left">Turn quadruple-size mode on/off for Kanji characters
+                                                </td>
+                                                <td align="left" nowrap="">Kanji</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lg_1.html">FS g 1</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Write to NV user memory</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lg_2.html">FS g 2</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Read from NV user memory</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lp.html">FS p</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Print NV bit image</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="fs_lq.html">FS q</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Define NV bit image</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_exclamation.html">GS !</a></td>
+                                                <td align="left">Select character size</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_dollarssign.html">GS $</a></td>
+                                                <td align="left">Set absolute vertical print position in Page mode</td>
+                                                <td align="left" nowrap="">Print Position</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ca.html">GS ( A</a></td>
+                                                <td align="left">Execute test print</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cc.html">GS ( C</a></td>
+                                                <td align="left">Edit NV user memory</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cc_fn0.html">GS ( C
+                                                        &lt;fn=0&gt;</a></td>
+                                                <td align="left">Delete the specified record</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cc_fn1.html">GS ( C
+                                                        &lt;fn=1&gt;</a></td>
+                                                <td align="left">Store the data in the specified record</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cc_fn2.html">GS ( C
+                                                        &lt;fn=2&gt;</a></td>
+                                                <td align="left">Transmit the data in the specified record</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cc_fn3.html">GS ( C
+                                                        &lt;fn=3&gt;</a></td>
+                                                <td align="left">Transmit capacity of the NV user memory currently being
+                                                    used</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cc_fn4.html">GS ( C
+                                                        &lt;fn=4&gt;</a></td>
+                                                <td align="left">Transmit the remaining capacity of the NV user memory
+                                                </td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cc_fn5.html">GS ( C
+                                                        &lt;fn=5&gt;</a></td>
+                                                <td align="left">Transmit the key code list</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cc_fn6.html">GS ( C
+                                                        &lt;fn=6&gt;</a></td>
+                                                <td align="left">Delete all data in the NV user memory</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cd.html">GS ( D</a></td>
+                                                <td align="left">Enable/disable real-time command</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce.html">GS ( E</a></td>
+                                                <td align="left">Set user setup commands</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn01.html">GS ( E
+                                                        &lt;fn=1&gt;</a></td>
+                                                <td align="left">Change into the user setting mode</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn02.html">GS ( E
+                                                        &lt;fn=2&gt;</a></td>
+                                                <td align="left">End the user setting mode session</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn03.html">GS ( E
+                                                        &lt;fn=3&gt;</a></td>
+                                                <td align="left">Change the memory switch</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn04.html">GS ( E
+                                                        &lt;fn=4&gt;</a></td>
+                                                <td align="left">Transmit the settings of the memory switch</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn05.html">GS ( E
+                                                        &lt;fn=5&gt;</a></td>
+                                                <td align="left">Set the customized setting values</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn06.html">GS ( E
+                                                        &lt;fn=6&gt;</a></td>
+                                                <td align="left">Transmit the customized setting values</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn07.html">GS ( E
+                                                        &lt;fn=7&gt;</a></td>
+                                                <td align="left">Copy the user-defined page</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn08.html">GS ( E
+                                                        &lt;fn=8&gt;</a></td>
+                                                <td align="left">Define the data (column format) for the character code
+                                                    page</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn09.html">GS ( E
+                                                        &lt;fn=9&gt;</a></td>
+                                                <td align="left">Define the data (raster format) for the character code
+                                                    page</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn10.html">GS ( E
+                                                        &lt;fn=10&gt;</a></td>
+                                                <td align="left">Delete the data for the character code page</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn11.html">GS ( E
+                                                        &lt;fn=11&gt;</a></td>
+                                                <td align="left">Set the configuration item for the serial interface
+                                                </td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn12.html">GS ( E
+                                                        &lt;fn=12&gt;</a></td>
+                                                <td align="left">Transmit the configuration item for the serial
+                                                    interface</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn13.html">GS ( E
+                                                        &lt;fn=13&gt;</a></td>
+                                                <td align="left">Set the configuration item for the Bluetooth interface
+                                                </td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn14.html">GS ( E
+                                                        &lt;fn=14&gt;</a></td>
+                                                <td align="left">Transmit the configuration item for the Bluetooth
+                                                    interface</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn15.html">GS ( E
+                                                        &lt;fn=15&gt;</a></td>
+                                                <td align="left">Set conditions for USB interface communication</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn16.html">GS ( E
+                                                        &lt;fn=16&gt;</a></td>
+                                                <td align="left">Transmit conditions for USB interface communication
+                                                </td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn48.html">GS ( E
+                                                        &lt;fn=48&gt;</a></td>
+                                                <td align="left">Delete the paper layout</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn49.html">GS ( E
+                                                        &lt;fn=49&gt;</a></td>
+                                                <td align="left">Set the paper layout</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn50.html">GS ( E
+                                                        &lt;fn=50&gt;</a></td>
+                                                <td align="left">Transmit the paper layout information</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn51.html">GS ( E
+                                                        &lt;fn=51&gt;</a></td>
+                                                <td align="left">Set the control for label paper and paper with black
+                                                    marks</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn52.html">GS ( E
+                                                        &lt;fn=52&gt;</a></td>
+                                                <td align="left">Transmit the control settings for label paper and paper
+                                                    with black marks</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn99.html">GS ( E
+                                                        &lt;fn=99&gt;</a></td>
+                                                <td align="left">Set internal buzzer patterns</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ce_fn100.html">GS ( E
+                                                        &lt;fn=100&gt;</a></td>
+                                                <td align="left">Transmit internal buzzer patterns</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ch.html">GS ( H</a></td>
+                                                <td align="left">Request transmission of response or status</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ch_fn48.html">GS ( H
+                                                        &lt;fn=48&gt;</a></td>
+                                                <td align="left">Specifies the process ID response</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ch_fn49.html">GS ( H
+                                                        &lt;fn=49&gt;</a></td>
+                                                <td align="left">Specifies the offline response</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ck.html">GS ( K</a></td>
+                                                <td align="left">Select print control method(s)</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ck_fn48.html">GS ( K
+                                                        &lt;fn=48&gt;</a></td>
+                                                <td align="left">Select the print control mode</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ck_fn49.html">GS ( K
+                                                        &lt;fn=49&gt;</a></td>
+                                                <td align="left">Select the print density</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ck_fn50.html">GS ( K
+                                                        &lt;fn=50&gt;</a></td>
+                                                <td align="left">Select the print speed</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_ck_fn97.html">GS ( K
+                                                        &lt;fn=97&gt;</a></td>
+                                                <td align="left">Select the number of parts for the thermal head
+                                                    energizing</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl.html">GS ( L / GS 8
+                                                        L</a></td>
+                                                <td align="left">Set graphics data</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn48.html">GS ( L
+                                                        &lt;fn=48&gt;</a></td>
+                                                <td align="left">Transmit the NV graphics memory capacity</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn49.html">GS ( L
+                                                        &lt;fn=49&gt;</a></td>
+                                                <td align="left">Set the reference dot density for graphics</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn50.html">GS ( L
+                                                        &lt;fn=50&gt;</a></td>
+                                                <td align="left">Print the graphics data in the print buffer</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn51.html">GS ( L
+                                                        &lt;fn=51&gt;</a></td>
+                                                <td align="left">Transmit the remaining capacity of the NV graphics
+                                                    memory</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn52.html">GS ( L
+                                                        &lt;fn=52&gt;</a></td>
+                                                <td align="left">Transmit the remaining capacity of the download
+                                                    graphics memory</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn64.html">GS ( L
+                                                        &lt;fn=64&gt;</a></td>
+                                                <td align="left">Transmit the key code list for defined NV graphics</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn65.html">GS ( L
+                                                        &lt;fn=65&gt;</a></td>
+                                                <td align="left">Delete all NV graphics data</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn66.html">GS ( L
+                                                        &lt;fn=66&gt;</a></td>
+                                                <td align="left">Delete the specified NV graphics data</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn67.html">GS ( L / GS
+                                                        8 L &lt;fn=67&gt;</a></td>
+                                                <td align="left">Define the NV graphics data (raster format)</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn68.html">GS ( L / GS
+                                                        8 L &lt;fn=68&gt;</a></td>
+                                                <td align="left">Define the NV graphics data (column format)</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn69.html">GS ( L
+                                                        &lt;fn=69&gt;</a></td>
+                                                <td align="left">Print the specified NV graphics data</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn80.html">GS ( L
+                                                        &lt;fn=80&gt;</a></td>
+                                                <td align="left">Transmit the key code list for defined download
+                                                    graphics</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn81.html">GS ( L
+                                                        &lt;fn=81&gt;</a></td>
+                                                <td align="left">Delete all download graphics data</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn82.html">GS ( L
+                                                        &lt;fn=82&gt;</a></td>
+                                                <td align="left">Delete the specified download graphics data</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn83.html">GS ( L / GS
+                                                        8 L &lt;fn=83&gt;</a></td>
+                                                <td align="left">Define the download graphics data (raster format)</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn84.html">GS ( L / GS
+                                                        8 L &lt;fn=84&gt;</a></td>
+                                                <td align="left">Define the download graphics data (column format)</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn85.html">GS ( L
+                                                        &lt;fn=85&gt;</a></td>
+                                                <td align="left">Print the specified download graphics data</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn112.html">GS ( L / GS
+                                                        8 L &lt;fn=112&gt;</a></td>
+                                                <td align="left">Store the graphics data in the print buffer (raster
+                                                    format)</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cl_fn113.html">GS ( L / GS
+                                                        8 L &lt;fn=113&gt;</a></td>
+                                                <td align="left">Store the graphics data in the print buffer (column
+                                                    format)</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cm.html">GS ( M</a></td>
+                                                <td align="left">Customize printer control value(s)</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cm_fn1.html">GS ( M
+                                                        &lt;fn=1&gt;</a></td>
+                                                <td align="left">Save the setting values from the work area into the
+                                                    storage area</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cm_fn2.html">GS ( M
+                                                        &lt;fn=2&gt;</a></td>
+                                                <td align="left">Load the setting values stored in the storage area to
+                                                    the work area</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cm_fn3.html">GS ( M
+                                                        &lt;fn=3&gt;</a></td>
+                                                <td align="left">Select the setting values loaded to the work area after
+                                                    the initialization process</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cn.html">GS ( N</a></td>
+                                                <td align="left">Select character effects</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cn_fn48.html">GS ( N
+                                                        &lt;fn=48&gt;</a></td>
+                                                <td align="left">Select character color</td>
+                                                <td align="left" nowrap="">Customize</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cn_fn49.html">GS ( N
+                                                        &lt;fn=49&gt;</a></td>
+                                                <td align="left">Select background color</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cn_fn50.html">GS ( N
+                                                        &lt;fn=50&gt;</a></td>
+                                                <td align="left">Turn shading mode on/off</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cp.html">GS ( P</a></td>
+                                                <td align="left">Page mode control</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cp_fn48.html">GS ( P
+                                                        &lt;fn=48&gt;</a></td>
+                                                <td align="left">Set the printable area in Page mode</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cq.html">GS ( Q</a></td>
+                                                <td align="left">Commands for drawing graphics</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cq_fn48.html">GS ( Q
+                                                        &lt;fn=48&gt;</a></td>
+                                                <td align="left">Draw line</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cq_fn49.html">GS ( Q
+                                                        &lt;fn=49&gt;</a></td>
+                                                <td align="left">Draw rectangle</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cv.html">GS ( V</a></td>
+                                                <td align="left">Specify paper cut</td>
+                                                <td align="left" nowrap="">Mech. Control</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cv_fn48.html">GS ( V
+                                                        &lt;fn=48&gt;</a></td>
+                                                <td align="left">Paper cut</td>
+                                                <td align="left" nowrap="">Mech. Control</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cv_fn49.html">GS ( V
+                                                        &lt;fn=49&gt;</a></td>
+                                                <td align="left">Paper feed and cut</td>
+                                                <td align="left" nowrap="">Mech. Control</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_cv_fn51.html">GS ( V
+                                                        &lt;fn=51&gt;</a></td>
+                                                <td align="left">Paper cut reservation</td>
+                                                <td align="left" nowrap="">Mech. Control</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk.html">GS ( k</a></td>
+                                                <td align="left">Set up and print the symbol</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn065.html">GS ( k
+                                                        &lt;fn=065&gt;</a></td>
+                                                <td align="left">PDF417: Set the number of columns in the data region
+                                                </td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn066.html">GS ( k
+                                                        &lt;fn=066&gt;</a></td>
+                                                <td align="left">PDF417: Set the number of rows</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn067.html">GS ( k
+                                                        &lt;fn=067&gt;</a></td>
+                                                <td align="left">PDF417: Set the width of the module</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn068.html">GS ( k
+                                                        &lt;fn=068&gt;</a></td>
+                                                <td align="left">PDF417: Set the row height</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn069.html">GS ( k
+                                                        &lt;fn=069&gt;</a></td>
+                                                <td align="left">PDF417: Set the error correction level</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn070.html">GS ( k
+                                                        &lt;fn=070&gt;</a></td>
+                                                <td align="left">PDF417: Select the options</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn080.html">GS ( k
+                                                        &lt;fn=080&gt;</a></td>
+                                                <td align="left">PDF417: Store the data in the symbol storage area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn081.html">GS ( k
+                                                        &lt;fn=081&gt;</a></td>
+                                                <td align="left">PDF417: Print the symbol data in the symbol storage
+                                                    area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn082.html">GS ( k
+                                                        &lt;fn=082&gt;</a></td>
+                                                <td align="left">PDF417: Transmit the size information of the symbol
+                                                    data in the symbol storage area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn165.html">GS ( k
+                                                        &lt;fn=165&gt;</a></td>
+                                                <td align="left">QR Code: Select the model</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn167.html">GS ( k
+                                                        &lt;fn=167&gt;</a></td>
+                                                <td align="left">QR Code: Set the size of module</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn169.html">GS ( k
+                                                        &lt;fn=169&gt;</a></td>
+                                                <td align="left">QR Code: Select the error correction level</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn180.html">GS ( k
+                                                        &lt;fn=180&gt;</a></td>
+                                                <td align="left">QR Code: Store the data in the symbol storage area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn181.html">GS ( k
+                                                        &lt;fn=181&gt;</a></td>
+                                                <td align="left">QR Code: Print the symbol data in the symbol storage
+                                                    area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn182.html">GS ( k
+                                                        &lt;fn=182&gt;</a></td>
+                                                <td align="left">QR Code: Transmit the size information of the symbol
+                                                    data in the symbol storage area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn265.html">GS ( k
+                                                        &lt;fn=265&gt;</a></td>
+                                                <td align="left">MaxiCode: Select the mode</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn280.html">GS ( k
+                                                        &lt;fn=280&gt;</a></td>
+                                                <td align="left">MaxiCode: Store the data in the symbol storage area
+                                                </td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn281.html">GS ( k
+                                                        &lt;fn=281&gt;</a></td>
+                                                <td align="left">MaxiCode: Print the symbol data in the symbol storage
+                                                    area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn282.html">GS ( k
+                                                        &lt;fn=282&gt;</a></td>
+                                                <td align="left">MaxiCode: Transmit the size information of the symbol
+                                                    data in the symbol storage area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn367.html">GS ( k
+                                                        &lt;fn=367&gt;</a></td>
+                                                <td align="left">2-dimensional GS1 DataBar: Set the width of the module
+                                                </td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn371.html">GS ( k
+                                                        &lt;fn=371&gt;</a></td>
+                                                <td align="left">2-dimensional GS1 DataBar: GS1 DataBar Expanded Stacked
+                                                    maximum width setting</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn380.html">GS ( k
+                                                        &lt;fn=380&gt;</a></td>
+                                                <td align="left">2-dimensional GS1 DataBar: Store data in the symbol
+                                                    storage area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn381.html">GS ( k
+                                                        &lt;fn=381&gt;</a></td>
+                                                <td align="left">2-dimensional GS1 DataBar: Print the symbol data in the
+                                                    symbol storage area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn382.html">GS ( k
+                                                        &lt;fn=382&gt;</a></td>
+                                                <td align="left">2-dimensional GS1 DataBar: Transmit the size
+                                                    information of the symbol data in the
+                                                    symbol storage area
+                                                </td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn467.html">GS ( k
+                                                        &lt;fn=467&gt;</a></td>
+                                                <td align="left">Composite Symbology: Set the width of the module</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn471.html">GS ( k
+                                                        &lt;fn=471&gt;</a></td>
+                                                <td align="left">Composite Symbology: GS1 DataBar Expanded Stacked
+                                                    maximum width setting</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn472.html">GS ( k
+                                                        &lt;fn=472&gt;</a></td>
+                                                <td align="left">Composite Symbology: Select HRI character font</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn480.html">GS ( k
+                                                        &lt;fn=480&gt;</a></td>
+                                                <td align="left">Composite Symbology: Store the data in the symbol
+                                                    storage area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn481.html">GS ( k
+                                                        &lt;fn=481&gt;</a></td>
+                                                <td align="left">Composite Symbology: Print the symbol data in the
+                                                    symbol storage area</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn482.html">GS ( k
+                                                        &lt;fn=482&gt;</a></td>
+                                                <td align="left">Composite Symbology: Transmit the size information of
+                                                    the symbol data in the symbol
+                                                    storage area
+                                                </td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn566.html">GS ( k
+                                                        &lt;fn=566&gt;</a></td>
+                                                <td align="left">Aztec Code: Set the number of mode types and data
+                                                    layers</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn567.html">GS ( k
+                                                        &lt;fn=567&gt;</a></td>
+                                                <td align="left">Aztec Code: Set the size of the module</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn569.html">GS ( k
+                                                        &lt;fn=569&gt;</a></td>
+                                                <td align="left">Aztec Code: Set the error correction level</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn580.html">GS ( k
+                                                        &lt;fn=580&gt;</a></td>
+                                                <td align="left">Aztec Code: Store the data in the symbol storage area
+                                                </td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn581.html">GS ( k
+                                                        &lt;fn=581&gt;</a></td>
+                                                <td align="left">Aztec Code: Print the symbol data in the symbol storage
+                                                    area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn582.html">GS ( k
+                                                        &lt;fn=582&gt;</a></td>
+                                                <td align="left">Aztec Code: Transmit the size information of the symbol
+                                                    data in the symbol storage
+                                                    area
+                                                </td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn666.html">GS ( k
+                                                        &lt;fn=666&gt;</a></td>
+                                                <td align="left">DataMatrix: Set the symbol type, number of columns,
+                                                    number of rows</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn667.html">GS ( k
+                                                        &lt;fn=667&gt;</a></td>
+                                                <td align="left">DataMatrix: Set the size of the module</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn680.html">GS ( k
+                                                        &lt;fn=680&gt;</a></td>
+                                                <td align="left">DataMatrix: Store the data in the symbol storage area
+                                                </td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn681.html">GS ( k
+                                                        &lt;fn=681&gt;</a></td>
+                                                <td align="left">DataMatrix: Print the symbol data in the symbol storage
+                                                    area</td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lparen_lk_fn682.html">GS ( k
+                                                        &lt;fn=682&gt;</a></td>
+                                                <td align="left">DataMatrix: Transmit the size information of the symbol
+                                                    data in the symbol storage
+                                                    area
+                                                </td>
+                                                <td align="left" nowrap="">2D Code</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_asterisk.html">GS *</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Define downloaded bit image</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_slash.html">GS /</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Print downloaded bit image</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_colon.html">GS :</a></td>
+                                                <td align="left">Start/end macro definition</td>
+                                                <td align="left" nowrap="">Macro Function</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cb.html">GS B</a></td>
+                                                <td align="left">Turn white/black reverse print mode on/off</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cc_0.html">GS C 0</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Select counter print mode</td>
+                                                <td align="left" nowrap="">Counter Printing</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cc_1.html">GS C 1</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Select count mode (A)</td>
+                                                <td align="left" nowrap="">Counter Printing</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cc_2.html">GS C 2</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Set counter</td>
+                                                <td align="left" nowrap="">Counter Printing</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cc_semicolon.html">GS C
+                                                        ;</a><span style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Select count mode (B)</td>
+                                                <td align="left" nowrap="">Counter Printing</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cd.html">GS D</a></td>
+                                                <td align="left">Specify Windows BMP graphics data</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cd_fn67.html">GS D
+                                                        &lt;fn=67&gt;</a></td>
+                                                <td align="left">Define Windows BMP NV graphics data</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cd_fn83.html">GS D
+                                                        &lt;fn=83&gt;</a></td>
+                                                <td align="left">Define Windows BMP download graphics data</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_ch.html">GS H</a></td>
+                                                <td align="left">Select print position of HRI characters</td>
+                                                <td align="left" nowrap="">Barcode</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_ci.html">GS I</a></td>
+                                                <td align="left">Transmit printer ID</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cl.html">GS L</a></td>
+                                                <td align="left">Set left margin</td>
+                                                <td align="left" nowrap="">Print Position</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cp.html">GS P</a></td>
+                                                <td align="left">Set horizontal and vertical motion units</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cq_0.html">GS Q 0</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Print variable vertical size bit image</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_ct.html">GS T</a></td>
+                                                <td align="left">Set print position to the beginning of print line</td>
+                                                <td align="left" nowrap="">Print Position</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cv.html">GS V</a></td>
+                                                <td align="left">Select cut mode and cut paper</td>
+                                                <td align="left" nowrap="">Mech. Control</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_cw.html">GS W</a></td>
+                                                <td align="left">Set print area width</td>
+                                                <td align="left" nowrap="">Print Position</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_backslash.html">GS \</a></td>
+                                                <td align="left">Set relative vertical print position in Page mode</td>
+                                                <td align="left" nowrap="">Print Position</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_caret.html">GS ^</a></td>
+                                                <td align="left">Execute macro</td>
+                                                <td align="left" nowrap="">Macro Function</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_la.html">GS a</a></td>
+                                                <td align="left">Enable/disable Automatic Status Back (ASB)</td>
+                                                <td align="left" nowrap="">Status</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lb.html">GS b</a></td>
+                                                <td align="left">Turn smoothing mode on/off</td>
+                                                <td align="left" nowrap="">Character</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lc.html">GS c</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Print counter</td>
+                                                <td align="left" nowrap="">Counter Printing</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lf.html">GS f</a></td>
+                                                <td align="left">Select font for HRI characters</td>
+                                                <td align="left" nowrap="">Barcode</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lg_0.html">GS g 0</a></td>
+                                                <td align="left">Initialize maintenance counter</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lg_2.html">GS g 2</a></td>
+                                                <td align="left">Transmit maintenance counter</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lh.html">GS h</a></td>
+                                                <td align="left">Set barcode height</td>
+                                                <td align="left" nowrap="">Barcode</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lj.html">GS j</a></td>
+                                                <td align="left">Enable/disable Automatic Status Back (ASB) for ink</td>
+                                                <td align="left" nowrap="">Status</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lk.html">GS k</a></td>
+                                                <td align="left">Print barcode</td>
+                                                <td align="left" nowrap="">Barcode</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lr.html">GS r</a></td>
+                                                <td align="left">Transmit status</td>
+                                                <td align="left" nowrap="">Status</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lv_0.html">GS v 0</a><span
+                                                        style="float: right">&nbsp;<abbr
+                                                            title="Obsolete Command">(∗)</abbr></span></td>
+                                                <td align="left">Print raster bit image</td>
+                                                <td align="left" nowrap="">Bit Image</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lw.html">GS w</a></td>
+                                                <td align="left">Set barcode width</td>
+                                                <td align="left" nowrap="">Barcode</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" nowrap=""><a href="gs_lz_0.html">GS z 0</a></td>
+                                                <td align="left">Set online recovery wait time</td>
+                                                <td align="left" nowrap="">Miscellaneous</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table xmlns="" class="$table-class-grid">
+                                        <tbody>
+                                            <tr>
+                                                <td nowrap="">(∗):&nbsp;</td>
+                                                <td>Obsolete Command</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="index-list" style="position: absolute; width: 30px; left: 1091.5px; top: 342px;">
+                                <div id="index-list-main" style="overflow: hidden; float: right;display: table;">
+                                    <div id="index-list-left">&nbsp;</div>
+                                    <div id="index-list-right">
+                                        <div>
+                                            <h3>Quick Access</h3>
+                                        </div>
+                                        <div>
+                                            <ul>
+                                                <li><span>[Name]</span></li>
+                                                <li><span>[Format]</span></li>
+                                                <li><span>[Range]</span></li>
+                                                <li><span>[Description]</span></li>
+                                                <li><span>[Notes]</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="notification">
+                        </hr>
+                        <div style="text-align: right;">ESC/POS<sup xmlns="">®</sup> includes patented or patent pending
+                            commands. The contents must not be disclosed
+                            to third parties.
+                        </div><br></br>
+                    </div>
+                </div>
+            </div>
+            <div id="left" class="col-xs-12 col-sm-4 col-md-3 col-sm-pull-8 col-md-pull-9">
+                <div id="leftMenu">
+                    <div id="treecontrol">
+                        <p>ESC/POS<sup xmlns="">®</sup> Command Reference for TM Printers
+                        </p>
+                        <div class="search"><input onkeypress="enter(event.keyCode);" id="keywords" type="text"
+                                name="query_text" class="wordsTxt"></input><span class="input-group-btn"><button
+                                    onclick="search(); return false;" class="btn btn-default" type="button"
+                                    id="search"><span class="glyphicon glyphicon-search"></span></button></span></div>
+                        <ul>
+                            <li class="collapse"><a href="#">Collapse All</a></li>
+                            <li class="expand"><a href="#">Expand</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="treeview">
+                    <ul xmlns="">
+
+                        <li><a href="index.html">Introduction</a></li>
+
+                        <li><span>Command Lists</span>
+                            <ul>
+
+                                <li><a href="commands.html">Commands in Code Order</a></li>
+
+                                <li><a href="applicables.html">Applicable printers</a></li>
+
+                                <li><span>Command List by Model</span>
+                                    <ul>
+
+                                        <li><a href="eum30.html">EU-m30</a></li>
+
+                                        <li><a href="tmj2000.html">TM-J2000, TM-J2100</a></li>
+
+                                        <li><a href="tml90.html">TM-L90</a></li>
+
+                                        <li><a href="tml90lfc.html">TM-L90 LFC</a></li>
+
+                                        <li><a href="tml100.html">TM-L100</a></li>
+
+                                        <li><a href="tmm10.html">TM-m10</a></li>
+
+                                        <li><a href="tmm30.html">TM-m30</a></li>
+
+                                        <li><a href="tmm30ii.html">TM-m30II</a></li>
+
+                                        <li><a href="tmm30iih.html">TM-m30II-H</a></li>
+
+                                        <li><a href="tmm30iint.html">TM-m30II-NT</a></li>
+
+                                        <li><a href="tmm30iis.html">TM-m30II-S</a></li>
+
+                                        <li><a href="tmm30iisl.html">TM-m30II-SL</a></li>
+
+                                        <li><a href="tmm30iii.html">TM-m30III</a></li>
+
+                                        <li><a href="tmm30iiih.html">TM-m30III-H</a></li>
+
+                                        <li><a href="tmm50.html">TM-m50</a></li>
+
+                                        <li><a href="tmm50ii.html">TM-m50II</a></li>
+
+                                        <li><a href="tmm50iih.html">TM-m50II-H</a></li>
+
+                                        <li><a href="tmp20.html">TM-P20</a></li>
+
+                                        <li><a href="tmp20ii.html">TM-P20II</a></li>
+
+                                        <li><a href="tmp60.html">TM-P60</a></li>
+
+                                        <li><a href="tmp60ii.html">TM-P60II</a></li>
+
+                                        <li><a href="tmp80.html">TM-P80</a></li>
+
+                                        <li><a href="tmp80ii.html">TM-P80II</a></li>
+
+                                        <li><a href="tmt100.html">TM-T100</a></li>
+
+                                        <li><a href="tmt20.html">TM-T20</a></li>
+
+                                        <li><a href="tmt20ii.html">TM-T20II</a></li>
+
+                                        <li><a href="tmt20iii.html">TM-T20III</a></li>
+
+                                        <li><a href="tmt20iiil.html">TM-T20IIIL</a></li>
+
+                                        <li><a href="tmt20iv.html">TM-T20IV</a></li>
+
+                                        <li><a href="tmt20ivl.html">TM-T20IV-L</a></li>
+
+                                        <li><a href="tmt20ivsp.html">TM-T20IV-SP</a></li>
+
+                                        <li><a href="tmt20x.html">TM-T20X</a></li>
+
+                                        <li><a href="tmt20xii.html">TM-T20X-II</a></li>
+
+                                        <li><a href="tmt70.html">TM-T70</a></li>
+
+                                        <li><a href="tmt70ii.html">TM-T70II</a></li>
+
+                                        <li><a href="tmt81iii.html">TM-T81III</a></li>
+
+                                        <li><a href="tmt82ii.html">TM-T82II</a></li>
+
+                                        <li><a href="tmt82iii.html">TM-T82III</a></li>
+
+                                        <li><a href="tmt82iiil.html">TM-T82IIIL</a></li>
+
+                                        <li><a href="tmt82iv.html">TM-T82IV</a></li>
+
+                                        <li><a href="tmt82ivl.html">TM-T82IV-L</a></li>
+
+                                        <li><a href="tmt82x.html">TM-T82X</a></li>
+
+                                        <li><a href="tmt82xii.html">TM-T82X-II</a></li>
+
+                                        <li><a href="tmt83iii.html">TM-T83III</a></li>
+
+                                        <li><a href="tmt83iv.html">TM-T83IV</a></li>
+
+                                        <li><a href="tmt88iv.html">TM-T88IV</a></li>
+
+                                        <li><a href="tmt88v.html">TM-T88V</a></li>
+
+                                        <li><a href="tmt88vi.html">TM-T88VI</a></li>
+
+                                        <li><a href="tmt88vii.html">TM-T88VII</a></li>
+
+                                        <li><a href="tmt90.html">TM-T90</a></li>
+
+                                        <li><a href="tmu220.html">TM-U220</a></li>
+
+                                        <li><a href="tmu220ii.html">TM-U220II</a></li>
+
+                                        <li><a href="tmu230.html">TM-U230</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><a href="obsolete.html">Obsolete Commands</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li><span>Commands Arranged by Function</span>
+                            <ul>
+
+                                <li><span>Print Commands</span>
+                                    <ul>
+
+                                        <li><a href="lf.html">LF</a></li>
+
+                                        <li><a href="ff_in_page.html">FF (in Page mode)</a></li>
+
+                                        <li><a href="ff_in_standard.html">FF (in Standard mode)</a></li>
+
+                                        <li><a href="cr.html">CR</a></li>
+
+                                        <li><a href="esc_ff.html">ESC FF</a></li>
+
+                                        <li><a href="esc_cj.html">ESC J</a></li>
+
+                                        <li><a href="esc_ck.html">ESC K</a></li>
+
+                                        <li><a href="esc_ld.html">ESC d</a></li>
+
+                                        <li><a href="esc_le.html">ESC e</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Line Spacing Commands</span>
+                                    <ul>
+
+                                        <li><a href="esc_2.html">ESC 2</a></li>
+
+                                        <li><a href="esc_3.html">ESC 3</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Character Commands</span>
+                                    <ul>
+
+                                        <li><a href="can.html">CAN</a></li>
+
+                                        <li><a href="esc_space.html">ESC SP</a></li>
+
+                                        <li><a href="esc_exclamation.html">ESC !</a></li>
+
+                                        <li><a href="esc_minus.html">ESC -</a></li>
+
+                                        <li><a href="esc_ce.html">ESC E</a></li>
+
+                                        <li><a href="esc_cg.html">ESC G</a></li>
+
+                                        <li><a href="esc_cm.html">ESC M</a></li>
+
+                                        <li><a href="esc_cr.html">ESC R</a></li>
+
+                                        <li><a href="esc_cv.html">ESC V</a></li>
+
+                                        <li><a href="esc_lr.html">ESC r</a></li>
+
+                                        <li><a href="esc_lt.html">ESC t</a></li>
+
+                                        <li><a href="esc_lbrace.html">ESC {</a></li>
+
+                                        <li><a href="gs_exclamation.html">GS !</a></li>
+
+                                        <li><a href="gs_cb.html">GS B</a></li>
+
+                                        <li><a href="gs_lb.html">GS b</a></li>
+
+                                        <li><span></span>
+                                            <ul>
+
+                                                <li><span>Character effects</span>
+                                                    <ul>
+
+                                                        <li><a href="gs_lparen_cn.html">GS ( N</a></li>
+
+                                                        <li><a href="gs_lparen_cn_fn48.html">GS ( N &lt;fn=48&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_cn_fn49.html">GS ( N &lt;fn=49&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_cn_fn50.html">GS ( N &lt;fn=50&gt;</a>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                                <li><span>User-defined characters</span>
+                                                    <ul>
+
+                                                        <li><a href="esc_percent.html">ESC %</a></li>
+
+                                                        <li><a href="esc_ampersand.html">ESC &amp;</a></li>
+
+                                                        <li><a href="esc_questionmark.html">ESC ?</a></li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                                <li><span>Code conversion method</span>
+                                                    <ul>
+
+                                                        <li><a href="fs_lparen_cc.html">FS ( C</a></li>
+
+                                                        <li><a href="fs_lparen_cc_fn48.html">FS ( C &lt;fn=48&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="fs_lparen_cc_fn60.html">FS ( C &lt;fn=60&gt;</a>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Printing Paper Commands</span>
+                                    <ul>
+
+                                        <li><span>Label and black mark control</span>
+                                            <ul>
+
+                                                <li><a href="fs_lparen_cl.html">FS ( L</a></li>
+
+                                                <li><a href="fs_lparen_cl_fn33.html">FS ( L &lt;fn=33&gt;</a></li>
+
+                                                <li><a href="fs_lparen_cl_fn34.html">FS ( L &lt;fn=34&gt;</a></li>
+
+                                                <li><a href="fs_lparen_cl_fn48.html">FS ( L &lt;fn=48&gt;</a></li>
+
+                                                <li><a href="fs_lparen_cl_fn65.html">FS ( L &lt;fn=65&gt;</a></li>
+
+                                                <li><a href="fs_lparen_cl_fn66.html">FS ( L &lt;fn=66&gt;</a></li>
+
+                                                <li><a href="fs_lparen_cl_fn67.html">FS ( L &lt;fn=67&gt;</a></li>
+
+                                                <li><a href="fs_lparen_cl_fn80.html">FS ( L &lt;fn=80&gt;</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Print Position Commands</span>
+                                    <ul>
+
+                                        <li><a href="ht.html">HT</a></li>
+
+                                        <li><a href="esc_dollarssign.html">ESC $</a></li>
+
+                                        <li><a href="esc_cd.html">ESC D</a></li>
+
+                                        <li><a href="esc_ct.html">ESC T</a></li>
+
+                                        <li><a href="esc_cw.html">ESC W</a></li>
+
+                                        <li><a href="esc_backslash.html">ESC \</a></li>
+
+                                        <li><a href="esc_la.html">ESC a</a></li>
+
+                                        <li><a href="gs_dollarssign.html">GS $</a></li>
+
+                                        <li><a href="gs_cl.html">GS L</a></li>
+
+                                        <li><a href="gs_ct.html">GS T</a></li>
+
+                                        <li><a href="gs_cw.html">GS W</a></li>
+
+                                        <li><a href="gs_backslash.html">GS \</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Paper Sensor Commands</span>
+                                    <ul>
+
+                                        <li><a href="esc_lc_3.html">ESC c 3</a></li>
+
+                                        <li><a href="esc_lc_4.html">ESC c 4</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Mechanism Control Commands</span>
+                                    <ul>
+
+                                        <li><a href="esc_less_than_sign.html">ESC &lt;</a></li>
+
+                                        <li><a href="esc_cu.html">ESC U</a></li>
+
+                                        <li><a href="esc_li.html">ESC i</a></li>
+
+                                        <li><a href="esc_lm.html">ESC m</a></li>
+
+                                        <li><a href="gs_lparen_cv.html">ESC i</a></li>
+
+                                        <li><a href="gs_lparen_cv_fn48.html">GS ( V &lt;fn=48&gt;</a></li>
+
+                                        <li><a href="gs_lparen_cv_fn49.html">GS ( V &lt;fn=49&gt;</a></li>
+
+                                        <li><a href="gs_lparen_cv_fn51.html">GS ( V &lt;fn=51&gt;</a></li>
+
+                                        <li><a href="gs_cv.html">GS V</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Bit Image Commands</span>
+                                    <ul>
+
+                                        <li><span>Bit Image</span>
+                                            <ul>
+
+                                                <li><a href="esc_asterisk.html">ESC *</a></li>
+
+                                                <li><a href="fs_lp.html">FS p</a></li>
+
+                                                <li><a href="fs_lq.html">FS q</a></li>
+
+                                                <li><a href="gs_asterisk.html">GS *</a></li>
+
+                                                <li><a href="gs_slash.html">GS /</a></li>
+
+                                                <li><a href="gs_cq_0.html">GS Q 0</a></li>
+
+                                                <li><a href="gs_lv_0.html">GS v 0</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><a href="gs_lparen_cl.html">GS ( L &nbsp;&nbsp;/&nbsp;&nbsp; GS 8 L</a></li>
+
+                                        <li><a href="gs_cd.html">GS D</a></li>
+
+                                        <li><span>Graphics</span>
+                                            <ul>
+
+                                                <li><a href="gs_lparen_cl_fn49.html">GS ( L &lt;fn=49&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cl_fn50.html">GS ( L &lt;fn=50&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cl_fn112.html">GS ( L / GS 8 L &lt;fn=112&gt;</a>
+                                                </li>
+
+                                                <li><a href="gs_lparen_cl_fn113.html">GS ( L / GS 8 L &lt;fn=113&gt;</a>
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><span>NV Graphics</span>
+                                            <ul>
+
+                                                <li><a href="gs_lparen_cl_fn48.html">GS ( L &lt;fn=48&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cl_fn51.html">GS ( L &lt;fn=51&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cl_fn64.html">GS ( L &lt;fn=64&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cl_fn65.html">GS ( L &lt;fn=65&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cl_fn66.html">GS ( L &lt;fn=66&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cl_fn67.html">GS ( L / GS 8 L &lt;fn=67&gt;</a>
+                                                </li>
+
+                                                <li><a href="gs_lparen_cl_fn68.html">GS ( L / GS 8 L &lt;fn=68&gt;</a>
+                                                </li>
+
+                                                <li><a href="gs_lparen_cl_fn69.html">GS ( L &lt;fn=69&gt;</a></li>
+
+                                                <li><a href="gs_cd_fn67.html">GS ( D &lt;fn=67&gt;</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><span>Download Graphics</span>
+                                            <ul>
+
+                                                <li><a href="gs_lparen_cl_fn52.html">GS ( L &lt;fn=52&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cl_fn80.html">GS ( L &lt;fn=80&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cl_fn81.html">GS ( L &lt;fn=81&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cl_fn82.html">GS ( L &lt;fn=82&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cl_fn83.html">GS ( L / GS 8 L &lt;fn=83&gt;</a>
+                                                </li>
+
+                                                <li><a href="gs_lparen_cl_fn84.html">GS ( L / GS 8 L &lt;fn=84&gt;</a>
+                                                </li>
+
+                                                <li><a href="gs_lparen_cl_fn85.html">GS ( L &lt;fn=85&gt;</a></li>
+
+                                                <li><a href="gs_cd_fn83.html">GS D &lt;fn=83&gt;</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Panel Button Commands</span>
+                                    <ul>
+
+                                        <li><a href="esc_lc_5.html">ESC c 5</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Status Commands</span>
+                                    <ul>
+
+                                        <li><a href="dle_eot.html">DLE EOT</a></li>
+
+                                        <li><a href="esc_lu.html">ESC u</a></li>
+
+                                        <li><a href="esc_lv.html">ESC v</a></li>
+
+                                        <li><a href="fs_lparen_le.html">FS ( e</a></li>
+
+                                        <li><a href="gs_la.html">GS a</a></li>
+
+                                        <li><a href="gs_lj.html">GS j</a></li>
+
+                                        <li><a href="gs_lr.html">GS r</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Barcode Commands</span>
+                                    <ul>
+
+                                        <li><a href="gs_ch.html">GS H</a></li>
+
+                                        <li><a href="gs_lf.html">GS f</a></li>
+
+                                        <li><a href="gs_lh.html">GS h</a></li>
+
+                                        <li><a href="gs_lk.html">GS k</a></li>
+
+                                        <li><a href="gs_lw.html">GS w</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Two-dimensional Code Commands</span>
+                                    <ul>
+
+                                        <li><a href="gs_lparen_lk.html">GS ( k</a></li>
+
+                                        <li><span></span>
+                                            <ul>
+
+                                                <li><span>PDF417</span>
+                                                    <ul>
+
+                                                        <li><a href="gs_lparen_lk_fn065.html">GS ( k &lt;fn=065&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn066.html">GS ( k &lt;fn=066&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn067.html">GS ( k &lt;fn=067&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn068.html">GS ( k &lt;fn=068&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn069.html">GS ( k &lt;fn=069&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn070.html">GS ( k &lt;fn=070&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn080.html">GS ( k &lt;fn=080&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn081.html">GS ( k &lt;fn=081&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn082.html">GS ( k &lt;fn=082&gt;</a>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                                <li><span>QR Code</span>
+                                                    <ul>
+
+                                                        <li><a href="gs_lparen_lk_fn165.html">GS ( k &lt;fn=165&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn167.html">GS ( k &lt;fn=167&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn169.html">GS ( k &lt;fn=169&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn180.html">GS ( k &lt;fn=180&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn181.html">GS ( k &lt;fn=181&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn182.html">GS ( k &lt;fn=182&gt;</a>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                                <li><span>MaxiCode</span>
+                                                    <ul>
+
+                                                        <li><a href="gs_lparen_lk_fn265.html">GS ( k &lt;fn=265&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn280.html">GS ( k &lt;fn=280&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn281.html">GS ( k &lt;fn=281&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn282.html">GS ( k &lt;fn=282&gt;</a>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                                <li><span>2-dimensional GS1 DataBar</span>
+                                                    <ul>
+
+                                                        <li><a href="gs_lparen_lk_fn367.html">GS ( k &lt;fn=367&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn371.html">GS ( k &lt;fn=371&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn380.html">GS ( k &lt;fn=380&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn381.html">GS ( k &lt;fn=381&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn382.html">GS ( k &lt;fn=382&gt;</a>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                                <li><span>Composite Symbology</span>
+                                                    <ul>
+
+                                                        <li><a href="gs_lparen_lk_fn467.html">GS ( k &lt;fn=467&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn471.html">GS ( k &lt;fn=471&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn472.html">GS ( k &lt;fn=472&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn480.html">GS ( k &lt;fn=480&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn481.html">GS ( k &lt;fn=481&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn482.html">GS ( k &lt;fn=482&gt;</a>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                                <li><span>Aztec Code</span>
+                                                    <ul>
+
+                                                        <li><a href="gs_lparen_lk_fn566.html">GS ( k &lt;fn=566&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn567.html">GS ( k &lt;fn=567&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn569.html">GS ( k &lt;fn=569&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn580.html">GS ( k &lt;fn=580&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn581.html">GS ( k &lt;fn=581&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn582.html">GS ( k &lt;fn=582&gt;</a>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                                <li><span>DataMatrix</span>
+                                                    <ul>
+
+                                                        <li><a href="gs_lparen_lk_fn666.html">GS ( k &lt;fn=666&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn667.html">GS ( k &lt;fn=667&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn680.html">GS ( k &lt;fn=680&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn681.html">GS ( k &lt;fn=681&gt;</a>
+                                                        </li>
+
+                                                        <li><a href="gs_lparen_lk_fn682.html">GS ( k &lt;fn=682&gt;</a>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Macro Function Commands</span>
+                                    <ul>
+
+                                        <li><a href="gs_colon.html">GS :</a></li>
+
+                                        <li><a href="gs_caret.html">GS ^</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Kanji Commands</span>
+                                    <ul>
+
+                                        <li><a href="fs_exclamation.html">FS !</a></li>
+
+                                        <li><a href="fs_ampersand.html">FS &amp;</a></li>
+
+                                        <li><a href="fs_minus.html">FS -</a></li>
+
+                                        <li><a href="fs_period.html">FS .</a></li>
+
+                                        <li><a href="fs_2.html">FS 2</a></li>
+
+                                        <li><a href="fs_questionmark.html">FS ?</a></li>
+
+                                        <li><a href="fs_cc.html">FS C</a></li>
+
+                                        <li><a href="fs_cs.html">FS S</a></li>
+
+                                        <li><a href="fs_cw.html">FS W</a></li>
+
+                                        <li><span>Kanji character effects</span>
+                                            <ul>
+
+                                                <li><a href="fs_lparen_ca.html">FS ( A</a></li>
+
+                                                <li><a href="fs_lparen_ca_fn48.html">FS ( A &lt;fn=48&gt;</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Miscellaneous Commands</span>
+                                    <ul>
+
+                                        <li><a href="dle_enq.html">DLE ENQ</a></li>
+
+                                        <li><a href="dle_dc4_fn1.html">DLE DC4 &lt;fn=1&gt;</a></li>
+
+                                        <li><a href="dle_dc4_fn2.html">DLE DC4 &lt;fn=2&gt;</a></li>
+
+                                        <li><a href="dle_dc4_fn3.html">DLE DC4 &lt;fn=3&gt;</a></li>
+
+                                        <li><a href="dle_dc4_fn7.html">DLE DC4 &lt;fn=7&gt;</a></li>
+
+                                        <li><a href="dle_dc4_fn8.html">DLE DC4 &lt;fn=8&gt;</a></li>
+
+                                        <li><a href="esc_lparen_cy.html">ESC ( Y</a></li>
+
+                                        <li><a href="esc_equal.html">ESC =</a></li>
+
+                                        <li><a href="esc_atsign.html">ESC @</a></li>
+
+                                        <li><a href="esc_cl.html">ESC L</a></li>
+
+                                        <li><a href="esc_cs.html">ESC S</a></li>
+
+                                        <li><a href="esc_lp.html">ESC p</a></li>
+
+                                        <li><a href="gs_lparen_ca.html">GS ( A</a></li>
+
+                                        <li><a href="gs_lparen_cd.html">GS ( D</a></li>
+
+                                        <li><a href="gs_ci.html">GS I</a></li>
+
+                                        <li><a href="gs_cp.html">GS P</a></li>
+
+                                        <li><a href="gs_lg_0.html">GS g 0</a></li>
+
+                                        <li><a href="gs_lg_2.html">GS g 2</a></li>
+
+                                        <li><a href="gs_lz_0.html">GS z 0</a></li>
+
+                                        <li><span>Response or status transmission</span>
+                                            <ul>
+
+                                                <li><a href="gs_lparen_ch.html">GS ( H</a></li>
+
+                                                <li><a href="gs_lparen_ch_fn48.html">GS ( H &lt;fn=48&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ch_fn49.html">GS ( H &lt;fn=49&gt;</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><span>Print control methods</span>
+                                            <ul>
+
+                                                <li><a href="gs_lparen_ck.html">GS ( K</a></li>
+
+                                                <li><a href="gs_lparen_ck_fn48.html">GS ( K &lt;fn=48&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ck_fn49.html">GS ( K &lt;fn=49&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ck_fn50.html">GS ( K &lt;fn=50&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ck_fn97.html">GS ( K &lt;fn=97&gt;</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><span>Beeper tone control</span>
+                                            <ul>
+
+                                                <li><a href="esc_lparen_ca.html">ESC ( A</a></li>
+
+                                                <li><a href="esc_lparen_ca_fn48.html">ESC ( A &lt;fn=48&gt;</a></li>
+
+                                                <li><a href="esc_lparen_ca_fn97.html">ESC ( A &lt;fn=97&gt;</a></li>
+
+                                                <li><a href="esc_lparen_ca_fn98.html">ESC ( A &lt;fn=98&gt;</a></li>
+
+                                                <li><a href="esc_lparen_ca_fn99.html">ESC ( A &lt;fn=99&gt;</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><span>Graphics drawing</span>
+                                            <ul>
+
+                                                <li><a href="gs_lparen_cq.html">GS ( Q</a></li>
+
+                                                <li><a href="gs_lparen_cq_fn48.html">GS ( Q &lt;fn=48&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cq_fn49.html">GS ( Q &lt;fn=49&gt;</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><span>Receipt enhancement control</span>
+                                            <ul>
+
+                                                <li><a href="fs_lparen_ce.html">FS ( E</a></li>
+
+                                                <li><a href="fs_lparen_ce_fn60.html">FS ( E &lt;fn=60&gt;</a></li>
+
+                                                <li><a href="fs_lparen_ce_fn61.html">FS ( E &lt;fn=61&gt;</a></li>
+
+                                                <li><a href="fs_lparen_ce_fn62.html">FS ( E &lt;fn=62&gt;</a></li>
+
+                                                <li><a href="fs_lparen_ce_fn63.html">FS ( E &lt;fn=63&gt;</a></li>
+
+                                                <li><a href="fs_lparen_ce_fn64.html">FS ( E &lt;fn=64&gt;</a></li>
+
+                                                <li><a href="fs_lparen_ce_fn65.html">FS ( E &lt;fn=65&gt;</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><span>Page mode control</span>
+                                            <ul>
+
+                                                <li><a href="gs_lparen_cp.html">GS ( P</a></li>
+
+                                                <li><a href="gs_lparen_cp_fn48.html">GS ( P &lt;fn=48&gt;</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Customize Commands</span>
+                                    <ul>
+
+                                        <li><span>User setup</span>
+                                            <ul>
+
+                                                <li><a href="gs_lparen_ce.html">GS ( E</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn01.html">GS ( E &lt;fn=1&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn02.html">GS ( E &lt;fn=2&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn03.html">GS ( E &lt;fn=3&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn04.html">GS ( E &lt;fn=4&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn05.html">GS ( E &lt;fn=5&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn06.html">GS ( E &lt;fn=6&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn07.html">GS ( E &lt;fn=7&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn08.html">GS ( E &lt;fn=8&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn09.html">GS ( E &lt;fn=9&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn10.html">GS ( E &lt;fn=10&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn11.html">GS ( E &lt;fn=11&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn12.html">GS ( E &lt;fn=12&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn13.html">GS ( E &lt;fn=13&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn14.html">GS ( E &lt;fn=14&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn15.html">GS ( E &lt;fn=15&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn16.html">GS ( E &lt;fn=16&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn48.html">GS ( E &lt;fn=48&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn49.html">GS ( E &lt;fn=49&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn50.html">GS ( E &lt;fn=50&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn51.html">GS ( E &lt;fn=51&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn52.html">GS ( E &lt;fn=52&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn99.html">GS ( E &lt;fn=99&gt;</a></li>
+
+                                                <li><a href="gs_lparen_ce_fn100.html">GS ( E &lt;fn=100&gt;</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><span>Printer customization</span>
+                                            <ul>
+
+                                                <li><a href="gs_lparen_cm.html">GS ( M</a></li>
+
+                                                <li><a href="gs_lparen_cm_fn1.html">GS ( M &lt;fn=1&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cm_fn2.html">GS ( M &lt;fn=2&gt;</a></li>
+
+                                                <li><a href="gs_lparen_cm_fn3.html">GS ( M &lt;fn=3&gt;</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><span>NV user memory</span>
+                                            <ul>
+
+                                                <li><a href="fs_lg_1.html">FS g 1</a></li>
+
+                                                <li><a href="fs_lg_2.html">FS g 2</a></li>
+
+                                                <li><span>Edit NV user memory</span>
+                                                    <ul>
+
+                                                        <li><a href="gs_lparen_cc.html">GS ( C</a></li>
+
+                                                        <li><a href="gs_lparen_cc_fn0.html">GS ( C &lt;fn=0&gt;</a></li>
+
+                                                        <li><a href="gs_lparen_cc_fn1.html">GS ( C &lt;fn=1&gt;</a></li>
+
+                                                        <li><a href="gs_lparen_cc_fn2.html">GS ( C &lt;fn=2&gt;</a></li>
+
+                                                        <li><a href="gs_lparen_cc_fn3.html">GS ( C &lt;fn=3&gt;</a></li>
+
+                                                        <li><a href="gs_lparen_cc_fn4.html">GS ( C &lt;fn=4&gt;</a></li>
+
+                                                        <li><a href="gs_lparen_cc_fn5.html">GS ( C &lt;fn=5&gt;</a></li>
+
+                                                        <li><a href="gs_lparen_cc_fn6.html">GS ( C &lt;fn=6&gt;</a></li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><span>Counter Printing Commands</span>
+                                    <ul>
+
+                                        <li><a href="gs_cc_0.html">GS C 0</a></li>
+
+                                        <li><a href="gs_cc_1.html">GS C 1</a></li>
+
+                                        <li><a href="gs_cc_2.html">GS C 2</a></li>
+
+                                        <li><a href="gs_cc_semicolon.html">GS C ;</a></li>
+
+                                        <li><a href="gs_lc.html">GS c</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                        <li><span>Programming Examples</span>
+                            <ul>
+
+                                <li><a href="receipt.html">Issuing Receipts</a></li>
+
+                                <li><a href="receipt_with_barcode.html">Issuing Receipts with Barcodes</a></li>
+
+                                <li><a href="pagemode.html">Print in Page mode</a></li>
+
+                                <li><a href="label.html">Issuing Labels</a></li>
+
+                                <li><a href="cutting_paper.html">Select Cut Mode and Cut Paper</a></li>
+
+                                <li><a href="graphics.html">Print Graphics</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li><span>Appendixes</span>
+                            <ul>
+
+                                <li><a href="command_classification.html">Command Classification</a></li>
+
+                                <li><a href="data_processing.html">Overview of Data Processing</a></li>
+
+                                <li><a href="glossary.html">Glossary</a></li>
+
+                                <li><a href="notation.html">Command Notation</a></li>
+
+                                <li><a href="realtime_commands.html">Notes of Real-time Commands</a></li>
+
+                                <li><a href="receiving_status.html">Notes of receiving the status from the printer</a>
+                                </li>
+
+                                <li><a href="history.html">Revision History</a></li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="breadCrumbs grey">
+            <ol>
+                <li><a href="https://download4.epson.biz/sec_pubs/pos/reference_en/">TOP</a>»
+                </li>
+                <li><a href="./index.html">ESC/POS<sup xmlns="">®</sup> Command Reference for TM Printers</a> »
+                </li>
+                <li>Command Lists »</li>
+                <li><strong>Commands in Code Order</strong></li>
+            </ol>
+        </div>
+    </div>
+    <div id="footer">
+        <ul class="ui-accordion">
+            <li><a href="JavaScript:void(0);" onclick="dialogTermFunc.open_ps('en');">Privacy Statement</a></li>
+            <li><a href="JavaScript:void(0);" onclick="dialogTermFunc.open_tou('en');">Terms of Use</a></li>
+            <li><a href="https://global.epson.com/other_products/point_of_sale_index.htm" target="_blank">Contact Us</a>
+            </li>
+        </ul>
+        <p id="copyright" class="grey">©Seiko Epson Corporation 2003–2023</p>
+    </div>
+    <p id="pageTop" style="display: block;"><a href="#container"><img src="./files/jump_to_the_top.png" width="61"
+                height="59" alt="Jump to the top"></img></a></p><span id="lineup-font-size-sampler"
+        style="position: absolute; visibility: hidden; display: none;">M</span>
+    <script type="text/javascript" src="./files/jquery.js"></script>
+    <script type="text/javascript" src="./files/bootstrap.js"></script>
+    <script type="text/javascript" src="./files/jquery.cookie.js"></script>
+    <script type="text/javascript" src="./files/highlight.pack.js"></script>
+    <script type="text/javascript" src="./files/escpos_addinfo.js"></script>
+    <script type="text/javascript" src="./files/init_escpos.js"></script>
+    <script type="text/javascript" src="./files/fixed_midashi.js"></script>
+    <script type="text/javascript" src="./files/search/setSearch.js"></script>
+    <script type="text/javascript" src="./files/jquery.treeview.js"></script>
+    <script type="text/javascript" src="./files/term.js"></script>
+    <script language="JavaScript">
+        <!-
+                               $(document).ready(function(){
+                                   if ($('#treeview').size()) {
+                                       $("#treeview > ul").treeview({
+                                           collapsed: true,
+                                           animated: "fast",
+                                           control: "#treecontrol",
+                                           persist: "location"
+                                       });
+                                   }
+                                   dialogTermFunc.init_Term_Page('en');
+                               });
+                                -></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-6298218-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+
+</html>

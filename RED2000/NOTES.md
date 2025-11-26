@@ -597,6 +597,11 @@ GET  /api/v1/status      # Check printer status
 - I set up CodeQL for static analysis of the codebase. I will try to catch some bugs and security vulnerabilities. As expected, there were some vulterabilities around some github actions that were fixed.
 - I will pause the `beeper` pure commands implementation in the `miscellaneous` ESCPOS commands, i will focus to `raw` command JSON ticket representation package. This is because i can test any command i want without any dependency or making the entire definition from ESCPOS pure commands to JSON handler. It is also a way for other developers or users to test any command they want.
 
+- I will continue working on the `raw` command JSON ticket representation package. I will try to deliver up to the JSON ticket representation package. There are nice posibilities and opportunities to make it more flexible and easier to use. It can be integrated nicely with the Ticket Builder. It would allow us to test any command i want without any dependency or making the entire definition from ESCPOS pure commands to JSON handler. It is also a way for other developers or users to test any command they want.
+- I developed a simple hadcoded example to test the beeper command with a direct write to the printer. It simulated a kitchen scenario where the beeper is used to alert the kitchen staff. From now and on, i will try to keep every example updated and working.
+- What i discover is there are some commands used by generic ESCPOS printers that are not defined in the EPSON standard. The beeper one is a clear example of this. I will need to check if there are other generic commands that can be useful.
+- I will order the Poster documentation as i have created a Gem in Gemini, a type of AI that can help other to understand the codebase and generate scripts around it. I will check how to share this Gem with other users.
+
 ---
 
 ## 🎯 **Current Focus Areas**
