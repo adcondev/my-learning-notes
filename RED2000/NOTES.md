@@ -602,6 +602,13 @@ GET  /api/v1/status      # Check printer status
 - What i discover is there are some commands used by generic ESCPOS printers that are not defined in the EPSON standard. The beeper one is a clear example of this. I will need to check if there are other generic commands that can be useful.
 - I will order the Poster documentation as i have created a Gem in Gemini, a type of AI that can help other to understand the codebase and generate scripts around it. I will check how to share this Gem with other users.
 
+- Until i resolve some doubts and concerns about macros in key trigger mode, i will not allow the user to use it.
+- I will do the last checks on `raw` command JSON ticket representation package. Then, i will merge it into main branch.
+- What i interested on are the conditional commands. I will try to implement it in the JSON ticket representation package. I will try to make it as flexible as possible.
+- I just planned the `loop` and `conditional` JSON commands but i read and think about it a lot, tomorrow i will start working on it.
+- I will test the entire `poster` on a 58mm printer since every test done before was on a 80mm printer.
+- I will do more tests on the `poster` packages for each module, i will start with unit tests.
+
 ---
 
 ## 🎯 **Current Focus Areas**
