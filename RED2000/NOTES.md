@@ -609,6 +609,11 @@ GET  /api/v1/status      # Check printer status
 - I will test the entire `poster` on a 58mm printer since every test done before was on a 80mm printer.
 - I will do more tests on the `poster` packages for each module, i will start with unit tests.
 
+- I will continue with the planning of the `loop` and `conditional` JSON commands. They doesn't look that easy as i expected. Major changes are needed in other areas of the codebase. So, i will look for more approaches to implement it, starting with the `loop` and `conditional` commands, with their standalone solutions.
+- I worked in a massive refactoring in the `document` package, the observation was this package has 2 main concerns: building JSON commands programatically and parsing the JSON commands into printer commands. Now, there is a package called `builder` which follows a command builder pattern, and `executor` package with the responsible of parsing the JSON commands into physical printing.
+- I worked on testing the mini printer `PT-210`, the main problem is the codepage, as nothing worked, so i will return to the user defined characters.
+- I pushed the refactoring of the `document` and testing to a PR. I will merge it into main branch.
+
 ---
 
 ## 🎯 **Current Focus Areas**
