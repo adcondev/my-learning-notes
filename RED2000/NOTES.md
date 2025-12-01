@@ -618,6 +618,11 @@ GET  /api/v1/status      # Check printer status
 
 **Period:** December 1 - December 5, 2025
 
+- I centralized every types and default values in `poster` (mainly, for `document` package) in a new package called `constants`. It will be easier to modify default values across the scripts.
+- Because of package `constants`, i did a lot of refactoring around using it in the codebase.
+- I did research about serial communication, i will try to implement it in the `poster` package. Whether is by Bluetooth or USB, i will try to make it interchangeable with the actual windows spoler implementation.
+- `PT-210` is locked to page code 936, the workaround needed look tough. What i will try is to substitute the special characters that can't be printed on the printer, if `Á` appears `A` will be printed, and so on. the user defined character that i really need in a kind of `Ñ`.
+- I will try by using raw commands if priting speed can be modified in the printer.
 
 ---
 
