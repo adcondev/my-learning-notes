@@ -16,10 +16,14 @@
 - **PACELC_THEOREM.md** (EN) - Framework for distributed system design (partitions + normal operation)
 - **PACELC_THEOREM_ES.md** (ES) - Marco para diseño de sistemas distribuidos
 
+### Functional Options
+- **FUNCTIONAL_OPTIONS.md** (EN) - Flexible configuration pattern for Go structs
+- **FUNCTIONAL_OPTIONS_ES.md** (ES) - Patrón de configuración flexible para structs en Go
+
 ## Microservices Patterns
 
 ### Service Orchestration
-- **SAGA_PATTERNS_SIMPLIFIED.md** (EN) - Saga pattern: choreography vs orchestration for distributed transactions
+- **SAGA_PATTERNS.md** (EN) - Saga pattern: choreography vs orchestration for distributed transactions
 - **SAGA_PATTERNS_ES.md** (ES) - Patrón Saga: coreografía vs orquestación
 
 ### Service Location
@@ -42,14 +46,10 @@
 - **REST_API_GIN.md** (EN) - Building REST APIs with Gin framework
 - **REST_API_GIN_ES.md** (ES) - Construcción de APIs REST con Gin
 
-### Frontend Fundamentals
-- **FRONTEND_NOTES_SIMPLIFIED.md** (EN) - HTML, CSS, JavaScript essentials
-- **FRONTEND_NOTES_ES.md** (ES) - Fundamentos de Frontend
-
 ## Testing
 
 ### Test Patterns
-- **TEST_PATTERNS_SIMPLIFIED.md** (EN) - Unit, mock, fake, and E2E testing in Go
+- **TEST_PATTERNS.md** (EN) - Unit, mock, fake, and E2E testing in Go
 - **TEST_PATTERNS_ES.md** (ES) - Patrones de pruebas en Go
 
 ## Study Guide Structure
@@ -76,19 +76,19 @@ All guides follow a consistent format:
 
 **Beginner**:
 1. SOLID_PRINCIPLES
-2. ACID_VS_BASE
-3. FRONTEND_NOTES_SIMPLIFIED
+2. FUNCTIONAL_OPTIONS
+3. ACID_VS_BASE
 
 **Intermediate**:
 1. REST_API_GIN
-2. TEST_PATTERNS_SIMPLIFIED
+2. TEST_PATTERNS
 3. EXPONENTIAL_BACKOFF
 4. BACKPRESSURE
 
 **Advanced**:
 1. PACELC_THEOREM
 2. SERVICE_DISCOVERY
-3. SAGA_PATTERNS_SIMPLIFIED
+3. SAGA_PATTERNS
 
 ---
 

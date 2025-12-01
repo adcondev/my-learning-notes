@@ -1,74 +1,105 @@
-# Contrapresión en Go
+# Contrapresión (Backpressure) en Go
 
 La contrapresión previene que un productor rápido abrume a un consumidor lento controlando el flujo de datos. En Go, usa canales bufferizados y `select` para señalizar o bloquear cuando los búferes se llenan, forzando al productor a esperar.
 
+## Prerrequisitos
+
+- Entendimiento de goroutines y canales en Go.
+- Familiaridad con la sentencia `select`.
+
 ## Conceptos Clave
 
-- **Productor**: Envía datos a un canal
-- **Consumidor**: Lee del canal
-- **Contrapresión**: Ocurre cuando el búfer del canal se llena; el envío se bloquea, ralentizando la producción
-- **Canales Bufferizados**: Canales con capacidad que almacenan valores antes de bloquear
-- **Select con Default**: Operaciones no-bloqueantes en canales para manejar contrapresión
+- **Productor**: Envía datos a un canal.
+- **Consumidor**: Lee del canal.
+- **Contrapresión**: Ocurre cuando el búfer del canal se llena; el envío se bloquea, ralentizando la producción.
+- **Canales Bufferizados**: Canales con capacidad que almacenan valores antes de bloquear.
 
-## Cómo Funciona
+## Explicación Visual
 
+```mermaid
+sequenceDiagram
+    participant P as Productor Rápido
+    participant C as Canal (Buffer=2)
+    participant S as Consumidor Lento
+
+    P->>C: Msg 1 (Bufferizado)
+    P->>C: Msg 2 (Bufferizado)
+    Note over C: ¡Buffer Lleno!
+    P->>C: Msg 3 (BLOQUEADO)
+    Note over P: Productor Espera...
+    S->>C: Lee Msg 1
+    Note over C: Espacio Disponible
+    P->>C: Msg 3 (Desbloqueado)
 ```
-Productor Rápido → [Búfer: capacidad=3] → Consumidor Lento
-                          ↑
-                  Cuando está lleno: Productor se bloquea
-                  Fuerza al productor a esperar
-                  Sistema alcanza equilibrio
-```
 
-Cuando un productor intenta enviar en un canal lleno:
-- La operación de envío se bloquea
-- El productor deja de generar datos
-- Este throttling natural previene desbordamiento de memoria
-- El sistema alcanza equilibrio basado en velocidad del consumidor
+## Implementación Práctica
 
-## Patrón: Select con Caso Default
+### Contrapresión Bloqueante (Natural)
 
-```
-select {
-    case ch <- value:      // Envío no-bloqueante
-        // Éxito
-    default:               // Se ejecuta si envío se bloquearía
-        // Manejar contrapresión: reintentar, esperar, descartar, agregar
+La forma más simple de contrapresión depende del bloqueo de canales.
+
+```go
+package main
+
+import "time"
+
+func main() {
+    // Tamaño buffer 2: Permite pequeñas ráfagas
+    ch := make(chan int, 2)
+
+    // Productor Rápido
+    go func() {
+        for i := 0; i < 10; i++ {
+            ch <- i // SE BLOQUEA aquí si el buffer está lleno
+            println("Enviado:", i)
+        }
+        close(ch)
+    }()
+
+    // Consumidor Lento
+    for msg := range ch {
+        time.Sleep(100 * time.Millisecond) // Simular trabajo
+        println("Procesado:", msg)
+    }
 }
 ```
 
-## Patrón: Dimensionamiento del Búfer
+### Contrapresión No-Bloqueante (Descartar/Señalizar)
 
-- **Tamaño búfer = 0** (sin buffer): Productor se bloquea hasta que receptor esté listo
-- **Tamaño búfer = 1-10**: Búfer pequeño, señal rápida de contrapresión
-- **Tamaño búfer = grande**: Buffering alto, señal lenta de contrapresión
+Usa `select` con `default` para manejar el desbordamiento explícitamente (ej. descartar mensajes o retornar error).
 
-Elegir tamaño de búfer determina cuánto "lag" tolera el sistema antes de aplicar contrapresión.
-
-## Propagación de Contrapresión
-
+```go
+func trySend(ch chan int, val int) bool {
+    select {
+    case ch <- val:
+        return true // Enviado exitosamente
+    default:
+        return false // Buffer lleno, descartar o manejar error
+    }
+}
 ```
-Servicio A → Canal (tamaño=5) → Servicio B
-   ↓                               ↓
-[Rápido]                    [Lento - 2 msgs/seg]
 
-Línea de Tiempo:
-- Segundos 1-2: Búfer se llena (5 mensajes encolados)
-- Segundo 3: Servicio A se bloquea en envío (contrapresión aplica)
-- Servicio A deja de producir hasta que B consume algunos
-- Sistema auto-throttle a velocidad de B
-```
+## Trade-offs
+
+| Enfoque | Pros | Contras |
+| :--- | :--- | :--- |
+| **Bloqueo (Estándar)** | • Implementación simple<br>• Garantiza procesamiento<br>• Throttling natural | • Puede causar deadlocks si no se cuida<br>• Ralentiza toda la cadena upstream |
+| **Descarte (Select)** | • Protege latencia del productor<br>• Sistema permanece responsivo | • Pérdida de datos<br>• Requiere lógica de reintento o fallback |
+| **Canal Sin Buffer** | • Sincronización más fuerte<br>• Contrapresión instantánea | • Cero tolerancia a ráfagas<br>• Alto acoplamiento de velocidad |
 
 ## Escenario del Mundo Real
 
-Sin contrapresión: Eventos de alta frecuencia inundan un procesador lento, causando agotamiento de memoria y crash.
+**Pipeline de Procesamiento de Logs**:
+- **Productor**: Lee logs del disco (Rápido).
+- **Consumidor**: Sube logs a S3 (Lento).
+- **Mecanismo**: Canal bufferizado de tamaño 100.
+- **Resultado**: Si S3 es lento, el buffer se llena y el lector de disco se pausa. Esto previene que la aplicación se quede sin memoria por encolar millones de logs en RAM.
 
-Con contrapresión: Productor de eventos automáticamente se ralentiza cuando procesador no puede mantenerse al día. Sistema permanece estable incluso bajo presión.
+## Siguientes Pasos
 
-## Explicación
+- Explorar **Exponential Backoff** para manejar reintentos cuando la contrapresión lleva a errores.
+- Aprender sobre **Rate Limiting** (Token Bucket) para control más fino.
 
-La contrapresión es la solución elegante de Go al desajuste productor-consumidor. Al usar canales bufferizados con capacidad limitada, los consumidores lentos naturalmente reducen la velocidad de productores rápidos sin gestión de congestión explícita. El búfer del canal actúa como amortiguador—cuando está lleno, el productor se bloquea, previniendo desbordamiento de memoria.
+## Etiquetas
 
-Esto es especialmente poderoso en microservicios: cuando servicio aguas abajo está sobrecargado, el servicio aguas arriba automáticamente se detiene en lugar de encolar infinitos mensajes. El resultado es degradación elegante en lugar de falla en cascada.
-
-La idea clave: canales bufferizados crean control de flujo implícito. Sin necesidad de algoritmos complejos de congestión—la primitiva del lenguaje lo maneja naturalmente.
+#golang #concurrency #channels #performance #system-design

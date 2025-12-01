@@ -68,12 +68,10 @@ Integration (15%) - Realistic, fakes
 E2E (5%)         - Slow, actual interfaces
 ```
 
-### Frontend Fundamentals
-**When**: Frontend no es tu especialidad / Si no dominas frontend
+### Functional Options
+**When**: Configurando objetos complejos con defaults / En constructores
 ```
-HTML  → Estructura (DOM)
-CSS   → Estilizado (declarativo)
-JS    → Interactividad (imperative)
+NewServer(WithPort(8080), WithTimeout(30s))
 ```
 
 ---
@@ -121,10 +119,10 @@ JS    → Interactividad (imperative)
 | EXPONENTIAL_BACKOFF | Reintentos resilientes | Media |
 | BACKPRESSURE | Control de flujo | Media |
 | SERVICE_DISCOVERY | Microservicios ubicación | Media |
-| SAGA_PATTERNS_SIMPLIFIED | Transacciones distribuidas | Alta |
+| SAGA_PATTERNS | Transacciones distribuidas | Alta |
 | REST_API_GIN | APIs REST | Baja |
-| TEST_PATTERNS_SIMPLIFIED | Estrategias testing | Media |
-| FRONTEND_NOTES_SIMPLIFIED | HTML/CSS/JS | Baja |
+| TEST_PATTERNS | Estrategias testing | Media |
+| FUNCTIONAL_OPTIONS | Configuración flexible | Media |
 
 ### Spanish (ES)
 Mismos nombres + _ES.md suffix

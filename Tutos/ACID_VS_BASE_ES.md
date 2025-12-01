@@ -2,25 +2,52 @@
 
 ACID y BASE representan enfoques opuestos en el diseño de bases de datos. ACID garantiza confiabilidad en transacciones con consistencia fuerte, mientras que BASE ofrece mayor disponibilidad y escalabilidad por medio de consistencia eventual.
 
+## Prerrequisitos
+
+- Entendimiento básico de transacciones de bases de datos.
+- Familiaridad con conceptos de sistemas distribuidos (nodos, particiones).
+
 ## Conceptos Clave
 
 ### Propiedades ACID
 
-- **Atomicidad**: Las transacciones son "todo o nada"; se completan o fallan totalmente
-- **Consistencia**: Las transacciones mantienen restricciones de integridad de la base de datos
-- **Aislamiento**: Las transacciones concurrentes no interfieren entre sí
-- **Durabilidad**: Las transacciones completadas persisten incluso durante fallos del sistema
+- **Atomicidad**: Las transacciones son "todo o nada"; se completan o fallan totalmente.
+- **Consistencia**: Las transacciones mantienen restricciones de integridad de la base de datos.
+- **Aislamiento**: Las transacciones concurrentes no interfieren entre sí.
+- **Durabilidad**: Las transacciones completadas persisten incluso durante fallos del sistema.
 
 ### Propiedades BASE
 
-- **Básicamente Disponible**: El sistema garantiza disponibilidad
-- **Estado Suave**: El estado del sistema puede cambiar con el tiempo, incluso sin entrada
-- **Consistencia Eventual**: El sistema llegará a ser consistente con el tiempo
+- **Básicamente Disponible**: El sistema garantiza disponibilidad.
+- **Estado Suave**: El estado del sistema puede cambiar con el tiempo, incluso sin entrada.
+- **Consistencia Eventual**: El sistema llegará a ser consistente con el tiempo.
+
+## Comparación Visual
+
+```mermaid
+graph TB
+    subgraph "ACID"
+        A[Atomicidad] --> C[Consistencia]
+        I[Aislamiento] --> D[Durabilidad]
+        C --> SC[Consistencia Fuerte]
+    end
+    subgraph "BASE"
+        BA[Básicamente Disponible] --> SS[Estado Suave]
+        SS --> EC[Consistencia Eventual]
+        BA --> HP[Alto Rendimiento]
+    end
+    
+    ACID --> |Cambia por| TC[Casos Tradicionales]
+    BASE --> |Cambia por| DC[Casos Distribuidos]
+    
+    TC --> ERD[Empresarial, Financiero]
+    DC --> WS[Escala Web, Redes Sociales]
+```
 
 ## Tabla Comparativa
 
 | Aspecto | ACID | BASE |
-|--------|------|------|
+| :--- | :--- | :--- |
 | **Enfoque** | Consistencia fuerte | Alta disponibilidad |
 | **Escalado** | Vertical (difícil escalar) | Horizontal (fácil escalar) |
 | **Rendimiento** | Más lento por bloqueos | Generalmente más rápido |
@@ -30,90 +57,54 @@ ACID y BASE representan enfoques opuestos en el diseño de bases de datos. ACID 
 | **Teorema CAP** | Prioriza Consistencia | Prioriza Disponibilidad |
 | **Ejemplos** | PostgreSQL, MySQL, Oracle | Cassandra, MongoDB, DynamoDB |
 
-## Diagrama de Comparación
-
-```
-ACID                          BASE
-├─ Atomicidad                 ├─ Disponible
-├─ Consistencia               ├─ Estado Suave
-├─ Aislamiento                ├─ Eventual
-├─ Durabilidad                ├─ Alto Rendimiento
-└─ Consistencia Fuerte        └─ Disponibilidad Alta
-
-ACID: Casos Tradicionales     BASE: Casos Distribuidos
-├─ Empresarial                ├─ Redes Sociales
-└─ Financiero                 └─ Escala Web
-```
-
-## Escenario de Ejemplo ACID
-
-Transacción bancaria: transferencia de dinero entre cuentas
-
-1. Iniciar transacción
-2. Débito $100 de Cuenta A
-3. Crédito $100 a Cuenta B
-4. Confirmar transacción
-
-Si cualquier paso falla, toda la transacción se revierte. Los saldos siempre son correctos.
-
-## Escenario de Ejemplo BASE
-
-Aplicación de redes sociales: contador de likes en posts
-
-1. Usuario da like a un post
-2. El like se almacena localmente y en datacenter más cercano
-3. El contador se propaga eventualmente a todos los datacenters
-4. Otros usuarios pueden ver temporalmente conteos diferentes
-
-El sistema prioriza velocidad y disponibilidad sobre consistencia inmediata.
-
-## Consideraciones de Implementación
-
-### Cuándo Elegir ACID
-
-- Transacciones financieras
-- Gestión de inventario
-- Sistemas que requieren garantías de integridad
-- Aplicaciones con relaciones complejas entre entidades
-- Cuando la corrección es más importante que disponibilidad
-
-### Cuándo Elegir BASE
-
-- Aplicaciones de redes sociales
-- Redes de entrega de contenido
-- Sistemas que requieren alta escalabilidad
-- Análisis en tiempo real con resultados aproximados
-- Cuando disponibilidad es más importante que consistencia perfecta
-
-## Enfoques Híbridos
-
-Los sistemas modernos a menudo combinan ambos paradigmas:
-
-- **Persistencia Poliglota**: Usar diferentes tipos de BD para componentes distintos
-- **Transacciones Compensatorias**: Sistemas BASE con correcciones de negocio
-- **ACID dentro de BASE**: Consistencia local fuerte con consistencia global eventual
-- **Patrón Saga**: Coordinar múltiples transacciones locales entre servicios
-
 ## Aplicación en el Mundo Real
 
 ### Ejemplo de Plataforma de E-commerce
 
+```mermaid
+graph LR
+    subgraph "Componentes ACID"
+        O[Procesamiento Órdenes]
+        P[Sistema Pagos]
+    end
+    
+    subgraph "Componentes BASE"
+        R[Recomendaciones]
+        V[Contador Vistas]
+        C[Reseñas Clientes]
+    end
+    
+    User --> O
+    User --> P
+    User --> R
+    User --> V
+    User --> C
 ```
-Componentes ACID          Componentes BASE
-├─ Procesamiento Órdenes  ├─ Recomendaciones
-├─ Sistema Pagos          ├─ Contador de Vistas
-└─ Actualizaciones Stock   └─ Sistema de Reseñas
 
-ACID para: Órdenes, pagos, inventario
-BASE para: Recomendaciones, reseñas, contadores
-```
+- **ACID para**: Procesamiento de órdenes, pagos, actualizaciones de inventario.
+- **BASE para**: Recomendaciones de productos, sistemas de reseñas, contadores de vistas.
 
-## Explicación
+## Consideraciones de Implementación
 
-ACID y BASE representan filosofías diferentes para gestionar datos:
+### Cuándo Elegir ACID
+- Transacciones financieras.
+- Gestión de inventario.
+- Sistemas que requieren garantías de integridad de datos.
+- Aplicaciones con relaciones complejas entre entidades.
+- Cuando la corrección es más importante que la disponibilidad.
 
-- **ACID** ofrece garantías fuertes pero limita escalabilidad. Las bases de datos relacionales tradicionales implementan ACID para asegurar validez de datos incluso durante errores, crashes o fallos de energía. El costo es menor disponibilidad durante particiones y escalado más complejo.
+### Cuándo Elegir BASE
+- Aplicaciones de redes sociales.
+- Redes de entrega de contenido (CDNs).
+- Sistemas que requieren alta escalabilidad.
+- Análisis en tiempo real con resultados aproximados.
+- Cuando la disponibilidad es más importante que la consistencia perfecta.
 
-- **BASE** acepta consistencia más débil para mejorar disponibilidad y tolerancia a particiones. Las bases de datos NoSQL implementan principios BASE para lograr escalabilidad horizontal y alto rendimiento, pero las aplicaciones deben manejar consistencia eventual.
+## Siguientes Pasos
 
-La elección entre ACID y BASE no es binaria—aplicaciones modernas a menudo usan ambos enfoques para componentes diferentes según sus requisitos específicos. Entender estos trade-offs ayuda a arquitectos diseñar sistemas que balanceen consistencia, disponibilidad y tolerancia a particiones apropiadamente.
+- Estudiar el **Teorema CAP** (PACELC) para entender los límites teóricos.
+- Aprender sobre **Patrones Saga** para manejar transacciones a través de servicios distribuidos.
+
+## Etiquetas
+
+#database-design #distributed-systems #acid #base #system-design

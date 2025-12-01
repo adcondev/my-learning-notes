@@ -2,112 +2,114 @@
 
 Las pruebas en Go siguen una jerarquía desde pruebas unitarias aisladas hasta integración del sistema completo. Cada patrón sirve propósitos diferentes: verificar funciones individuales, aislar dependencias, probar con comportamiento realista, o validar flujos completos.
 
+## Prerrequisitos
+
+- Conocimiento básico del paquete `testing` de Go.
+- Entendimiento de interfaces para mocking.
+
 ## Conceptos Clave
 
-- **Pruebas Unitarias**: Pruebas de funciones individuales con mocks
-- **Mocks**: Simulan dependencias con respuestas predeterminadas
-- **Fakes**: Implementaciones funcionales con comportamiento simplificado
-- **Pruebas de Integración**: Múltiples componentes juntos
-- **E2E (End-to-End)**: Flujos completos a través de interfaces reales
+- **Pruebas Unitarias**: Pruebas de funciones individuales con mocks.
+- **Mocks**: Simulan dependencias con respuestas predeterminadas (Estricto).
+- **Fakes**: Implementaciones funcionales con comportamiento simplificado (Con estado).
+- **Pruebas de Integración**: Múltiples componentes juntos.
+- **Pruebas Orientadas a Tabla**: Enfoque data-driven para probar múltiples escenarios.
 
-## Pirámide de Pruebas
+## Explicación Visual
 
-```
-        ╱╲
-       ╱  ╲  Pruebas E2E (5%)
-      ╱    ╲ Lentas, frágiles, atrapa problemas del sistema
-     ╱──────╲
-    ╱        ╲ Pruebas de Integración (15%)
-   ╱          ╲ Velocidad moderada, comportamiento realista
-  ╱────────────╲
- ╱              ╲ Pruebas Unitarias (80%)
- ╱________________╲ Rápidas, aisladas, confiables
-```
-
-80% unitarias, 15% integración, 5% E2E para balance óptimo.
-
-## Patrón de Prueba Unitaria: Orientada a Tabla
-
-Define casos de prueba como datos, ejecuta cada uno. Fácil agregar casos, parametrización clara.
-
-## Patrón de Mock
-
-Simula dependencias con comportamiento exacto. Control total, pero no prueba integración real.
-
-## Patrón de Fake
-
-Implementación funcional simplificada. Más realista, pero requiere implementación.
-
-## Selección de Pruebas
-
-| Tipo de Prueba | Velocidad | Alcance | Cuándo |
-|----------------|-----------|---------|--------|
-| **Unitaria** | Rápida | Función individual | Siempre (mayoría) |
-| **Mock** | Rápida | Función con deps aisladas | Cuando necesitas control exacto |
-| **Fake** | Media | Servicio + almacenamiento simplificado | Verificación de integración |
-| **E2E** | Lenta | Sistema completo | Solo caminos críticos |
-
-## Ejecución
-
-```bash
-# Todas las pruebas
-go test ./...
-
-# Prueba específica
-go test -run TestName ./...
-
-# Sin pruebas lentas
-go test -short ./...
-
-# Con cobertura
-go test -cover ./...
-```
-
-## Mejores Prácticas
-
-- **Probar Comportamiento, No Implementación**: Verifica qué hace la función, no cómo lo hace
-- **Nombres Claros**: `TestUserService_CreateUser_ValidInput` mejor que `TestCreate`
-- **Un Foco de Aserción**: Cada prueba debe verificar una cosa
-- **Pruebas Paralelas**: Usa `t.Parallel()` para acelerar
-- **Fallar Rápido**: Retornar temprano en fallos de setup
-
-## Patrones Comunes
-
-### Setup y Teardown
-
-```
-func setupTest() *Service {
-    // Crear dependencias
-    db := setupDatabase()
-    cache := setupCache()
-    return NewService(db, cache)
-}
-
-func TestSomething(t *testing.T) {
-    service := setupTest()
-    defer cleanupTest()
+```mermaid
+graph TD
+    subgraph "Pirámide de Pruebas"
+        E2E[E2E Tests 5%]
+        Integration[Pruebas Integración 15%]
+        Unit[Pruebas Unitarias 80%]
+    end
     
-    // Test...
+    Unit --> Integration
+    Integration --> E2E
+    
+    style Unit fill:#bbf
+    style Integration fill:#bfb
+    style E2E fill:#fbf
+```
+
+## Implementación Práctica
+
+### Pruebas Orientadas a Tabla (The Go Way)
+
+```go
+func Add(a, b int) int { return a + b }
+
+func TestAdd(t *testing.T) {
+    tests := []struct {
+        name     string
+        a, b     int
+        expected int
+    }{
+        {"positivo", 2, 3, 5},
+        {"negativo", -1, -1, -2},
+        {"mixto", -1, 1, 0},
+    }
+
+    for _, tt := range tests {
+        t.Run(tt.name, func(t *testing.T) {
+            result := Add(tt.a, tt.b)
+            if result != tt.expected {
+                t.Errorf("obtenido %d, esperado %d", result, tt.expected)
+            }
+        })
+    }
 }
 ```
 
-### Subtests
+### Mocking con Interfaces
 
-```
+```go
+// Interfaz de Dependencia
+type Database interface {
+    GetUser(id string) (string, error)
+}
+
+// Implementación Mock
+type MockDB struct {
+    MockGetUser func(id string) (string, error)
+}
+
+func (m *MockDB) GetUser(id string) (string, error) {
+    return m.MockGetUser(id)
+}
+
+// Prueba usando Mock
 func TestService(t *testing.T) {
-    t.Run("create user", func(t *testing.T) {
-        // Código de prueba
-    })
-    t.Run("delete user", func(t *testing.T) {
-        // Código de prueba
-    })
+    mock := &MockDB{
+        MockGetUser: func(id string) (string, error) {
+            return "Alice", nil
+        },
+    }
+    
+    // Inyectar mock
+    service := NewService(mock)
+    user, _ := service.GetUser("1")
+    
+    if user != "Alice" {
+        t.Errorf("obtenido %s, esperado Alice", user)
+    }
 }
 ```
 
-## Explicación
+## Trade-offs
 
-La filosofía de pruebas de Go es pragmática: funciones simples, ceremonia mínima. El paquete estándar testing carece de librería de aserciones, forzando explicititud sobre qué estás verificando. Esto es intencional—mensajes de error claros importan más que DSLs.
+| Patrón | Velocidad | Alcance | Mantenimiento |
+| :--- | :--- | :--- | :--- |
+| **Unitario (Mock)** | Rápido | Función Aislada | Alto (Actualizar mocks) |
+| **Integración (Fake)** | Medio | Interacción Componentes | Medio |
+| **E2E (Real)** | Lento | Sistema Completo | Bajo (Caja negra) |
 
-La pirámide existe por costo: pruebas unitarias son baratas (milisegundos), E2E caras (segundos). Escribe muchas pruebas rápidas para atrapar regresiones rápidamente, menos pruebas lentas para caminos críticos. Esto proporciona feedback rápido durante desarrollo mientras asegura que funcionalidad core funciona end-to-end.
+## Siguientes Pasos
 
-Las pruebas orientadas a tabla aprovechan la simplicidad de Go para escalar: agregar casos de prueba es agregar filas, sin funciones nuevas necesarias. Este patrón se vuelve idioma Go una vez que escribes algunos.
+- Aprender sobre **Fuzz Testing** (introducido en Go 1.18) para encontrar casos borde automáticamente.
+- Explorar **Test Containers** para ejecutar bases de datos reales en pruebas de integración.
+
+## Etiquetas
+
+#golang #testing #unit-testing #mocks #integration-testing

@@ -2,132 +2,92 @@
 
 Service discovery manages and exposes service locations, enabling microservices to locate and communicate with each other dynamically. It decouples service location from hardcoded addresses, enabling auto-scaling and resilience.
 
+## Prerequisites
+
+- Understanding of Microservices architecture.
+- Basic knowledge of DNS and Load Balancing.
+- Familiarity with containerization (Docker/Kubernetes) is helpful.
+
 ## Key Concepts
 
-- **Service Registry**: Centralized catalog of available service instances and their addresses
-- **Registration**: Service registers itself on startup, deregisters on shutdown
-- **Health Checks**: Periodic probes to detect and remove unhealthy instances
-- **Client-side Discovery**: Clients query registry to find services
-- **Server-side Discovery**: Load balancer queries registry internally
+- **Service Registry**: Centralized catalog of available service instances (e.g., Consul, Etcd).
+- **Registration**: Service registers itself on startup, deregisters on shutdown.
+- **Health Checks**: Periodic probes to detect and remove unhealthy instances.
+- **Client-side Discovery**: Clients query registry to find services.
+- **Server-side Discovery**: Load balancer queries registry internally.
 
-## Two Approaches
+## Visual Explanation
 
-### Client-side Discovery
+### Client-Side Discovery
 
-```
-Client                Registry            Service A
-  │                     │                    │
-  ├─ Query for "api"───→│                    │
-  │                     │← Returns instances │
-  │                     │  [A1: host:8080,   │
-  │                     │   A2: host:8081]   │
-  │                                          │
-  ├─ Choose A1 ────────────→ Request
-  │                          Response ←─────┤
+```mermaid
+graph LR
+    Client[Client Service] -->|1. Query| Registry[Service Registry]
+    Registry -->|2. Return List| Client
+    Client -->|3. Select & Call| ServiceA[Service Instance A]
 ```
 
-**Pros**: Direct connection, full control
-**Cons**: Clients manage load balancing and failover
+### Server-Side Discovery
 
-### Server-side Discovery
-
-```
-Client           Load Balancer        Registry        Service A
-  │                   │                  │               │
-  ├─ Request ───────→ │                  │               │
-  │                   ├─ Query "api"────→│               │
-  │                   │← Instance list    │               │
-  │                   │                   │               │
-  │                   ├─────────────────────→ Forward    │
-  │                   │←───── Response ──────┤           │
-  │← Response ────────┤                      │           │
+```mermaid
+graph LR
+    Client[Client Service] -->|1. Call| LB[Load Balancer]
+    LB -->|2. Query| Registry[Service Registry]
+    LB -->|3. Forward| ServiceA[Service Instance A]
 ```
 
-**Pros**: Clients simplified, LB handles complexity
-**Cons**: LB becomes potential bottleneck
+## Practical Implementation
 
-## Service Registry Patterns
+### Registration Pattern (Conceptual Go)
 
-| Pattern | Tool | Use Case |
-|---------|------|----------|
-| **Consul** | Explicit registration | Microservices on VMs, self-managed K8s |
-| **Kubernetes DNS** | Automatic (built-in) | Any containerized service |
-| **Eureka** | Registration, heartbeat | Spring Boot, Netflix stack |
-| **Cloud Vendor** | AWS/GCP/Azure | Cloud-native applications |
+```go
+// On Startup
+func RegisterService() {
+    serviceInfo := ServiceInfo{
+        Name: "order-service",
+        Address: "10.0.0.5",
+        Port: 8080,
+        HealthURL: "/health",
+    }
+    registryClient.Register(serviceInfo)
+    
+    // Start Heartbeat
+    go func() {
+        for {
+            registryClient.SendHeartbeat(serviceInfo.ID)
+            time.Sleep(5 * time.Second)
+        }
+    }()
+}
 
-## Registration Pattern
-
+// On Shutdown
+func DeregisterService() {
+    registryClient.Deregister(serviceInfo.ID)
+}
 ```
-Service starts
-  │
-  ├─ Register with registry
-  │  [name: "user-service",
-  │   address: "10.0.1.5",
-  │   port: 8080,
-  │   healthCheck: "GET /health"]
-  │
-  ├─ Periodic heartbeat (e.g., every 5s)
-  │  "I'm still alive"
-  │
-  ├─ On failure or shutdown
-  │  Deregister
-  │
-  └─ Registry removes stale entries
-     after heartbeat timeout
-```
-
-## Health Checks
-
-```
-Registry          Service
-  │                 │
-  ├─ GET /health ───→│
-  │                  │
-  │← 200 OK ─────────┤ (Healthy: keep registered)
-  
-  ├─ GET /health ───→│
-  │                  │
-  │  (No response)   │ (Timeout: mark unhealthy)
-  │
-  └─ After N failures: Remove from registry
-```
-
-## Implementation Considerations
-
-### What to Register
-
-- Service name (unique identifier)
-- Network address and port
-- Version/tags for filtering
-- Health check endpoint
-- Metadata (region, canary flag, etc.)
-
-### Health Check Strategies
-
-- **Passive**: Clients report failures
-- **Active**: Registry pings service
-- **External**: Separate monitor checks
-- **Application**: Service self-reports
 
 ## Comparison Matrix
 
-| Aspect | Client-side | Server-side |
-|--------|------------|------------|
-| **Complexity** | High (clients) | Low (clients) |
-| **Load Balancing** | Client library | Load balancer |
-| **Latency** | Lower (direct) | Slightly higher |
-| **Scalability** | Linear with clients | Bottleneck at LB |
-| **Failure Handling** | Per client | Centralized |
-| **Example** | Consul + client lib | Kubernetes |
+| Feature | Client-Side Discovery | Server-Side Discovery |
+| :--- | :--- | :--- |
+| **Complexity** | High (Client logic needed) | Low (Handled by LB) |
+| **Network Hops** | Fewer (Direct) | More (Through LB) |
+| **Coupling** | Client coupled to Registry | Client decoupled |
+| **Language Support** | Needs library per language | Language agnostic |
+| **Example** | Netflix Eureka, Consul | Kubernetes Service, AWS ELB |
 
-## Explanation
+## Real-world Scenario
 
-Service discovery solves a fundamental problem in microservices: how do services find each other when locations change? Hardcoding addresses breaks auto-scaling and resilience; service discovery makes location a runtime concern.
+**Kubernetes (Server-Side)**:
+- **Service**: Abstraction defining a logical set of Pods.
+- **Kube-DNS**: Acts as the service registry.
+- **Flow**: App A calls `http://app-b`. Kube-DNS resolves `app-b` to a ClusterIP (Virtual IP). The Kube-Proxy (Load Balancer) forwards traffic to a healthy Pod.
 
-The choice between client-side and server-side depends on your infrastructure:
-- **Client-side** gives you fine-grained control and direct connections, ideal if you're managing your own infrastructure
-- **Server-side** simplifies clients and centralizes complexity, ideal in cloud-native environments (Kubernetes, serverless)
+## Next Steps
 
-Health checks prevent requests to dead services. Without them, clients repeatedly try failed instances. The registration/deregistration lifecycle ensures the registry stays accurate.
+- Learn about **Service Mesh** (Istio, Linkerd) which handles discovery and more (mTLS, tracing) transparently.
+- Explore **Consul** for a platform-agnostic service registry.
 
-Modern platforms (Kubernetes, service meshes) automate much of this. Understanding the underlying patterns helps when building custom solutions or debugging issues.
+## Tags
+
+#microservices #service-discovery #kubernetes #distributed-systems #architecture

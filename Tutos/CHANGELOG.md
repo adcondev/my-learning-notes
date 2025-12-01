@@ -100,6 +100,26 @@ Versiones condensadas enfocadas en lo importante:
 - **Guías Simplificadas**: 3 (_SIMPLIFIED.md)
 - **Total de Archivos Nuevos**: 14
 - **Total de Archivos Modificados**: 4
+### 6. ✅ Guía Functional Options (Inglés/Español)
+
+**FUNCTIONAL_OPTIONS.md** - Nueva guía sobre patrón de diseño Go:
+- Configuración flexible de objetos
+- Variadic functions
+- Trade-offs vs Config Structs
+
+### 7. 🗑️ Limpieza de Contenido
+
+**Eliminado**: Notas de Frontend (HTML/CSS/JS) para enfocar el repositorio 100% en Go y Backend.
+
+## Estadísticas
+
+- **Nuevas Guías**: 2 (SOLID_PRINCIPLES, FUNCTIONAL_OPTIONS)
+- **Archivos Actualizados**: 6 (BACKPRESSURE, EXPONENTIAL_BACKOFF, REST_API_GIN, SERVICE_DISCOVERY, ACID_VS_BASE, PACELC_THEOREM)
+- **Traducciones Creadas**: 11 archivos _ES.md
+- **Guías Simplificadas**: 0 (Todas estandarizadas)
+- **Archivos Eliminados**: 3 (Frontend notes)
+- **Total de Archivos Nuevos**: 16
+- **Total de Archivos Modificados**: 6
 - **Índice General**: README.md
 
 ## Estructura Final del Directorio

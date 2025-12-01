@@ -2,116 +2,106 @@
 
 El patrón Saga mantiene consistencia de datos entre múltiples servicios en transacciones distribuidas sin acoplamiento fuerte. Divide transacciones distribuidas en secuencias de transacciones locales con acciones compensatorias para fallos.
 
+## Prerrequisitos
+
+- Entendimiento de arquitectura de Microservicios.
+- Conocimiento básico de transacciones de bases de datos (ACID).
+- Familiaridad con Arquitectura Orientada a Eventos.
+
 ## Conceptos Clave
 
-- **Transacción Distribuida**: Operación que abarca múltiples servicios que debe tener éxito en todos o deshacer en todos
-- **Transacción Local**: Operación dentro de un único servicio
-- **Transacción Compensatoria**: Revierte los efectos de una transacción exitosa (operación deshacer)
-- **Coreografía**: Servicios reaccionan a eventos independientemente
-- **Orquestación**: Coordinador central gestiona el flujo
+- **Transacción Distribuida**: Operación que abarca múltiples servicios.
+- **Transacción Compensatoria**: Revierte los efectos de un paso fallido (Deshacer).
+- **Coreografía**: Coordinación descentralizada vía eventos.
+- **Orquestación**: Coordinación centralizada vía un controlador.
 
-## Dos Enfoques
+## Explicación Visual
 
-### Coreografía: Orientada a Eventos
+### Coreografía (Event-Driven)
 
-```
-Servicio Órdenes    Servicio Pagos    Servicio Inventario    Servicio Envíos
-        │                  │                  │                      │
-        ├─ OrderCreated ───→│                  │                      │
-        │  (publish)        │                  │                      │
-        │                   ├─ PaymentProcessed ──→                   │
-        │                   │  (publish)           │                  │
-        │                   │                      ├─ ItemsReserved ──→│
-        │                   │                      │  (publish)        │
-        │                   │                      │                   │
-        │                   │                      │← DeliveryScheduled│
-        │                   │                      │  (publish)        │
+```mermaid
+sequenceDiagram
+    participant Orden
+    participant Pago
+    participant Inventario
+    
+    Orden->>Pago: Evento Orden Creada
+    Pago->>Inventario: Evento Pago Procesado
+    Inventario--xPago: Error Sin Stock
+    Pago->>Orden: Evento Pago Reembolsado (Compensación)
+    Orden->>Orden: Cancelar Orden (Compensación)
 ```
 
-**Descentralizada**: Sin coordinador
-**Acoplamiento Laxo**: Servicios comunican vía eventos
-**Trade-off**: Difícil rastrear estado general
+### Orquestación (Command-Driven)
 
-### Orquestación: Coordinada
-
-```
-                Saga Orchestrator
-                        │
-         ┌──────────────┼──────────────┐
-         │              │              │
-    Servicio Órdenes Servicio Pagos Servicio Inventario
-         │              │              │
-         ├─ Crear ────→ │              │
-         │← OrderId ────┤              │
-         │              ├─ Procesar ──→│
-         │              │← Confirmado ─┤
-         │              │              ├─ Reservar ────→
-         │              │              │← Reservado ───┤
+```mermaid
+graph TD
+    Orchestrator[Orquestador Saga]
+    
+    Orchestrator -->|1. Crear Orden| Order[Servicio Orden]
+    Orchestrator -->|2. Procesar Pago| Payment[Servicio Pago]
+    Orchestrator -->|3. Reservar Stock| Inventory[Servicio Inventario]
+    
+    Inventory -.->|Fallo| Orchestrator
+    Orchestrator -.->|Compensar| Payment
+    Orchestrator -.->|Compensar| Order
 ```
 
-**Centralizada**: Orquestrador controla flujo
-**Visibilidad Clara**: Estado en un lugar
-**Trade-off**: Orquestrador se vuelve cuello de botella
+## Implementación Práctica
 
-## Patrón de Coreografía
+### Ejemplo de Orquestador (Go)
 
-Cada servicio publica eventos, otros reaccionan. Sin coordinador central, pero estado distribuido es difícil de rastrear. Ideal para flujos simples.
+```go
+package main
 
-## Patrón de Orquestación
+// Lógica del Orquestador Saga
+func ProcessOrderSaga(order Order) error {
+    // Paso 1: Crear Orden
+    if err := services.Order.Create(order); err != nil {
+        return err // No se necesita compensación aún
+    }
 
-Orquestador central ejecuta pasos en orden, con transacciones compensatorias en fallos. Estado claro, pero orquestrador es punto crítico.
+    // Paso 2: Pago
+    if err := services.Payment.Charge(order); err != nil {
+        services.Order.Cancel(order) // Compensar Paso 1
+        return err
+    }
 
-## Coreografía vs Orquestación
+    // Paso 3: Inventario
+    if err := services.Inventory.Reserve(order); err != nil {
+        services.Payment.Refund(order) // Compensar Paso 2
+        services.Order.Cancel(order)   // Compensar Paso 1
+        return err
+    }
 
-| Aspecto | Coreografía | Orquestación |
-|--------|------------|-------------|
-| **Complejidad** | Distribuida en servicios | Centralizada en orquestador |
-| **Acoplamiento** | Laxo (basado en eventos) | Más apretado (llamadas directas) |
-| **Visibilidad** | Difícil rastrear | Estado claro |
-| **Escalabilidad** | Altamente escalable | Cuello de botella potencial |
-| **Recuperación** | Compensación por servicio | Coordinada por orquestador |
-| **Pruebas** | Difícil (eventos async) | Más fácil (flujo sincrónico) |
-
-## Cuándo Usar Cada Una
-
-### Elige Coreografía Cuando
-
-- Servicios naturalmente reaccionan a eventos
-- Proceso de negocio relativamente simple
-- Equipo valora autonomía y acoplamiento laxo
-- Arquitectura event-driven ya existe
-
-### Elige Orquestación Cuando
-
-- Transacción compleja con muchas dependencias
-- Necesitas visibilidad clara del estado de saga
-- Manejo de errores centralizado preferido
-- Flujo de proceso cambia frecuentemente
-
-## Patrones de Implementación
-
-### Transacciones Compensatorias
-
-Cada operación forward debe tener un undo:
-
-```
-Crear Orden         → Fallo → Cancelar Orden
-Procesar Pago       → Fallo → Reembolsar
-Reservar Inventario → Fallo → Liberar
+    return nil // Éxito
+}
 ```
 
-### Idempotencia
+## Tabla Comparativa
 
-Las operaciones deben ser re-intentables de forma segura. Crear la misma orden dos veces retorna el mismo resultado.
+| Característica | Coreografía | Orquestación |
+| :--- | :--- | :--- |
+| **Acoplamiento** | Bajo (Desacoplado) | Más alto (Centralizado) |
+| **Complejidad** | Difícil rastrear flujo | Fácil rastrear flujo |
+| **Escalabilidad** | Alta | Orquestador puede ser cuello de botella |
+| **Mejor Para** | Flujos simples, pocos servicios | Flujos complejos, muchos pasos |
+| **Manejo de Fallos** | Lógica distribuida | Lógica centralizada |
 
-### Timeouts y Dead-letter
+## Escenario del Mundo Real
 
-Manejar servicios que no responden. Si una operación excede timeout, compensar o reintentar.
+**Reservar un Viaje**:
+1.  **Reservar Vuelo** (Éxito)
+2.  **Reservar Hotel** (Éxito)
+3.  **Reservar Auto** (Fallo - No hay autos disponibles)
+4.  **Compensar Hotel** (Cancelar reserva)
+5.  **Compensar Vuelo** (Cancelar reserva)
 
-## Explicación
+## Siguientes Pasos
 
-El patrón Saga resuelve transacciones distribuidas reemplazando garantías ACID con una serie de transacciones compensatorias. En lugar de atómico "todo o nada," las sagas aseguran "éxito en todos o deshacer en todos."
+- Aprender sobre **Two-Phase Commit (2PC)** y por qué las Sagas son preferidas en microservicios.
+- Explorar **Outbox Pattern** para publicación confiable de eventos.
 
-La coreografía es más autónoma y escalable pero más difícil de razonar—no hay lugar central mostrando el flujo de transacción completo. La orquestación es opuesta: más fácil entender y debugear, pero el coordinador se vuelve infraestructura crítica.
+## Etiquetas
 
-En la práctica, muchos sistemas usan enfoque híbrido: orquestación para caminos críticos (checkout, pago) y coreografía para tareas auxiliares (notificaciones, analytics). Esto balancea claridad con escalabilidad.
+#microservices #distributed-systems #saga-pattern #transactions #architecture
