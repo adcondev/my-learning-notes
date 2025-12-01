@@ -614,6 +614,11 @@ GET  /api/v1/status      # Check printer status
 - I worked on testing the mini printer `PT-210`, the main problem is the codepage, as nothing worked, so i will return to the user defined characters.
 - I pushed the refactoring of the `document` and testing to a PR. I will merge it into main branch.
 
+## 🗓️ **WEEK 22: TBD**
+
+**Period:** December 1 - December 5, 2025
+
+
 ---
 
 ## 🎯 **Current Focus Areas**
