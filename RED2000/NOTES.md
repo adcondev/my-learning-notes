@@ -623,6 +623,10 @@ GET  /api/v1/status      # Check printer status
 - I did research about serial communication, i will try to implement it in the `poster` package. Whether is by Bluetooth or USB, i will try to make it interchangeable with the actual windows spoler implementation.
 - `PT-210` is locked to page code 936, the workaround needed look tough. What i will try is to substitute the special characters that can't be printed on the printer, if `Á` appears `A` will be printed, and so on. the user defined character that i really need in a kind of `Ñ`.
 - I will try by using raw commands if priting speed can be modified in the printer.
+- I worked on some study guides about Go language and system design.
+
+- I keep working on setting up the `constants` package in `poster`. I want to ensure a single source of truth for default values and types. I finished the centralization of default values in `poster`. Now i have to integrate it into the codebase. It took me more time than expected.
+- I reviewed the topic around `Functional Options Pattern` in Go. It is useful to avoid constructor overloading and make the code more readable. I will try to implement it in the `poster` package where order doesn't matter.
 
 ---
 
