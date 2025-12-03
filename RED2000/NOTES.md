@@ -628,6 +628,9 @@ GET  /api/v1/status      # Check printer status
 - I keep working on setting up the `constants` package in `poster`. I want to ensure a single source of truth for default values and types. I finished the centralization of default values in `poster`. Now i have to integrate it into the codebase. It took me more time than expected.
 - I reviewed the topic around `Functional Options Pattern` in Go. It is useful to avoid constructor overloading and make the code more readable. I will try to implement it in the `poster` package where order doesn't matter.
 
+- I keep integrating the `constants` package into the codebase. It took me more time than expected. It is totally worth since it will be consistent with the schema of the JSON ticket representation package. I did the setup of the constants package in `qr_handler.go` and `text_handler.go`.
+- I updated some documentation of repositories done in RED2000. I will try to update the rest of the documentation.
+
 ---
 
 ## 🎯 **Current Focus Areas**
