@@ -631,6 +631,10 @@ GET  /api/v1/status      # Check printer status
 - I keep integrating the `constants` package into the codebase. It took me more time than expected. It is totally worth since it will be consistent with the schema of the JSON ticket representation package. I did the setup of the constants package in `qr_handler.go` and `text_handler.go`.
 - I updated some documentation of repositories done in RED2000. I will try to update the rest of the documentation.
 
+- I integrated the constants package into `barcode_handler.go` and `qr_handler.go`. Then, i merged the changes and resolved some conflicts into the master branch.
+- I will work in a UART and Bluetooth serial communication for the printer. I will try to implement it in the `poster` package.
+- I did a deep research about the areas of opportunity for the `poster` package around an emulator for the printer, this could save a lot of paper and testing. Also, it will completly solver the problem for any printer around character codepages. So, any printer that have the graphics capabilities will be able to print the ticket. My only concern is the performance and the maximum buffer size of the printer. What is nice is since my library works with raw commands, the core communication protocol about `package document` will be the same. My concern would be around embedding into the ticket the QR Codes, generating barcodes as image and embedding them, and the automatic codepage selection (i think i would need to support UTF-8).
+
 ---
 
 ## 🎯 **Current Focus Areas**
