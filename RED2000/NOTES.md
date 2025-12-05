@@ -635,6 +635,9 @@ GET  /api/v1/status      # Check printer status
 - I will work in a UART and Bluetooth serial communication for the printer. I will try to implement it in the `poster` package.
 - I did a deep research about the areas of opportunity for the `poster` package around an emulator for the printer, this could save a lot of paper and testing. Also, it will completly solver the problem for any printer around character codepages. So, any printer that have the graphics capabilities will be able to print the ticket. My only concern is the performance and the maximum buffer size of the printer. What is nice is since my library works with raw commands, the core communication protocol about `package document` will be the same. My concern would be around embedding into the ticket the QR Codes, generating barcodes as image and embedding them, and the automatic codepage selection (i think i would need to support UTF-8).
 
+- I am working on the planning of a features based on the automatic calculation of maximun printable width in pixels and characters. Limits are taken in count for other packages likes `tables` and `images`. I am starting with the implementation.
+- I was planning the new `emulator` that will help `poster` to print in very generic printers and emulate printer. Also, it will help to make instantaneus digital tikets to be sended throgh mail or other means.
+
 ---
 
 ## 🎯 **Current Focus Areas**
