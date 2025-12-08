@@ -638,6 +638,13 @@ GET  /api/v1/status      # Check printer status
 - I am working on the planning of a features based on the automatic calculation of maximun printable width in pixels and characters. Limits are taken in count for other packages likes `tables` and `images`. I am starting with the implementation.
 - I was planning the new `emulator` that will help `poster` to print in very generic printers and emulate printer. Also, it will help to make instantaneus digital tikets to be sended throgh mail or other means. I identified the `gg` package which is a graphics rendering library for Go. It is a good candidate for the emulator.
 
+## 🗓️ **WEEK 23: TBD**
+
+**Period:** December 8 - December 12, 2025
+
+- I will continue working on the emulator for the printer. I will try to implement it in the `poster` package. I have nice first implementation, it is not perfect but it works. For now the `package emulator` is capable of creating a PNG image with some ticket data. It looks like zoomed in letters, i had to check if it is related to the font embedding, i have to make sure the `.tff` files are being embedded into the binary. What i will try tomorrow is to make it work with the JSON ticket representation package, by adding a flag called `"render": "emulator" or "printer"`. I will review a descriptive name for the flag. So far, so good.
+- I also created a repo called `personal-vps`, i did work on Terraform, Ansible and Docker Compose to replicate my actual VPS. I docuemented the scripts and learnings in the repo.
+
 ---
 
 ## 🎯 **Current Focus Areas**
