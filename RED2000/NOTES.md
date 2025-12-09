@@ -645,6 +645,10 @@ GET  /api/v1/status      # Check printer status
 - I will continue working on the emulator for the printer. I will try to implement it in the `poster` package. I have nice first implementation, it is not perfect but it works. For now the `package emulator` is capable of creating a PNG image with some ticket data. It looks like zoomed in letters, i had to check if it is related to the font embedding, i have to make sure the `.tff` files are being embedded into the binary. What i will try tomorrow is to make it work with the JSON ticket representation package, by adding a flag called `"render": "emulator" or "printer"`. I will review a descriptive name for the flag. So far, so good.
 - I also created a repo called `personal-vps`, i did work on Terraform, Ansible and Docker Compose to replicate my actual VPS. I docuemented the scripts and learnings in the repo.
 
+- I will continue working on the emulator for the printer. Fow today, I will solve the problem around the fonts being loaded but not displayed. At least, fallback characters works fine and are enough for a MVP for the feature. Before continuing with anything else, i will make sure `package emulator` workds by its own.
+- I was able to print with the `58mm PT-210` printer. I added many characters that were imposible to see under regular ESCPOS printing. I sended the image generated into the `package graphics` and `package service` to print the ticket. I was finally able to see `áéíóúüÁÉÍÓÚÜ` and `ñÑ`. For now, the letters look tiny, nothing unreadable, but i will try to make it better since they are smaller than the native ones. Also, i will check the rest of the styles of the letters, i could only check the bold style. Also, i will review the Size style since, when used it uses the fallback letters, i just try a little since i looks completly fine to me.
+- Maybe i integrate the `text`, `separator`, `feed` into the JSON ticket representation package. I will try to make it work with the emulator.
+
 ---
 
 ## 🎯 **Current Focus Areas**
