@@ -648,6 +648,13 @@ GET  /api/v1/status      # Check printer status
 - I will continue working on the emulator for the printer. Fow today, I will solve the problem around the fonts being loaded but not displayed. At least, fallback characters works fine and are enough for a MVP for the feature. Before continuing with anything else, i will make sure `package emulator` workds by its own.
 - I was able to print with the `58mm PT-210` printer. I added many characters that were imposible to see under regular ESCPOS printing. I sended the image generated into the `package graphics` and `package service` to print the ticket. I was finally able to see `áéíóúüÁÉÍÓÚÜ` and `ñÑ`. For now, the letters look tiny, nothing unreadable, but i will try to make it better since they are smaller than the native ones. Also, i will check the rest of the styles of the letters, i could only check the bold style. Also, i will review the Size style since, when used it uses the fallback letters, i just try a little since i looks completly fine to me.
 - Maybe i integrate the `text`, `separator`, `feed` into the JSON ticket representation package. I will try to make it work with the emulator.
+- Migrated from `github.com/golang/freetype` (deprecated, fails on Variable Fonts) to `golang.org/x/image/font/opentype`. The new library correctly parses modern font tables, enabling TrueType rendering instead of always falling back to bitmap.
+- Extended `basic_example.go` to demonstrate full workflow: generate receipt image with emulator → load PNG → process through graphics pipeline → print to physical PT-210 thermal printer using Windows Spooler API.
+
+- I am planning a guide: `Interviews: Panic and Recover`. Just a markdown with some experiences on failed interviews. What for me was useful or definetly not helpful. It would be a nice farewell gift for a friend of mine. Maybe she can succed faster where I couldn't (yet).
+- I worked on reafactoring and integrating the `constants` package into the `emulator` one. I also updated the documentation of the `emulator` package.
+- Unified scattered constants into `pkg/constants/defaults.go`. Added emulator-specific constants: paper and font sizes, canvas limits, scale bounds, cut rendering parameters, and helper functions.
+- Separated concerns: bitmap patterns to `fallback.go`, and configuration to `config.go`. Added comprehensive package documentation in `doc.go`.
 
 ---
 
