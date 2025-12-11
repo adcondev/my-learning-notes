@@ -656,6 +656,11 @@ GET  /api/v1/status      # Check printer status
 - Unified scattered constants into `pkg/constants/defaults.go`. Added emulator-specific constants: paper and font sizes, canvas limits, scale bounds, cut rendering parameters, and helper functions.
 - Separated concerns: bitmap patterns to `fallback.go`, and configuration to `config.go`. Added comprehensive package documentation in `doc.go`.
 
+- I will begin the day with a refactor on `package executor` and `package builder`. I want to ensure a 1:1 match of commands, then i will try to make it work with the emulator. I defined testing across both packages. `builder` was almost finished, i just made minimal improvements and added tests. `executor` is a bit more complex, since it need a mock for the `service` printer it uses. I defined the mock and the interface it uses. I keep working on the `executor` test on the handlers for each JSON command.
+- Conducted a comprehensive review of command parity between the `builder` and `executor` packages. Identified that `pulse` and `beep` commands existed in the `builder` (via raw ESC/POS bytes) but lacked proper handler registration in the `executor`.
+- Identified the main testability barrier: handlers directly depend on `*service.Printer` which requires real connections. Introduced a `PrinterActions` interface to enable mock-based testing.
+- A PR will be opened tomorrow for the changes on `package executor` and `package builder`.
+
 ---
 
 ## 🎯 **Current Focus Areas**
