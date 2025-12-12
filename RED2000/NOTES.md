@@ -661,6 +661,9 @@ GET  /api/v1/status      # Check printer status
 - Identified the main testability barrier: handlers directly depend on `*service.Printer` which requires real connections. Introduced a `PrinterActions` interface to enable mock-based testing.
 - A PR will be opened tomorrow for the changes on `package executor` and `package builder`.
 
+- I keep working with the testing of `executor` and `builder` packages. I defined the mock for the `service` printer it uses. I merged the changes into the `adcondev/poster` repository.
+- I focused on standardizing the test suite across all executor handlers in the `adcondev/poster` repository. The goal was to ensure consistent, non-excessive testing coverage for each command handler (text, barcode, QR, image, table, raw, feed, cut, separator, pulse, beep).
+
 ---
 
 ## 🎯 **Current Focus Areas**
