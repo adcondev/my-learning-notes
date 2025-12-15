@@ -83,9 +83,9 @@ func trySend(ch chan int, val int) bool {
 
 | Enfoque | Pros | Contras |
 | :--- | :--- | :--- |
-| **Bloqueo (Estándar)** | • Implementación simple<br>• Garantiza procesamiento<br>• Throttling natural | • Puede causar deadlocks si no se cuida<br>• Ralentiza toda la cadena upstream |
-| **Descarte (Select)** | • Protege latencia del productor<br>• Sistema permanece responsivo | • Pérdida de datos<br>• Requiere lógica de reintento o fallback |
-| **Canal Sin Buffer** | • Sincronización más fuerte<br>• Contrapresión instantánea | • Cero tolerancia a ráfagas<br>• Alto acoplamiento de velocidad |
+| **Bloqueo (Estándar)** | • Implementación simple• Garantiza procesamiento• Throttling natural | • Puede causar deadlocks si no se cuida• Ralentiza toda la cadena upstream |
+| **Descarte (Select)** | • Protege latencia del productor• Sistema permanece responsivo | • Pérdida de datos• Requiere lógica de reintento o fallback |
+| **Canal Sin Buffer** | • Sincronización más fuerte• Contrapresión instantánea | • Cero tolerancia a ráfagas• Alto acoplamiento de velocidad |
 
 ## Escenario del Mundo Real
 
