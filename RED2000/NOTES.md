@@ -664,6 +664,15 @@ GET  /api/v1/status      # Check printer status
 - I keep working with the testing of `executor` and `builder` packages. I defined the mock for the `service` printer it uses. I merged the changes into the `adcondev/poster` repository.
 - I focused on standardizing the test suite across all executor handlers in the `adcondev/poster` repository. The goal was to ensure consistent, non-excessive testing coverage for each command handler (text, barcode, QR, image, table, raw, feed, cut, separator, pulse, beep).
 
+## 🗓️ **WEEK 24: TBD**
+
+**Period:** December 15 - December 19, 2025
+
+- I will sinthetize some note on work I've done so far. I will create a list of major projects, my main work and some side projects. I will mention the technologies I used and the main learnings I got from them.
+- I was discussing with a friend about a landing page for a group of dancers. I will gather ideas about the design and the content.
+- A guide about 12-factor app was created. I wasn't familiar with the concept, but I found it interesting and I will try to apply it to my future work.
+- I did some study in Go language. I was learning about it in `study mode` in Gemini.
+
 ---
 
 ## 🎯 **Current Focus Areas**
