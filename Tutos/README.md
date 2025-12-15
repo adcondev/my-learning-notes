@@ -5,50 +5,65 @@
 ## Core Principles & Design
 
 ### SOLID Principles
+
 - **SOLID_PRINCIPLES.md** (EN) - Five design principles for maintainable Go code with minimal examples
 - **SOLID_PRINCIPLES_ES.md** (ES) - Cinco principios de diseño para código Go mantenible
 
+### 12-Factor App
+
+- **APP_12_FACTOR.md** (EN) - The 12 factors for building scalable SaaS apps
+- **APP_12_FACTOR_ES.md** (ES) - Los 12 factores para construir apps SaaS escalables
+
 ### ACID vs BASE
+
 - **ACID_VS_BASE.md** (EN) - Database design trade-offs: consistency vs availability
 - **ACID_VS_BASE_ES.md** (ES) - Trade-offs de diseño de BD: consistencia vs disponibilidad
 
 ### Distributed Systems Theorems
+
 - **PACELC_THEOREM.md** (EN) - Framework for distributed system design (partitions + normal operation)
 - **PACELC_THEOREM_ES.md** (ES) - Marco para diseño de sistemas distribuidos
 
 ### Functional Options
+
 - **FUNCTIONAL_OPTIONS.md** (EN) - Flexible configuration pattern for Go structs
 - **FUNCTIONAL_OPTIONS_ES.md** (ES) - Patrón de configuración flexible para structs en Go
 
 ## Microservices Patterns
 
 ### Service Orchestration
+
 - **SAGA_PATTERNS.md** (EN) - Saga pattern: choreography vs orchestration for distributed transactions
 - **SAGA_PATTERNS_ES.md** (ES) - Patrón Saga: coreografía vs orquestación
 
 ### Service Location
+
 - **SERVICE_DISCOVERY.md** (EN) - Client-side vs server-side service discovery patterns
 - **SERVICE_DISCOVERY_ES.md** (ES) - Descubrimiento de servicios
 
 ## Resilience & Reliability
 
 ### Retry Strategies
+
 - **EXPONENTIAL_BACKOFF.md** (EN) - Retry strategy with exponential backoff and jitter
 - **EXPONENTIAL_BACKOFF_ES.md** (ES) - Estrategia de reintentos con backoff exponencial
 
 ### Flow Control
+
 - **BACKPRESSURE.md** (EN) - Producer-consumer throttling using buffered channels
 - **BACKPRESSURE_ES.md** (ES) - Control de presión en canales bufferizados
 
 ## Web Development
 
 ### REST APIs
+
 - **REST_API_GIN.md** (EN) - Building REST APIs with Gin framework
 - **REST_API_GIN_ES.md** (ES) - Construcción de APIs REST con Gin
 
 ## Testing
 
 ### Test Patterns
+
 - **TEST_PATTERNS.md** (EN) - Unit, mock, fake, and E2E testing in Go
 - **TEST_PATTERNS_ES.md** (ES) - Patrones de pruebas en Go
 
@@ -75,17 +90,23 @@ All guides follow a consistent format:
 ## Recommended Reading Order
 
 **Beginner**:
+
 1. SOLID_PRINCIPLES
+2. APP_12_FACTOR
+3. FUNCTIONAL_OPTIONS
+
 2. FUNCTIONAL_OPTIONS
 3. ACID_VS_BASE
 
 **Intermediate**:
+
 1. REST_API_GIN
 2. TEST_PATTERNS
 3. EXPONENTIAL_BACKOFF
 4. BACKPRESSURE
 
 **Advanced**:
+
 1. PACELC_THEOREM
 2. SERVICE_DISCOVERY
 3. SAGA_PATTERNS

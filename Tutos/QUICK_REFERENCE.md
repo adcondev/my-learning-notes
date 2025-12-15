@@ -3,7 +3,9 @@
 ## Cheat Sheet / Referencia Rápida
 
 ### SOLID Principles
+
 **When**: Diseñando código mantenible / Cuando diseñes código
+
 - **SRP**: Una responsabilidad por tipo
 - **OCP**: Extensión sin modificación (interfaces)
 - **LSP**: Implementaciones intercambiables
@@ -11,48 +13,62 @@
 - **DIP**: Inyectar abstracciones, no concretos
 
 ### ACID vs BASE
+
 **When**: Eligiendo base de datos / Cuando elijas BD
+
 ```
 ACID  ← Consistencia, transacciones, lento, vertical
 BASE  ← Disponibilidad, eventual, rápido, horizontal
 ```
 
 ### PACELC Theorem
+
 **When**: Diseñando sistema distribuido / Cuando diseñes distribuido
+
 ```
 Partición: Elige A (disponible) o C (consistente)
 Normal: Elige L (latencia) o C (consistencia)
 ```
 
 ### Exponential Backoff
+
 **When**: Reintentando en fallos transitorios / En reintentos
+
 ```
 delay = base × (multiplier ^ attempt)
 + jitter para prevenir manada atronadora
 ```
 
 ### Backpressure
+
 **When**: Productor rápido, consumidor lento / Mismatch de velocidad
+
 ```
 Canal bufferizado lleno → Productor se bloquea → Auto-throttle
 ```
 
 ### Service Discovery
+
 **When**: Microservicios necesitan localizarse / En microservicios
+
 ```
 Cliente-lado: Clientes consultan registro
 Servidor-lado: Load balancer consulta (simpler clients)
 ```
 
 ### Saga Pattern
+
 **When**: Transacción distribuida sin ACID / En transacciones distribuidas
+
 ```
 Coreografía: Eventos, descentralizado, estado difícil de rastrear
 Orquestación: Coordinador central, estado claro, bottleneck potencial
 ```
 
 ### REST API Gin
+
 **When**: Construyendo API HTTP / Cuando construyas API REST
+
 ```
 GET /users/:id          → Obtener
 POST /users             → Crear (201)
@@ -61,7 +77,9 @@ DELETE /users/:id       → Eliminar
 ```
 
 ### Test Patterns
+
 **When**: Escribiendo pruebas / En testing
+
 ```
 Unit (80%)        - Fast, mocks
 Integration (15%) - Realistic, fakes
@@ -69,9 +87,21 @@ E2E (5%)         - Slow, actual interfaces
 ```
 
 ### Functional Options
+
 **When**: Configurando objetos complejos con defaults / En constructores
+
 ```
 NewServer(WithPort(8080), WithTimeout(30s))
+```
+
+### 12-Factor App
+
+**When**: Construyendo SaaS/Cloud Native Apps / Arquitectura
+
+```
+Codebase, Dependencies, Config, Backing Services
+Build/Release/Run, Processes, Port Binding, Concurrency
+Disposability, Dev/Prod Parity, Logs, Admin Proc
 ```
 
 ---
@@ -79,6 +109,7 @@ NewServer(WithPort(8080), WithTimeout(30s))
 ## Decision Trees / Árboles de Decisión
 
 ### "¿Qué patrón de saga?"
+
 ```
 ¿Flujo simple?
 ├─ Sí → Coreografía (event-driven)
@@ -86,6 +117,7 @@ NewServer(WithPort(8080), WithTimeout(30s))
 ```
 
 ### "¿Qué database approach?"
+
 ```
 ¿Prioridad: Exactitud?
 ├─ Sí → ACID (transacciones, consistencia)
@@ -93,6 +125,7 @@ NewServer(WithPort(8080), WithTimeout(30s))
 ```
 
 ### "¿Cuántos tests?"
+
 ```
 ├─ 80% unit tests (rápidas)
 ├─ 15% integration (realistas)
@@ -100,6 +133,7 @@ NewServer(WithPort(8080), WithTimeout(30s))
 ```
 
 ### "¿Service discovery?"
+
 ```
 ¿Control fino, infraestructura custom?
 ├─ Sí → Client-side
@@ -111,6 +145,7 @@ NewServer(WithPort(8080), WithTimeout(30s))
 ## Files at a Glance
 
 ### English (EN)
+
 | Archivo | Propósito | Complejidad |
 |---------|-----------|------------|
 | SOLID_PRINCIPLES | 5 principios diseño | Media |
@@ -123,8 +158,10 @@ NewServer(WithPort(8080), WithTimeout(30s))
 | REST_API_GIN | APIs REST | Baja |
 | TEST_PATTERNS | Estrategias testing | Media |
 | FUNCTIONAL_OPTIONS | Configuración flexible | Media |
+| APP_12_FACTOR | Arquitectura Cloud Native | Baja |
 
 ### Spanish (ES)
+
 Mismos nombres + _ES.md suffix
 
 ---
@@ -132,6 +169,7 @@ Mismos nombres + _ES.md suffix
 ## 80/20 Learning Path
 
 **Si tienes 1 hora**, lee en orden:
+
 1. SOLID_PRINCIPLES (15 min)
 2. ACID_VS_BASE (10 min)
 3. EXPONENTIAL_BACKOFF (10 min)
@@ -142,6 +180,7 @@ Mismos nombres + _ES.md suffix
 Leer todos los EN en orden: Beginner → Intermediate → Advanced
 
 **Si tienes 1 mes**:
+
 - Inglés: Lee todos
 - Español: Lee los que use frecuentemente
 - Práctica: Implementa patrones en proyectos
@@ -160,6 +199,7 @@ Leer todos los EN en orden: Beginner → Intermediate → Advanced
 | Service Discovery | Sin health checks |
 | Saga | Sin transacciones compensatorias |
 | Tests | Demasiados E2E, pocos unit |
+| 12-Factor | Hardcodear config o guardar estado local |
 
 ---
 
