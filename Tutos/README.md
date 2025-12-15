@@ -94,9 +94,7 @@ All guides follow a consistent format:
 1. SOLID_PRINCIPLES
 2. APP_12_FACTOR
 3. FUNCTIONAL_OPTIONS
-
-2. FUNCTIONAL_OPTIONS
-3. ACID_VS_BASE
+4. ACID_VS_BASE
 
 **Intermediate**:
 

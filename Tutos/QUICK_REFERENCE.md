@@ -16,7 +16,7 @@
 
 **When**: Eligiendo base de datos / Cuando elijas BD
 
-```
+```text
 ACID  ← Consistencia, transacciones, lento, vertical
 BASE  ← Disponibilidad, eventual, rápido, horizontal
 ```
@@ -25,7 +25,7 @@ BASE  ← Disponibilidad, eventual, rápido, horizontal
 
 **When**: Diseñando sistema distribuido / Cuando diseñes distribuido
 
-```
+```text
 Partición: Elige A (disponible) o C (consistente)
 Normal: Elige L (latencia) o C (consistencia)
 ```
@@ -34,7 +34,7 @@ Normal: Elige L (latencia) o C (consistencia)
 
 **When**: Reintentando en fallos transitorios / En reintentos
 
-```
+```text
 delay = base × (multiplier ^ attempt)
 + jitter para prevenir manada atronadora
 ```
@@ -43,7 +43,7 @@ delay = base × (multiplier ^ attempt)
 
 **When**: Productor rápido, consumidor lento / Mismatch de velocidad
 
-```
+```text
 Canal bufferizado lleno → Productor se bloquea → Auto-throttle
 ```
 
@@ -51,7 +51,7 @@ Canal bufferizado lleno → Productor se bloquea → Auto-throttle
 
 **When**: Microservicios necesitan localizarse / En microservicios
 
-```
+```text
 Cliente-lado: Clientes consultan registro
 Servidor-lado: Load balancer consulta (simpler clients)
 ```
@@ -60,7 +60,7 @@ Servidor-lado: Load balancer consulta (simpler clients)
 
 **When**: Transacción distribuida sin ACID / En transacciones distribuidas
 
-```
+```text
 Coreografía: Eventos, descentralizado, estado difícil de rastrear
 Orquestación: Coordinador central, estado claro, bottleneck potencial
 ```
@@ -69,7 +69,7 @@ Orquestación: Coordinador central, estado claro, bottleneck potencial
 
 **When**: Construyendo API HTTP / Cuando construyas API REST
 
-```
+```text
 GET /users/:id          → Obtener
 POST /users             → Crear (201)
 PUT /users/:id          → Actualizar
@@ -80,7 +80,7 @@ DELETE /users/:id       → Eliminar
 
 **When**: Escribiendo pruebas / En testing
 
-```
+```text
 Unit (80%)        - Fast, mocks
 Integration (15%) - Realistic, fakes
 E2E (5%)         - Slow, actual interfaces
@@ -90,7 +90,7 @@ E2E (5%)         - Slow, actual interfaces
 
 **When**: Configurando objetos complejos con defaults / En constructores
 
-```
+```text
 NewServer(WithPort(8080), WithTimeout(30s))
 ```
 
@@ -98,7 +98,7 @@ NewServer(WithPort(8080), WithTimeout(30s))
 
 **When**: Construyendo SaaS/Cloud Native Apps / Arquitectura
 
-```
+```text
 Codebase, Dependencies, Config, Backing Services
 Build/Release/Run, Processes, Port Binding, Concurrency
 Disposability, Dev/Prod Parity, Logs, Admin Proc
@@ -110,7 +110,7 @@ Disposability, Dev/Prod Parity, Logs, Admin Proc
 
 ### "¿Qué patrón de saga?"
 
-```
+```text
 ¿Flujo simple?
 ├─ Sí → Coreografía (event-driven)
 └─ No → Orquestación (central coordinator)
@@ -118,7 +118,7 @@ Disposability, Dev/Prod Parity, Logs, Admin Proc
 
 ### "¿Qué database approach?"
 
-```
+```text
 ¿Prioridad: Exactitud?
 ├─ Sí → ACID (transacciones, consistencia)
 └─ No → BASE (disponibilidad, velocidad)
@@ -126,7 +126,7 @@ Disposability, Dev/Prod Parity, Logs, Admin Proc
 
 ### "¿Cuántos tests?"
 
-```
+```text
 ├─ 80% unit tests (rápidas)
 ├─ 15% integration (realistas)
 └─ 5% E2E (críticas)
@@ -134,7 +134,7 @@ Disposability, Dev/Prod Parity, Logs, Admin Proc
 
 ### "¿Service discovery?"
 
-```
+```text
 ¿Control fino, infraestructura custom?
 ├─ Sí → Client-side
 └─ No → Server-side (cloud-native)

@@ -90,6 +90,7 @@ func trySend(ch chan int, val int) bool {
 ## Escenario del Mundo Real
 
 **Pipeline de Procesamiento de Logs**:
+
 - **Productor**: Lee logs del disco (Rápido).
 - **Consumidor**: Sube logs a S3 (Lento).
 - **Mecanismo**: Canal bufferizado de tamaño 100.
@@ -102,4 +103,4 @@ func trySend(ch chan int, val int) bool {
 
 ## Etiquetas
 
-#golang #concurrency #channels #performance #system-design
+golang #concurrency #channels #performance #system-design

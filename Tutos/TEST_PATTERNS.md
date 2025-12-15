@@ -112,4 +112,4 @@ func TestService(t *testing.T) {
 
 ## Tags
 
-#golang #testing #unit-testing #mocks #integration-testing
+golang #testing #unit-testing #mocks #integration-testing

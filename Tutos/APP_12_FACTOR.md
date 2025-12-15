@@ -205,4 +205,4 @@ f.Write([]byte("Request received"))
 
 ## Tags
 
-# 12-factor #architecture #devops #cloud-native #best-practices #golang
+12-factor #architecture #devops #cloud-native #best-practices #golang
