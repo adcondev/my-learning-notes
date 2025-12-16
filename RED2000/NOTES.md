@@ -673,6 +673,11 @@ GET  /api/v1/status      # Check printer status
 - A guide about 12-factor app was created. I wasn't familiar with the concept, but I found it interesting and I will try to apply it to my future work.
 - I did some study in Go language. I was learning about it in `study mode` in Gemini.
 
+- Today, i begun with a new feature, it is about integrating a more complete rendering paackage, it is called `fogleman/gg` for the Poster `emulator package`. I will try to make it work with the emulator. In theory, it is just a refactoring, just replaces the functionality with the homologous from `fogleman/gg`. If it gets complex very quick, i will switch to integrate the `table` and `graphics` engines to `emulator`. As i suspected, it is getting complex very quick.
+- I better started with the integration of `graphics` engine into the `emulator` package. I will add the barcode generation as image, i don't think it is needed for regular physical printing, but is a must for the emulator.
+- I was able to print some images into a physical ticket, but i need to do some tests to ensure it works as expected. Another thing solved in the way, was the correct usage of the Truetype font loaded. Now, when we increase the font size, the text is rendered correctly. Fallback character are no longer used.
+- I will create enough test for the chages realted to graphics and font usage. Tomorrow, i continue with the table engine integration.
+
 ---
 
 ## 🎯 **Current Focus Areas**
