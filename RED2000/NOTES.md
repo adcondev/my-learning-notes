@@ -673,10 +673,14 @@ GET  /api/v1/status      # Check printer status
 - A guide about 12-factor app was created. I wasn't familiar with the concept, but I found it interesting and I will try to apply it to my future work.
 - I did some study in Go language. I was learning about it in `study mode` in Gemini.
 
-- Today, i begun with a new feature, it is about integrating a more complete rendering paackage, it is called `fogleman/gg` for the Poster `emulator package`. I will try to make it work with the emulator. In theory, it is just a refactoring, just replaces the functionality with the homologous from `fogleman/gg`. If it gets complex very quick, i will switch to integrate the `table` and `graphics` engines to `emulator`. As i suspected, it is getting complex very quick.
+- Today, i begun with a new feature, it is about integrating a more complete rendering paackage, it is called `fogleman/gg` for the Poster `emulator package`. I will try to make it work with the emulator. In theory, it is just a refactoring, just replaces the functionality with the homologous from `fogleman/gg`. If it gets complex very quick, i will switch to integrate the `table` and `graphics` engines to `emulator`. As i suspected, it is getting complex very quick. `fogleman/gg` have few but heavy limitations, due to this it is discarded.
 - I better started with the integration of `graphics` engine into the `emulator` package. I will add the barcode generation as image, i don't think it is needed for regular physical printing, but is a must for the emulator.
 - I was able to print some images into a physical ticket, but i need to do some tests to ensure it works as expected. Another thing solved in the way, was the correct usage of the Truetype font loaded. Now, when we increase the font size, the text is rendered correctly. Fallback character are no longer used.
 - I will create enough test for the chages realted to graphics and font usage. Tomorrow, i continue with the table engine integration.
+
+- Today, I hard tested the emulator with the new graphics engine. I tested emulator image methods, the rendering of image, the processing helper functions and added. Also, I did minimal refactor related to text rendering due to changes of yesterday.
+- I merged the changes into the `adcondev/poster` repository. Plus, i adequated some documentation in `doc.go` files and overall `README.md`.
+- I planned one more modification for `tables` packages. It consists on generalizing for 38 characters per line, instead of 48. It won't affect emulator since it works with the same amount of characters per line.
 
 ---
 

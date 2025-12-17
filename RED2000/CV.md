@@ -1,13 +1,16 @@
 # Adrián Constante
 
+Backend Developer | DevOps | CloudOps | Data Engineer
+
 ## Contact
 
 - Email: <ad_con.reload@proton.me>
 - LinkedIn: <https://linkedin.com/in/adrian-constant>
 - GitHub: <https://github.com/adcondev>
-- LeetCode: <https://leetcode.com/adcondev>
 
 ## Professional Summary
+
+DevOps Engineer & Go Developer with a strong foundation in Biomedical Engineering and Computer Science. Expert in architecting high-concurrency backend systems and distributed cloud infrastructure, with a specialized focus on Hardware Abstraction Layers and IoT Integration. Proven track record of engineering production-ready libraries (e.g., "Poster") that decouple complex hardware protocols from business logic, significantly reducing integration latency. Experienced in designing robust CI/CD pipelines, automating cross-platform testing, and managing self-hosted PaaS environments using Docker and Traefik. Adept at bridging the gap between low-level hardware constraints and high-level cloud architectures, delivering scalable solutions for industries ranging from retail POS systems to scientific research at CERN. Passionate about Open Source, Clean Architecture, and Test-Driven Development.
 
 ## Technologies and Tools
 
@@ -16,6 +19,14 @@
 ## Education
 
 ## Major Projects
+
+### Poster: Enterprise Thermal Printing Engine & Driver SDK (2025)
+
+- **System Architecture:** Architected a modular **Go (1.24+)** library utilizing **Interface-Driven Design** and **Facade Patterns** to decouple business logic from hardware protocols. Designed a versioned **JSON Schema** middleware that validates and transforms structured data into binary ESC/POS commands, reducing client integration time by **[Pending: XX%]**.
+- **Low-Level Engineering:** Engineered a custom **Windows Print Spooler** integration using `syscall` and `unsafe` to manage kernel-level print jobs. Implemented a "Force Flush" algorithm that bypasses standard spooler buffering, reducing print-start latency by **[Pending: XX%]** compared to legacy drivers.
+- **Algorithm Design:** Developed a dependency-free **Graphics Engine** implementing **Atkinson Dithering** and **Bilinear Interpolation** to optimize image rendering for 1-bit thermal heads. Created a **Dynamic Table Engine** for algorithmic text wrapping and alignment, eliminating the need for manual pixel counting in receipt layouts.
+- **DevOps & Security:** Established a **Tier-1 CI/CD Pipeline** using **GitHub Actions**, automating **Semantic Versioning**, **Trivy** vulnerability scanning, and multi-OS testing. Achieved **[Pending: XX%]** code coverage (verified via Codecov) and automated dependency updates using **Dependabot**.
+- **Tooling & Emulation:** Designed a **Visual Emulator** that renders print jobs as PNGs, enabling a **Test-Driven Development (TDD)** approach for hardware integrations. This simulation layer allowed for **[Pending: XX%]** faster feature validation without requiring physical devices.
 
 ### Local n8n Automation Infrastructure (2025)
 
