@@ -682,6 +682,12 @@ GET  /api/v1/status      # Check printer status
 - I merged the changes into the `adcondev/poster` repository. Plus, i adequated some documentation in `doc.go` files and overall `README.md`.
 - I planned one more modification for `tables` packages. It consists on generalizing for 38 characters per line, instead of 48. It won't affect emulator since it works with the same amount of characters per line.
 
+- The current `tables` codebase lacks enforcement of paper width limits, allowing malformed JSON definitions to produce corrupted printer output. Currently, the library allows users to define tables with column widths that exceed the physical paper width, causing corrupted output on thermal printers. I added a validation gate that calculates the hardware limit based on paper size and font, then rejects any table definition that exceeds it before rendering.
+- For now, it stops the table rendering process and returns an error.
+- I did heavy testing of the changes and everything works as expected in a 58mm printer.
+- I worked on a method to autoreduce the table columns to fit the paper width. It is `reduceFromLongest`, it is a helper function that reduces the columns widths depending on the longest column. I will merge the changes into the `adcondev/poster` repository.
+- Pending refactoring will be needed for the `tables` package. It will be needed to handler the autoreduction of columns widths.
+
 ---
 
 ## 🎯 **Current Focus Areas**
