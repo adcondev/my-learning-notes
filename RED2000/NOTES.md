@@ -688,6 +688,11 @@ GET  /api/v1/status      # Check printer status
 - I worked on a method to autoreduce the table columns to fit the paper width. It is `reduceFromLongest`, it is a helper function that reduces the columns widths depending on the longest column. I will merge the changes into the `adcondev/poster` repository.
 - Pending refactoring will be needed for the `tables` package. It will be needed to handler the autoreduction of columns widths.
 
+- Started the day with a refactoring the `executor` handler for `table` command. Main function has became very complex and it is not easy to test. I will try to break it down into smaller functions.
+- I updated tests and documentation of the recent changes to the table handler and autoreduction of columns widths. Same for the `builder` package, now it generates JSON table commands with autoreduce option.
+- I opened a PR for the `adcondev/poster` repository. As soon i merge the changes to master i will start a (better) proper planning to integrate the `table` package to the `emulator` one. They were successfully merged.
+- I will do some improvements in the entire `.github/workflows` folder. I will try to improve clarity and organization of the workflows.
+
 ---
 
 ## 🎯 **Current Focus Areas**
