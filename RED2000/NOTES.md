@@ -693,6 +693,12 @@ GET  /api/v1/status      # Check printer status
 - I opened a PR for the `adcondev/poster` repository. As soon i merge the changes to master i will start a (better) proper planning to integrate the `table` package to the `emulator` one. They were successfully merged.
 - I will do some improvements in the entire `.github/workflows` folder. I will try to improve clarity and organization of the workflows.
 
+## 🗓️ **WEEK 25: TBD**
+
+**Period:** December 22 - December 26, 2025
+
+- I worked in personal documentation of my work so far in RED2000 as year ends.
+
 ---
 
 ## 🎯 **Current Focus Areas**
