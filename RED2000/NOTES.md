@@ -705,6 +705,7 @@ GET  /api/v1/status      # Check printer status
 - Configuration and setupt for `codecov` was done. It will help to measure the code coverage of the project.
 - Very heavy improvements in the section of the codebase related to CI/CD, Github Templates and Documentation. Any file related to DX (Developer Experience) was improved.
 - Heavy renaming across the codebase since old name `pos-printer` was not so good. `poster` is now the official name and it has consistency across the codebase.
+- I need to setup some agents to schedule mini-improvements of the codebase across refactoring, performance and security.
 
 ---
 
