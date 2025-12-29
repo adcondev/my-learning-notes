@@ -695,7 +695,7 @@ GET  /api/v1/status      # Check printer status
 
 ## 🗓️ **WEEK 25: TBD**
 
-**Period:** December 22 - December 26, 2025
+**Period:** December 22 - December 24, 2025
 
 - I worked in personal documentation of my work so far in RED2000 as year ends.
 
@@ -705,7 +705,15 @@ GET  /api/v1/status      # Check printer status
 - Configuration and setupt for `codecov` was done. It will help to measure the code coverage of the project.
 - Very heavy improvements in the section of the codebase related to CI/CD, Github Templates and Documentation. Any file related to DX (Developer Experience) was improved.
 - Heavy renaming across the codebase since old name `pos-printer` was not so good. `poster` is now the official name and it has consistency across the codebase.
+
 - I need to setup some agents to schedule mini-improvements of the codebase across refactoring, performance and security.
+
+## 🗓️ **WEEK 26: TBD**
+
+**Period:** December 29 - January 2, 2026
+
+- Back to work after holidays.
+- I am continuing the fix of the CI and Release.
 
 ---
 
