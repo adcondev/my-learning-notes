@@ -715,6 +715,8 @@ GET  /api/v1/status      # Check printer status
 - Back to work after holidays.
 - I am continuing the fix of the CI and Release.
 
+- Keep the refactoring of the codebase.
+
 ---
 
 ## 🎯 **Current Focus Areas**
