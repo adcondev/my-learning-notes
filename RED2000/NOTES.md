@@ -717,6 +717,8 @@ GET  /api/v1/status      # Check printer status
 
 - Keep the refactoring of the codebase.
 
+- Small fixes in Release workflow.
+
 ---
 
 ## 🎯 **Current Focus Areas**
