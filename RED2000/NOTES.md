@@ -710,7 +710,7 @@ GET  /api/v1/status      # Check printer status
 
 ## 🗓️ **WEEK 26: TBD**
 
-**Period:** December 29 - January 2, 2026
+**Period:** December 29 - December 31
 
 - Back to work after holidays.
 - I am continuing the fix of the CI and Release.
@@ -718,6 +718,12 @@ GET  /api/v1/status      # Check printer status
 - Keep the refactoring of the codebase.
 
 - Small fixes in Release workflow.
+
+## 🗓️ **WEEK 27: TBD**
+
+**Period:** January 5 - January 9, 2026
+
+- Back in business. Today was a day for urgencies. The scale daemon was tested in a semi-production environment. It was tested in the store of a client and in the office, several connection to thw websocket were established. Minimal mistakes were done (around configuration and typos), the main one was about the browser used (Brave). I did a quick fix for the issue, and documented the nitpicks and blindspots. For now, a live logs feature will be added tomorrow.
 
 ---
 
