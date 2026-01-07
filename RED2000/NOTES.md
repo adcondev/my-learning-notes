@@ -728,6 +728,18 @@ GET  /api/v1/status      # Check printer status
 - I will continue the work around the scale daemon related to the installer and live logging.
 - I designed several plans for feture implementation related to: live logging with multiple options, serial port scan and diagnosis, and TUI UI/UX Installer improvements.
 
+- I finally integrated the log menu into the installer. It is a simple menu that allows the user to select the log level and the log format.
+- The thing is i have a bug where i can display for a moment the 100 last logs in live, but suddenly they disappear and show an error in the connection. For the rest of options, it works as expected. It opens the log file correctly, it flushes them and log detail toggling works fine.
+- I have an idea(it happened while testing) since the first message the service sends for a first connection is a configuration, which the TUI tries to read as a log. Then, `Error leyendo respuesta` and `Error enviando solicitud` are showing.
+- More details with the TUI:
+  - `Tamaño` for the log file in only showing 0 B.
+  - In log menu, `Abriendo archivo de logs...` is showing always.
+  - I will try to initiate the Test version without test data.
+  - I need to distinguish between `local` and `remote` instead of `prod` and `dev`.
+  - I need do the manual flush through the TUI, without the websocket.
+  - `Ver Estado` should be like a heartbeat, it needs to be more detailed.
+- Further debugging is needed to find the root cause of the issue.
+
 ---
 
 ## 🎯 **Current Focus Areas**
