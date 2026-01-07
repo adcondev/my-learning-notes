@@ -725,6 +725,9 @@ GET  /api/v1/status      # Check printer status
 
 - Back in business. Today was a day for urgencies. The scale daemon was tested in a semi-production environment. It was tested in the store of a client and in the office, several connection to thw websocket were established. Minimal mistakes were done (around configuration and typos), the main one was about the browser used (Brave). I did a quick fix for the issue, and documented the nitpicks and blindspots. For now, a live logs feature will be added tomorrow.
 
+- I will continue the work around the scale daemon related to the installer and live logging.
+- I designed several plans for feture implementation related to: live logging with multiple options, serial port scan and diagnosis, and TUI UI/UX Installer improvements.
+
 ---
 
 ## 🎯 **Current Focus Areas**
