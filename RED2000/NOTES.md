@@ -740,6 +740,12 @@ GET  /api/v1/status      # Check printer status
   - `Ver Estado` should be like a heartbeat, it needs to be more detailed.
 - Further debugging is needed to find the root cause of the issue.
 
+- For now i will pause the modifications for the `scale-daemon` logging and TUI. MVP is done and woking so, no need for urgency.
+- Being more important, i will work in the fist main `poster` usage, which corresponds to `ticket-daemon`. This new repo is the first production usage of `poster`. A daemon that waits for printing jobs and sends them to the printer, working in pair with the scale daemon.
+- I have the planning ready, this work is based on `poster v4.3.0`, `printer-daemon v1.0.0` and `scale-daemon v1.1.0`.
+- I expect a functional MVP by tomorrow. both daemons are about to be deployed in "La Morena" store.
+- The implementation is around 75% done.
+
 ---
 
 ## 🎯 **Current Focus Areas**
