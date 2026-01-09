@@ -746,6 +746,8 @@ GET  /api/v1/status      # Check printer status
 - I expect a functional MVP by tomorrow. both daemons are about to be deployed in "La Morena" store.
 - The implementation is around 75% done.
 
+- I finished the first version of ticket-daemon. It is a daemon that waits for printing jobs and sends them to the printer, working in pair with the scale daemon.
+
 ---
 
 ## 🎯 **Current Focus Areas**
