@@ -748,6 +748,8 @@ GET  /api/v1/status      # Check printer status
 
 - I finished the first version of ticket-daemon. It is a daemon that waits for printing jobs and sends them to the printer, working in pair with the scale daemon.
 - I did development for the `Taskfile.yml` to improve Developer Experience. I prepared a fitting `README.md` file.
+- The dashboard of ticket-daemon is a complete monitoring tool were test are easy to do and results are easy to read. It is ready to be merged.
+- Minimal translation and comments will be added to the HTML interface. Comments will help any frontend dev to implement the UI/UX and how to work with responses and how to send the JSON ticket.
 
 ## 🗓️ **WEEK 28: TBD**
 
@@ -755,9 +757,11 @@ GET  /api/v1/status      # Check printer status
 
 - I will check some ideas i had, the main one is about the changes needed for the service to run in MAC too. From my perspective, those changes are not that needed, i would prefer to improve usability, installation and standarization between daemons that are already working.
 - For today i will wait for specific orders to do the changes. Meanwhile, i will improve the testing interfaces as HTMLs and embedd them into the services.
-- I did a lot of improvements for the HTML testing interface of `ticket-daemon`. now, it is a complete monitoring tool were test are easy to do and results are easy to read. This needed a better logging and more explicit RESULT and ERROR messages in the backend.
+
+- I did a lot of improvements for the HTML testing interface of `ticket-daemon`. Now, it is a complete monitoring tool were test are easy to do and results are easy to read. This needed a better logging and more explicit RESULT and ERROR messages in the backend.
 - For now, TUI installer is pending. At least a very minimal one will be done.
 - I will discuss the MAC development considerations or if i should just continue with the windows version and do the test myself in the main POS system.
+- I have to think about a setup to make the entire building, testing and deployment process in MAC. Since in Red2000 we use a lot of MAC and Windows, i need to make sure the process is as simple as possible.
 
 ---
 
