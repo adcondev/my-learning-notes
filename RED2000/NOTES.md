@@ -763,6 +763,10 @@ GET  /api/v1/status      # Check printer status
 - I will discuss the MAC development considerations or if i should just continue with the windows version and do the test myself in the main POS system.
 - I have to think about a setup to make the entire building, testing and deployment process in MAC. Since in Red2000 we use a lot of MAC and Windows, i need to make sure the process is as simple as possible.
 
+- I have created abinary anyone with windows can run without installing go. This with help with testing and deployment. I will wait for comments, issues and changes.
+- I will continue with the TUI installer.
+- A good idea for personal usage would be a Poster format generator. It could be a nice GOAT simple stack project. It would help me a lot to test the `builder package`.
+
 ---
 
 ## 🎯 **Current Focus Areas**
