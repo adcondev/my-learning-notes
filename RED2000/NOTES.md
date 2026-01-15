@@ -767,6 +767,11 @@ GET  /api/v1/status      # Check printer status
 - I will continue with the TUI installer.
 - A good idea for personal usage would be a Poster format generator. It could be a nice GOAT simple stack project. It would help me a lot to test the `builder package`.
 
+- I started the day creating documentation around the API of the `ticket-daemon`, now it's clear about the responses and the expected data.
+- For now, i will implement a printer discovery feature in the `ticket-daemon`. It will allow the user to select the printer from a list of available printers witout knowing them a priori. the only condition is they have to be installed to be recognized. I need to think about how to discriminate between regular ones and thermal printers.
+- Last feature will be included in `poster v.4.4.0` and it will lead to a new version of `ticket-daemon v1.1.0`.
+- Actually, this is a good demonstration on how modular `poster` is since only `package connection` will be neede to solve this issue.
+
 ---
 
 ## 🎯 **Current Focus Areas**
