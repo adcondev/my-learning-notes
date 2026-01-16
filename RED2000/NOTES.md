@@ -772,6 +772,11 @@ GET  /api/v1/status      # Check printer status
 - Last feature will be included in `poster v.4.4.0` and it will lead to a new version of `ticket-daemon v1.1.0`.
 - Actually, this is a good demonstration on how modular `poster` is since only `package connection` will be neede to solve this issue.
 
+- I will continue with the printer discovery feature in the `ticket-daemon`.
+- The changes in the backend were done. They were about implementing the printer discovery feature with the low level Windows API. It receives a new type of message `get_printers`, then it returns the list of installed printers.
+- I modifed the dashboard to include a new section for printer discovery. Then i updated the documentation to include the new feature.
+- I released `ticket-daemon v1.1.0` and `poster v4.4.0`. they are now in the Google Drive folder and in the repo.
+
 ---
 
 ## 🎯 **Current Focus Areas**
