@@ -777,6 +777,14 @@ GET  /api/v1/status      # Check printer status
 - I modifed the dashboard to include a new section for printer discovery. Then i updated the documentation to include the new feature.
 - I released `ticket-daemon v1.1.0` and `poster v4.4.0`. they are now in the Google Drive folder and in the repo.
 
+## 🗓️ **WEEK 29: TBD**
+
+**Period:** January 19 - January 23, 2026
+
+- Today's changes addressed the broken automatic release pipeline by restoring critical functionality that was lost during the workflow "improvements." These changes essentially roll back the problematic "improvements" while keeping the cosmetic enhancements like emojis and better formatting.
+- Today I tackled a bunch of Go linter warnings across my poster project - mostly staticcheck nil pointer dereference issues in tests, prealloc suggestions for byte slices, and gosec warnings for unsafe.
+- I also integrated the new printer discovery functionality into the CLI, adding `--list`, `--list-thermal`, and `--list-physical` flags, updated the `README.md` to reflect these changes.
+
 ---
 
 ## 🎯 **Current Focus Areas**
