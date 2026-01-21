@@ -785,6 +785,12 @@ GET  /api/v1/status      # Check printer status
 - Today I tackled a bunch of Go linter warnings across my poster project - mostly staticcheck nil pointer dereference issues in tests, prealloc suggestions for byte slices, and gosec warnings for unsafe.
 - I also integrated the new printer discovery functionality into the CLI, adding `--list`, `--list-thermal`, and `--list-physical` flags, updated the `README.md` to reflect these changes.
 
+- In continued with the fix of the release pipeline. It found a way to fix it manuelly but more in-depth analysis is needed to fully restore the automatic release pipeline.
+- I did a review and viability of the scenarios of different type of connections for `poster`. For now network should be fine if printer is installed and configured to work with it.
+
+- I am still fixing the release pipeline. I am implementing old workflow to restore the automatic release pipeline. I am also very interested in developing a Github App that works as a bot todo many things in `poster` repo.
+- In theory, it is fixed but i am missing a permission in Github. I just can't find it, i will brute force into any option.
+
 ---
 
 ## 🎯 **Current Focus Areas**
