@@ -791,6 +791,13 @@ GET  /api/v1/status      # Check printer status
 - I am still fixing the release pipeline. I am implementing old workflow to restore the automatic release pipeline. I am also very interested in developing a Github App that works as a bot todo many things in `poster` repo.
 - In theory, it is fixed but i am missing a permission in Github. I just can't find it, i will brute force into any option.
 
+- Improved documentation across all `poster` packages. Dedicate a section for the CI/CD pipeline in `CONTRIBUTING.md`.
+- I cleared some doubts for my companions about the tables in `poster`. The minimal problems were solved.
+- There is a bug inside the QR autosizing logic. It is not critical but it is annoying. When printing as native QR in different pixel size, it prints the same QR and size. In QR printing as image, i am still not sure if it's bugged or not but, it prints the same QR but scaled. I will investigate more. The logic goes like this:
+  1. We calculate the QR grid size based on the content and the correction level asked. Then we define a module size. Minimal (21+4)x(21+4) at 3 module size + 4 modules x 3 module size because of the quiet zone. Min = 87px.
+  2. Once we have the grid size and pixel size, we have to aproximate the module size such grid_size * module_size <= pixel_size. So if the original QR is 21x21 in grid size and the pixel size is 87px, the module size is 3. So the final QR is 63x63. Another scenario is we have as result this exact same QR but we need it to be 174x174px, as image it should be no problem, it just scales, the problem i see is that if you have a original QR 256x256px because high EC Level plus long string, you should not be able to reduce it, and it does it if you as for a smaller size, thus the QR loses legibility.
+  3. About the native, we do the same process calculating module size based on grid and size, resulting in scaling done by the module size, which is not hapening since 300px or 100px QRs are identical.
+
 ---
 
 ## 🎯 **Current Focus Areas**
