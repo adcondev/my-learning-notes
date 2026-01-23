@@ -798,6 +798,11 @@ GET  /api/v1/status      # Check printer status
   2. Once we have the grid size and pixel size, we have to aproximate the module size such grid_size * module_size <= pixel_size. So if the original QR is 21x21 in grid size and the pixel size is 87px, the module size is 3. So the final QR is 63x63. Another scenario is we have as result this exact same QR but we need it to be 174x174px, as image it should be no problem, it just scales, the problem i see is that if you have a original QR 256x256px because high EC Level plus long string, you should not be able to reduce it, and it does it if you as for a smaller size, thus the QR loses legibility.
   3. About the native, we do the same process calculating module size based on grid and size, resulting in scaling done by the module size, which is not hapening since 300px or 100px QRs are identical.
 
+- I will continue with the QR autosizing logic. I will try to find a way to fix it. It looks partially fix i have some annotations to continue it later:
+  - Native Printing: It have a clear issue with the EC Level since the same string with different EC Level gives the same result. Also, it looks like it really tries to resize through grid size, but module size stills the same leading to a resize that is only visible in larger px step sizes.
+  - Image Printing: Looks fine, doesn't look it downscale minimal QR sizes. It just scales up. The only problem i see right now is it should respect the maximum dots per line value depending on paper width.
+- I will continue with the test of network printing. Theorically, is should be as simple as the regular USB printing. I will document my process and results. I set up a printer in the local network and printing was successful. I will retake QR fix.
+
 ---
 
 ## 🎯 **Current Focus Areas**
