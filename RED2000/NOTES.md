@@ -803,6 +803,18 @@ GET  /api/v1/status      # Check printer status
   - Image Printing: Looks fine, doesn't look it downscale minimal QR sizes. It just scales up. The only problem i see right now is it should respect the maximum dots per line value depending on paper width.
 - I will continue with the test of network printing. Theorically, is should be as simple as the regular USB printing. I will document my process and results. I set up a printer in the local network and printing was successful. I will retake QR fix.
 
+## 🗓️ **WEEK 30: TBD**
+
+**Period:** January 26 - January 30, 2026
+
+- I continued with the QR autosizing logic.
+  - Image Printing: Looks that it respects the maximum dots per line value depending on paper width. It looks like the most stable version so far. It identifies if the minimum QR size based on data, EC Level and grid size if greater than the requested pixel size, it will bypass it and not force the scaling, so readability is preserved. Module size is not a problem here since if we use 3 always, it is enough to scale the minimum QR size to the requested pixel size.
+  - Native Printing: EC Level is respected, but module size adjusment to fit pixel width request is not working. Here module size is the only way to scale the QR, but not sure if it is working since, for me, it looks that if you request 100px QR, it will try to be at least 100px, so if module size = 3 brings you to 99px, it will jump to 4 and result in 101px (just an example). I think it should take the 3 module size and printed pixel size should be 99px. Being bigger could break the QR since it could exceed the maximum dots per line value depending on paper width.
+  - What i see is like i can't end up with the same QR in exact same configurations between both modes. Native is bigger (i guess because of the quiet zone too) and module size is not being adjusted correctly, it looks it uses 4 as minimum module size.
+  - While ESPCOS can use module size 1 or 2, is not recommended since it can break the QR. So using 3 as minimum module or default is a good idea. Which i expect to be respected by both modes.
+  - Also, i am not sure if module size 3 in image mode is really 3, if we consider quiet zone and scale to expected pixel size, it should be smaller than native mode but also module size look like between 2 and 3.
+- I still have to find a way to fix the QR autosizing logic. I will continue with it later, tomorrow i will create a single TUI for both daemons, scale and ticket printing.
+
 ---
 
 ## 🎯 **Current Focus Areas**
