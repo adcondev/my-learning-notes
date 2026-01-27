@@ -815,6 +815,8 @@ GET  /api/v1/status      # Check printer status
   - Also, i am not sure if module size 3 in image mode is really 3, if we consider quiet zone and scale to expected pixel size, it should be smaller than native mode but also module size look like between 2 and 3.
 - I still have to find a way to fix the QR autosizing logic. I will continue with it later, tomorrow i will create a single TUI for both daemons, scale and ticket printing.
 
+- I will plan and review the features and changes needed to merge both daemons into a single TUI Installer. For now ticket-daemon is my standard for structure and build logic. I have to do several changes into scale-daemon to make it compatible with the planned TUI. I will continue with it tomorrow.
+
 ---
 
 ## 🎯 **Current Focus Areas**
