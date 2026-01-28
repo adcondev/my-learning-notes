@@ -817,6 +817,14 @@ GET  /api/v1/status      # Check printer status
 
 - I will plan and review the features and changes needed to merge both daemons into a single TUI Installer. For now ticket-daemon is my standard for structure and build logic. I have to do several changes into scale-daemon to make it compatible with the planned TUI. I will continue with it tomorrow.
 
+- I will continue with the TUI Installer. I will try to make it as user-friendly as possible for both services.
+- I did a showcase for both services to the team, at least they have really solid services to test.
+- Some notes around QR behavior through `poster` library:
+  - About QR size: Minimum original QR pixel size is not the same as the final QR pixel size. Original size could be bigger, depending on EC Level and data length.
+  - QR Generation in printers: Some printers just can't changes module size, which works but if more control is needed, image mode is the way to go.
+- Add security layer in ticket-daemon to prevent unauthorized access. At least a simple login with username and password. Add a configuration file for the daemon, so it has a password for dashboard and a password for JSON API.
+- Structured `scale-daemon` so it can be similar and adequate to final TUI installer.
+
 ---
 
 ## 🎯 **Current Focus Areas**
