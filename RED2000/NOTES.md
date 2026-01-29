@@ -825,6 +825,10 @@ GET  /api/v1/status      # Check printer status
 - Add security layer in ticket-daemon to prevent unauthorized access. At least a simple login with username and password. Add a configuration file for the daemon, so it has a password for dashboard and a password for JSON API.
 - Structured `scale-daemon` so it can be similar and adequate to final TUI installer.
 
+- I continued the refactoring of the scale-daemon to make it compatible with the planned TUI installer. It has a more robust but less complicated `Taskfile.yml`. It generate service, installer and console files. It has now  abtter and easier build process with `ldflags` injection.
+- I will continue with a heavy refactoring of the `main.go` file to make it more maintainable and easier to understand.
+- Tomorrow i will finish the last details of `scale-daemon` and i will start with the TUI installer.
+
 ---
 
 ## 🎯 **Current Focus Areas**
