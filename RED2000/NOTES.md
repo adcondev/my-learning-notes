@@ -829,6 +829,11 @@ GET  /api/v1/status      # Check printer status
 - I will continue with a heavy refactoring of the `main.go` file to make it more maintainable and easier to understand.
 - Tomorrow i will finish the last details of `scale-daemon` and i will start with the TUI installer.
 
+- Both daemons are ready to be integrated into a single TUI Installer. They have a very similar look-like and structure. `scale-daemon` is polished and its dashboard is very complete.
+- I created a merged `Taskfile.yml` for the `poster-tuis` repo, its responsibility is to generate the installer and console files for both daemons, plus service management for remote daemons.
+- I uploaded the console version of the services. I won't finish the finall TUI installer, but i will left them installed as daemons.
+- Documentation is still missing for the `scale-daemon`, i need to clarify the API and JSON schema to the team.
+
 ---
 
 ## 🎯 **Current Focus Areas**
