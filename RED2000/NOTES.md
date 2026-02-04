@@ -842,6 +842,10 @@ GET  /api/v1/status      # Check printer status
 - I checked a printer that was not working properly with the main POS, it was printing scaled up ticket. Learned about CUPS on MacOS and how to fix it. The printer issues were only around driver configuration and not about the daemon itself.
 - I will continue with the TUI Installer, i will try to make it as user-friendly as possible for both services.
 
+- I will plan the ultimate TUI installer, it will be simplier than the previous one, and it will be more user-friendly. It will be a single file, and it will be able to install both services on both modes, so it will embed at least 4 binary files, plus the TUI itself.
+- I did needed refactoring and minor changes to make `scale-daemon` compatible with the TUI installer.
+- I will setup core linters for both daemons and TUI installer. I will continue with it tomorrow.
+
 ---
 
 ## 🎯 **Current Focus Areas**
