@@ -834,6 +834,14 @@ GET  /api/v1/status      # Check printer status
 - I uploaded the console version of the services. I won't finish the finall TUI installer, but i will left them installed as daemons.
 - Documentation is still missing for the `scale-daemon`, i need to clarify the API and JSON schema to the team.
 
+## 🗓️ **WEEK 31: TBD**
+
+**Period:** February 2 - February 6, 2026
+
+- Today i checked minimal things on dashboard of scale-daemon, and i found a few things to fix.
+- I checked a printer that was not working properly with the main POS, it was printing scaled up ticket. Learned about CUPS on MacOS and how to fix it. The printer issues were only around driver configuration and not about the daemon itself.
+- I will continue with the TUI Installer, i will try to make it as user-friendly as possible for both services.
+
 ---
 
 ## 🎯 **Current Focus Areas**
