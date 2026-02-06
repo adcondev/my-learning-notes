@@ -849,6 +849,15 @@ GET  /api/v1/status      # Check printer status
 - First, i am generating an executive plan for the TUI installer, then i will start with the implementation.
 - The first version of the TUI installer is ready, it is a single file, and it is able to install both services on both modes. proper testing is still needed.
 
+- Noticed a bug during testing where the services don't stop properly after being selected to uninstall. This causes a error screen in TUI, for the TUI it looks stopped and unistalled, but in Windows Task Manager it shows as running, but like "crashed" or "stopping".
+- Several fixes and improvements were made to the TUI and the services. The uninstall process was fixed and the services are now properly stopped. Also, the TUI looks much better now.
+- TUI Comments and Observations:
+  - TUI could not open the folder with the logs, same for the log file in `C:\ProgramData\R2k_TicketServicio_Local\R2k_TicketServicio_Local.log`
+  - Install, uninstall, stop, boot, reboot was fine for local and remote ticket service. Only logs were not opening.
+  - I am considering check if scale service has a proper graceful shutdown process since there is no problem with ticket service. There is something wrong with scale service.
+  - For local and remote scale service, it installs correctly, but it has problems with stopping, it just hangs, even force stop from TUI doesn't work on it. In cas of uninstall, it mentions it will be uninstalled once stopped, which happens but it only can be done through task manager.
+- I will left pending the standarization of ldflags and naming for the daemons.
+
 ---
 
 ## 🎯 **Current Focus Areas**
