@@ -846,6 +846,9 @@ GET  /api/v1/status      # Check printer status
 - I did needed refactoring and minor changes to make `scale-daemon` compatible with the TUI installer.
 - I will setup core linters for both daemons and TUI installer. I will continue with it tomorrow.
 
+- First, i am generating an executive plan for the TUI installer, then i will start with the implementation.
+- The first version of the TUI installer is ready, it is a single file, and it is able to install both services on both modes. proper testing is still needed.
+
 ---
 
 ## 🎯 **Current Focus Areas**
