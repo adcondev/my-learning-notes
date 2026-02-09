@@ -858,6 +858,8 @@ GET  /api/v1/status      # Check printer status
   - For local and remote scale service, it installs correctly, but it has problems with stopping, it just hangs, even force stop from TUI doesn't work on it. In cas of uninstall, it mentions it will be uninstalled once stopped, which happens but it only can be done through task manager.
 - I will left pending the standarization of ldflags and naming for the daemons.
 
+- Not too many changes today, electricity went out for 6 hours. I will continue with the TUI installer fixes tomorrow.
+
 ---
 
 ## 🎯 **Current Focus Areas**
