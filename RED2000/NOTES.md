@@ -858,7 +858,15 @@ GET  /api/v1/status      # Check printer status
   - For local and remote scale service, it installs correctly, but it has problems with stopping, it just hangs, even force stop from TUI doesn't work on it. In cas of uninstall, it mentions it will be uninstalled once stopped, which happens but it only can be done through task manager.
 - I will left pending the standarization of ldflags and naming for the daemons.
 
+## 🗓️ **WEEK 32: TBD**
+
+**Period:** February 9 - February 13, 2026
+
 - Not too many changes today, electricity went out for 6 hours. I will continue with the TUI installer fixes tomorrow.
+
+- The installer has the proper fixes around the naming, ldflags, service management and logs. I have a stable version of the installer, but it still needs some improvements around UI and UX.
+- I am working simultaneously on 3 repos: `poster-tuis`, `ticket-daemon` and `scale-daemon`. As i develope features i create the same branch name on the other repos to keep them in sync.
+- I have still pending a fix around the scale disconnection, it has to send a message `E01` to the main POS when it disconnects.
 
 ---
 
