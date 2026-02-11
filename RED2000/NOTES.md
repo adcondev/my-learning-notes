@@ -857,6 +857,7 @@ GET  /api/v1/status      # Check printer status
   - I am considering check if scale service has a proper graceful shutdown process since there is no problem with ticket service. There is something wrong with scale service.
   - For local and remote scale service, it installs correctly, but it has problems with stopping, it just hangs, even force stop from TUI doesn't work on it. In cas of uninstall, it mentions it will be uninstalled once stopped, which happens but it only can be done through task manager.
 - I will left pending the standarization of ldflags and naming for the daemons.
+- I leveraged on Google Jules AI agent to look for minimal improvements in `poster`, `ticket-daemon`, `poster-tuis` and `scale-daemon`. I will implement the changes tomorrow.
 
 ## 🗓️ **WEEK 32: TBD**
 
@@ -867,6 +868,10 @@ GET  /api/v1/status      # Check printer status
 - The installer has the proper fixes around the naming, ldflags, service management and logs. I have a stable version of the installer, but it still needs some improvements around UI and UX.
 - I am working simultaneously on 3 repos: `poster-tuis`, `ticket-daemon` and `scale-daemon`. As i develope features i create the same branch name on the other repos to keep them in sync.
 - I have still pending a fix around the scale disconnection, it has to send a message `E01` to the main POS when it disconnects.
+
+- I have done the changes on TUI Installer, both services are properly installed and uninstalled, and the service management is working as expected.
+- I have also fixed the scale disconnection issue, it now sends a message `ERR_SCALE_CONN` and others to the main POS when it disconnects.
+- I updated a lot of documentation related to the `scale-daemon` around the error codes and messages and an API documentation.
 
 ---
 
