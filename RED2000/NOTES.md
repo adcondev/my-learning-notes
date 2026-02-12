@@ -873,6 +873,10 @@ GET  /api/v1/status      # Check printer status
 - I have also fixed the scale disconnection issue, it now sends a message `ERR_SCALE_CONN` and others to the main POS when it disconnects.
 - I updated a lot of documentation related to the `scale-daemon` around the error codes and messages and an API documentation.
 
+- I continued with many more small improvements on the daemons and the TUI installer. I will continue with it tomorrow.
+- I fixed a dashboard issue related to connection error in `scale-daemon`.
+- Tomorrow i will setup a login and token system for the dashboard of both daemons.
+
 ---
 
 ## 🎯 **Current Focus Areas**
