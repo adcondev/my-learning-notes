@@ -877,7 +877,20 @@ GET  /api/v1/status      # Check printer status
 - I fixed a dashboard issue related to connection error in `scale-daemon`.
 - Tomorrow i will setup a login and token system for the dashboard of both daemons.
 
----
+- I worked on a auth system for `scale-daemon` firts, it implements an embedded hashed password for login and a token system for the configuration messages. It also implements a rate limiter for the last ones. A cookie is used to timeout the session. Dashboard is now server-side rendered and it is much more secure.
+- Auth system workflow:
+  1. User visits <http://host:8765/>
+  2. Server checks session cookie
+  - No cookie or expired? → Serve login.html
+  - Valid cookie? → Serve dashboard (index.html)
+  1. User submits password via POST /auth/login
+  2. Server compares bcrypt(password) against embedded hash
+  - Match? → Set HttpOnly cookie, redirect to /
+  - No match? → Return 401, increment fail counter
+  1. After 15 min, cookie expires → back to login
+- Testing is still pending.
+
+--
 
 ## 🎯 **Current Focus Areas**
 
