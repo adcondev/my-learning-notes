@@ -897,3 +897,5 @@ GET  /api/v1/status      # Check printer status
 - I did some improvements on the auth system of `scale-daemon`. I will do more testing to cross-check the system.
 - Now, i will extrapolate the auth system to `ticket-daemon`. I need the same login for dashboard access, establish the rate limiter for printing jobs and implement a token system for the print jobs. I expect to use very similar code to the one used in `scale-daemon`.
 - I will test both daemons and the TUI installer, and i will do the final touches on them.
+
+- I have an ultimate version of the TUI installer, it is a single file, and it is able to install both services on both modes, and it has a proper auth system for both daemons. I will continue with the testing and improvements.
