@@ -890,73 +890,10 @@ GET  /api/v1/status      # Check printer status
   1. After 15 min, cookie expires → back to login
 - Testing is still pending.
 
---
+## 🗓️ **WEEK 33: TBD**
 
-## 🎯 **Current Focus Areas**
+**Period:** February 16 - February 20, 2026
 
-### 🔬 Active Research & Development
-
-| Area                          | Tool/Technology       | Status                   |
-|-------------------------------|-----------------------|--------------------------|
-| 📄 JSON Ticket Representation | Parzibyte tools       | Investigating            |
-| 🔌 Communication Protocol     | WebSocket vs REST API | Feasibility analysis     |
-| 📟 Hardware Issues            | Codepage problems     | Firmware updates needed? |
-| 🐳 Deployment                 | Containerization      | Impact on connectors     |
-
-### 🛠️ Technical Debt Management
-
-**High Priority:**
-
-- Complete ESCPOS commands
-- Implement input validation
-- Reduce boilerplate code
-
-**Medium Priority:**
-
-- Documentation generation
-- Error handling improvements
-- Performance optimization
-
----
-
-## 📈 **Learning Trajectory**
-
-### 🧠 Skills Developed
-
-- **Go Programming**: From basics to advanced patterns
-- **Testing Mastery**: Multiple testing strategies and patterns
-- **Architecture Design**: Microservices & API design principles
-- **DevOps Practices**: CI/CD, automation, project management
-
-### 🏆 Key Achievements
-
-- ✅ Robust testing framework established
-- ✅ Clean architecture principles applied
-- ✅ Comprehensive documentation approach
-- ✅ Sustainable development practices
-
----
-
-## 🔮 **Future Roadmap**
-
-### 📋 Next Milestones
-
-1. **Complete ESCPOS Implementation**
-2. **ZPL Protocol Integration**
-3. **REST API Prototype**
-4. **Hardware Testing Phase**
-5. **Performance Benchmarking**
-
-### 🎯 Success Metrics
-
-- [ ] 100% Command Coverage
-- [ ] Sub-100ms Response Times
-- [ ] Zero Hardware Dependencies for Testing
-- [ ] Comprehensive Documentation
-- [ ] Production-Ready Prototype
-
----
-
-> 💡 **Project Mission**  
-> *"Building robust, testable, and maintainable POS printing solutions"*  
-> **— Adrián Constante, RED2000**
+- I did some improvements on the auth system of `scale-daemon`. I will do more testing to cross-check the system.
+- Now, i will extrapolate the auth system to `ticket-daemon`. I need the same login for dashboard access, establish the rate limiter for printing jobs and implement a token system for the print jobs. I expect to use very similar code to the one used in `scale-daemon`.
+- I will test both daemons and the TUI installer, and i will do the final touches on them.
