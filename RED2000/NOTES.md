@@ -899,3 +899,6 @@ GET  /api/v1/status      # Check printer status
 - I will test both daemons and the TUI installer, and i will do the final touches on them.
 
 - I have an ultimate version of the TUI installer, it is a single file, and it is able to install both services on both modes, and it has a proper auth system for both daemons. I will continue with the testing and improvements.
+
+- The auth system is working as expected for both daemons, it was completely tested manually and behaved as expected. Now, i have to make proper programatically tests to cross-check the system. I will continue with it tomorrow.
+- I will add a simple but effective CI/CD pipeline for both daemons and the TUI installer. Those changes include other Github files.
