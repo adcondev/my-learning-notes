@@ -902,3 +902,6 @@ GET  /api/v1/status      # Check printer status
 
 - The auth system is working as expected for both daemons, it was completely tested manually and behaved as expected. Now, i have to make proper programatically tests to cross-check the system. I will continue with it tomorrow.
 - I will add a simple but effective CI/CD pipeline for both daemons and the TUI installer. Those changes include other Github files.
+
+- I have done the changes for the CI/CD pipeline for both daemons and the TUI installer. I will continue with the testing and improvements.
+- Final detailes on testing, refactoring and performance. I will continue with it tomorrow.
