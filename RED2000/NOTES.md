@@ -905,3 +905,5 @@ GET  /api/v1/status      # Check printer status
 
 - I have done the changes for the CI/CD pipeline for both daemons and the TUI installer. I will continue with the testing and improvements.
 - Final detailes on testing, refactoring and performance. I will continue with it tomorrow.
+
+- Nice improvements and refactoring.
