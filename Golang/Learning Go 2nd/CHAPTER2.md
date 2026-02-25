@@ -6,6 +6,7 @@
 ---
 
 ## **Table of Contents**
+
 1. [Introduction](#introduction)  
 2. [Predeclared Types](#predeclared-types)  
    - [Zero Value](#zero-value)  
@@ -28,6 +29,7 @@
 ---
 
 ## **Introduction**
+
 Go provides a rich set of **predeclared types** (booleans, integers, floats, strings, runes) and straightforward **declaration rules**. Although these concepts exist in most languages, Go’s approach emphasizes clarity and simplicity:  
 - **Zero values** to avoid null references or uninitialized variables.  
 - **Untyped literals** to allow flexible assignment.  
@@ -36,12 +38,14 @@ Go provides a rich set of **predeclared types** (booleans, integers, floats, str
 ---
 
 ## **Predeclared Types**
+
 Go ships with many built-in types that streamline everyday coding tasks, commonly grouped into:
 1. **Boolean** (*bool*)
 2. **Numeric** (*int, float64, etc.*)
 3. **String** and **Rune**
 
 ### **Zero Value**
+
 In Go, declared variables that aren’t initialized receive a default **zero value**:  
 - **bool** → `false`  
 - **numeric types** → `0` (e.g., `int`, `float64`)  
@@ -54,6 +58,7 @@ In Go, declared variables that aren’t initialized receive a default **zero val
 ---
 
 ### **Literals**
+
 A literal is a fixed value in source code. Common literal forms:
 
 - **Integer literals**:
@@ -94,6 +99,7 @@ A literal is a fixed value in source code. Common literal forms:
 ---
 
 ### **Booleans**
+
 - Declared via the `bool` type.
 - Possible values: `true` or `false`.
 - Zero value is `false`.
@@ -108,9 +114,11 @@ var isAwesome = true
 ---
 
 ### **Numeric Types**
+
 Go has a rich set of numeric types to suit various performance and memory constraints.
 
 #### **Integers**
+
 Signed and unsigned integers in one to eight bytes:
 
 | **Type** | **Size**     | **Range (Signed)**                    |
@@ -145,6 +153,7 @@ x <<= 2  // 60
 ```
 
 #### **Floating-Point**
+
 Two primary floating-point types: `float32` and `float64`.
 
 | **Type**   | **Size**    | **Range**         |
@@ -160,6 +169,7 @@ Two primary floating-point types: `float32` and `float64`.
 ---
 
 ## **Strings and Runes**
+
 - **String** zero value is the empty string `""`.
 - Strings are **immutable**; you can’t modify them in place.
 - **Rune** is an alias for `int32`; default type for a rune literal (`'A'`) is `rune`.
@@ -177,6 +187,7 @@ Strings support:
 ---
 
 ## **Explicit Type Conversion**
+
 Go **does not** allow automatic type promotions. You must convert explicitly:
 
 ```go
@@ -195,6 +206,7 @@ var sum2 int = x + int(y)
 ---
 
 ## **var vs :=**
+
 Two primary ways to declare variables:
 
 1. **`var`** declarations:
@@ -224,6 +236,7 @@ Two primary ways to declare variables:
 ---
 
 ## **Using const**
+
 Constants (`const`) define **immutable** named values known at compile time. They **cannot** be the result of runtime computations.
 
 ```go
@@ -234,6 +247,7 @@ const z = x + y // compile error - x + y is runtime
 ```
 
 ### **Typed and Untyped Constants**
+
 - **Untyped constant**: No fixed type, but a default type is inferred if needed.
 - **Typed constant**: Only assignable to variables of the same type.
 
@@ -249,6 +263,7 @@ const typedX int = 10
 ---
 
 ## **Unused Variables**
+
 Go enforces that **every declared local variable must be read** at least once; otherwise, it’s a compile-time error:
 
 ```go
@@ -266,6 +281,7 @@ func main() {
 ---
 
 ## **Naming Variables and Constants**
+
 - Must start with a letter or underscore (`_`); can contain letters, digits, underscores.
 - **CamelCase** is idiomatic in Go.
 - Smaller scopes → shorter names (`i`, `j`). Larger scopes → more descriptive (`indexCounter`).
@@ -275,6 +291,7 @@ func main() {
 ---
 
 ## **Summary and Quick Revision**
+
 1. **Types**: Mastering booleans, numeric types, runes, and strings helps avoid confusion.  
 2. **Zero Values**: Avoids null references; uninitialized variables default to a safe zero value.  
 3. **Literals**: Integers, floats, runes, strings are flexible. Untyped allows easy usage across expressions.  
@@ -284,22 +301,26 @@ func main() {
 7. **Naming**: Use descriptive names in broader scopes; short names for tight scopes or idiomatic patterns.
 
 ### **Extra Tips**
+
 - **Use `float64`** by default for floating-point calculations to avoid subtle precision issues.  
 - **Remember** that rune is just `int32`—useful for storing Unicode code points.  
 - **Practice** bitwise operations (`&`, `|`, `^`) for performance-critical tasks like cryptography or image processing.
 
 ### **Best Practices**
+
 - Favor **short declarations** (`:=`) for local variables; it improves readability.  
 - Keep **constants untyped** where possible for greater flexibility.  
 - Use **package-level variables** sparingly; prefer function-level or smaller-scope variables.
 
 ### **Common Pitfalls**
+
 1. **Forgetting to read a local variable** → compile-time error.  
 2. **Confusing `=` with `:=`** → `:=` only works inside functions.  
 3. **Implicit conversions** → not allowed; must cast explicitly.  
 4. **Unused import** or **unused variable** → compiler error in Go.  
 
 ### **Interview Questions**
+
 1. **What is a zero value, and how does it help in Go?**  
    Answer: A zero value is the default value assigned to a variable when it is declared but not initialized. It helps avoid null references and provides a safe starting point for variables.
 2. **Explain how untyped constants work in Go.**  
