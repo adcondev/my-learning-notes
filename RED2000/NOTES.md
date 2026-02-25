@@ -907,3 +907,11 @@ GET  /api/v1/status      # Check printer status
 - Final detailes on testing, refactoring and performance. I will continue with it tomorrow.
 
 - Nice improvements and refactoring.
+
+## 🗓️ **WEEK 34: TBD**
+
+**Period:** February 23 - February 27, 2026
+
+- We tested the entire functionality of both daemons and the TUI installer. Everything works as expected in the main POS system. I also explained the build process to the other developers.
+
+- I helped with some video tutorials ofthe POS system and did more documentation.
